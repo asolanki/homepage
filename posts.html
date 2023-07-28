@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Adarsh's Homepage
+    Posts - Adarsh's Homepage
   </title>
-  <meta name="title" content="Adarsh's Homepage">
+  <meta name="title" content="Posts - Adarsh's Homepage">
   <meta name="twitter:card" content="summary">
   </meta>
-  <meta name="twitter:title" content="Adarsh's Homepage">
+  <meta name="twitter:title" content="Posts - Adarsh's Homepage">
   </meta>
   <link rel="stylesheet" href="css/pico.min.css">
 
@@ -25,47 +25,22 @@
       top: 100vh;
     }
 
-    .intro {
-      position: absolute;
-      top: 40%;
-      left: 50%;
+    .post-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1em; /* Add some space between posts */
     }
 
-    .cover{
-      transition: transform 0.3s ease-in-out
+    .post-title {
+        text-align: left;
     }
 
-    .cover:hover {
-      transform: translate(-50%, -45%);
-
+    .post-date {
+        text-align: right;
     }
 
-    .avatar img {
-      width: 128px;
-      height: auto;
-      transform: translate(-50%, -50%);
-      border-radius: 100%;
-      border-style: none;
-      overflow: clip;
-    }
 
-    .social-links {
-      transform: translate(-50%, -100%);
-      margin: 0 auto;
-      border-style: none;
-      overflow: clip;
-    }
-
-    .social-links a {
-      text-decoration: none;
-      padding: 10px;
-      opacity: 0.4;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .social-links a:hover {
-      opacity: 1;
-    }
   </style>
 
 </head>
@@ -75,13 +50,12 @@
 
     <!-- nav bar -->
     <nav>
-
       <ul>
-        <li><a href="#" class="secondary"><small>Adarsh Solanki</small></a></li>
+        <li><a href="index.html" class="secondary"><small>Adarsh Solanki</small></a></li>      
       </ul>
 
       <ul>
-        <li><a href="posts.html" class="secondary"><small>Posts</small></a></li>
+        <li><a href="#" class="secondary"><small>Posts</small></a></li>
         <li><a href="#" class="secondary"><small>About Me</small></a></li>
         <li><a href="#" id="toggle-dark" data-tooltip="Toggle Dark"><svg width="18" height="18" viewBox="0 4 24 18"
               preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
@@ -93,37 +67,11 @@
                 fill="currentColor" />
             </svg></a></li>
       </ul>
-
     </nav>
 
-
-    <div class="intro">
-      <div class="avatar">
-        <img class="cover" src="img/cover.jpg" alt="Avatar">
-      </div>
-
-      <!-- SOCIALS -->
-      <div class="social-links">
-        <a href="https://github.com/asolanki" target="_blank" rel="me noopener noreffer">
-          <img src="img/github.svg" alt="GitHub" width="32" height="32">
-        </a>
-
-        <a href="https://linkedin.com/in/adarshsolanki" target="_blank" rel="me noopener noreffer">
-          <img src="img/linkedin.svg" alt="LinkedIn" width="32" height="32">
-        </a>
-
-
-        <a href="https://twitter.com/adarshsolanki" target="_blank" rel="me noopener noreffer">
-          <img src="img/twitter.svg" alt="Twitter" width="32" height="32">
-        </a>
-
-        <a href="https://facebook.com/adarsh.solanki" rel="me noopener noreffer" target="_blank">
-          <img src="img/facebook.svg" alt="Facebook" width="32" height="32">
-        </a>
-      </div>
-
-    </div>
-
+    <h5>All Posts</h5>
+    <!-- posts -->
+    <div id="posts-list"></div>
 
   </main>
 
@@ -145,6 +93,28 @@
       document.documentElement.setAttribute('data-theme', 'light');
     }
   });
+
+  function loadPosts() {
+    fetch('posts.json')
+        .then(response => response.json())
+        .then(posts => {
+            let postsDiv = document.getElementById('posts-list');
+
+            for (let post of posts) {
+                let postElement = document.createElement('div');
+                postElement.className = 'post-entry';
+                postElement.innerHTML = `
+                    <div class="post-title">
+                        <a href="posts/${post.filename}">${post.title}</a>
+                    </div>
+                    <div class="post-date">${post.date}</div>
+                `;
+                postsDiv.appendChild(postElement);
+            }
+        });
+}
+
+loadPosts();
 
 </script>
 

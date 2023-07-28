@@ -5,19 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Adarsh's Homepage
+    Adarsh's 404 page
   </title>
-  <meta name="title" content="Adarsh's Homepage">
-  <meta name="twitter:card" content="summary">
-  </meta>
-  <meta name="twitter:title" content="Adarsh's Homepage">
-  </meta>
+  <meta name="title" content="Adarsh's 404">
   <link rel="stylesheet" href="css/pico.min.css">
 
   <style>
 
     html,body{
       height: 100vh;
+      margin:0;
+    }
+    h2 {
       margin:0;
     }
     footer {
@@ -32,7 +31,7 @@
     }
 
     .cover{
-      transition: transform 0.3s ease-in-out
+      transition: transform 0.3s ease-in-out;
     }
 
     .cover:hover {
@@ -43,29 +42,21 @@
     .avatar img {
       width: 128px;
       height: auto;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) rotate(180deg);
       border-radius: 100%;
       border-style: none;
       overflow: clip;
+      
     }
 
     .social-links {
-      transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%);      
       margin: 0 auto;
       border-style: none;
       overflow: clip;
+      text-align: center;
     }
 
-    .social-links a {
-      text-decoration: none;
-      padding: 10px;
-      opacity: 0.4;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .social-links a:hover {
-      opacity: 1;
-    }
   </style>
 
 </head>
@@ -77,7 +68,7 @@
     <nav>
 
       <ul>
-        <li><a href="#" class="secondary"><small>Adarsh Solanki</small></a></li>
+        <li><a href="index.html" class="secondary"><small>Adarsh Solanki</small></a></li>            
       </ul>
 
       <ul>
@@ -98,29 +89,17 @@
 
 
     <div class="intro">
+
+      <div class="social-links">
+        <h2> 404! </h2>
+        <p>Page not found!</p>      
+      </div>
       <div class="avatar">
         <img class="cover" src="img/cover.jpg" alt="Avatar">
       </div>
 
       <!-- SOCIALS -->
-      <div class="social-links">
-        <a href="https://github.com/asolanki" target="_blank" rel="me noopener noreffer">
-          <img src="img/github.svg" alt="GitHub" width="32" height="32">
-        </a>
 
-        <a href="https://linkedin.com/in/adarshsolanki" target="_blank" rel="me noopener noreffer">
-          <img src="img/linkedin.svg" alt="LinkedIn" width="32" height="32">
-        </a>
-
-
-        <a href="https://twitter.com/adarshsolanki" target="_blank" rel="me noopener noreffer">
-          <img src="img/twitter.svg" alt="Twitter" width="32" height="32">
-        </a>
-
-        <a href="https://facebook.com/adarsh.solanki" rel="me noopener noreffer" target="_blank">
-          <img src="img/facebook.svg" alt="Facebook" width="32" height="32">
-        </a>
-      </div>
 
     </div>
 
