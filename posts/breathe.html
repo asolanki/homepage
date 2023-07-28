@@ -120,6 +120,10 @@ Description: Web-based tool to help with meditation and breathwork
         transform: scale(0.5);
       }
     }
+
+    #post-content {
+      padding: 1em;
+    }
   </style>
 
 </head>
@@ -164,35 +168,37 @@ Description: Web-based tool to help with meditation and breathwork
     </nav>
 
     <!-- POST CONTENT -->
-    <p>Select a preset breathing time or choose your own</p>
-    <div class="control">
-      <select id="presetSelect">
-        <!-- preset options will be added dynamically -->
-      </select>
-    </div>
-    <div class="control">
-      <label for="inhale">Inhale:</label>
-      <span id="inhale-label"></span>
-      <input type="range" id="inhale" min="0" max="20" value="2">
-    </div>
-    <div class="control">
-      <label for="hold1">Hold after inhale:</label>
-      <span id="hold1-label"></span>
-      <input type="range" id="hold1" min="0" max="20" value="1">
-    </div>
-    <div class="control">
-      <label for="exhale">Exhale:</label>
-      <span id="exhale-label"></span>
-      <input type="range" id="exhale" min="0" max="20" value="2">
-    </div>
-    <div class="control">
-      <label for="hold2">Hold after exhale:</label>
-      <span id="hold2-label"></span>
-      <input type="range" id="hold2" min="0" max="20" value="1">
-    </div>
-    <div id="outerCircle">
-      <div id="circle"></div>
-      <div id="countdown"></div>
+    <div id="post-content">
+      <p>Select a preset breathing time or choose your own</p>
+      <div class="control">
+        <select id="presetSelect">
+          <!-- preset options will be added dynamically -->
+        </select>
+      </div>
+      <div class="control">
+        <label for="inhale">Inhale:</label>
+        <span id="inhale-label"></span>
+        <input type="range" id="inhale" min="0" max="20" value="2">
+      </div>
+      <div class="control">
+        <label for="hold1">Hold after inhale:</label>
+        <span id="hold1-label"></span>
+        <input type="range" id="hold1" min="0" max="20" value="1">
+      </div>
+      <div class="control">
+        <label for="exhale">Exhale:</label>
+        <span id="exhale-label"></span>
+        <input type="range" id="exhale" min="0" max="20" value="2">
+      </div>
+      <div class="control">
+        <label for="hold2">Hold after exhale:</label>
+        <span id="hold2-label"></span>
+        <input type="range" id="hold2" min="0" max="20" value="1">
+      </div>
+      <div id="outerCircle">
+        <div id="circle"></div>
+        <div id="countdown"></div>
+      </div>
     </div>
   </main>
 
