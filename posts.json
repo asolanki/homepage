@@ -1,11 +1,5 @@
 [
     {
-        "title": "Hello World",
-        "date": "2023-07-27",
-        "description": "Test.",
-        "filename": "test.html"
-    },
-    {
         "title": "Breathing Assistant Tool",
         "date": "2023-07-27",
         "description": "Web-based tool to help with meditation and breathwork",
