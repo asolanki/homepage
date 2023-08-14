@@ -10,5 +10,11 @@
         "date": "2023-07-27",
         "description": "Web-based tool to help with meditation and breathwork",
         "filename": "breathe.html"
+    },
+    {
+        "title": "Reflections on 10 Years in Tech",
+        "date": "2023-08-10",
+        "description": "Career reflections after 10 years in the tech industry.",
+        "filename": "10years.html"
     }
 ]

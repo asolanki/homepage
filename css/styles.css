@@ -1,0 +1,44 @@
+html,
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+body>footer {
+  position: sticky;
+  top: 100vh;
+  text-align: center;
+}
+
+img{
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+
+}
+
+#post-content {
+  padding: 1em;
+}
+
+p {
+  padding-left: 1em;
+}
+
+h4, h5 {
+  padding-left: 0.5em;
+}
+
+h6 {
+  padding-left: 1em;
+}
+
+.center {
+    text-align: center;
+    padding: 1em;
+  }
+
+  .sub {
+    font-size: 0.8em;
+    font-style: italic;
+  }

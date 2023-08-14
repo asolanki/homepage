@@ -1,6 +1,12 @@
 import json
 import os
 
+##
+## INSTRUCTIONS: FIRST ADD POST TO POSTS.JSON
+## THEN RUN THIS TO CREATE TEMPLATE
+## THEN EDIT THE POST TEMPLATE HTML
+## 
+
 # Directory where the posts are stored
 post_dir = 'posts/'
 
