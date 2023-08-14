@@ -155,8 +155,15 @@ document.getElementById('sorting-options').addEventListener('click', function (e
   if (event.target.tagName === 'A') { // Check if the clicked element is a link
     var sortingMethod = event.target.getAttribute('data-sort');
     displayPosts(sortingMethod);
+    
+    // Find the <details> element and close it
+    var detailsElement = event.target.closest('details');
+    if (detailsElement) {
+      detailsElement.open = false;
+    }
   }
 });
+
 
 // Load posts initially with default sorting
 loadPosts('desc');
