@@ -74,16 +74,25 @@
       </ul>
     </nav>
 
-    <nav aria-label="breadcrumb">
-      <small>
+    <nav>
         <ul>
+          <small>
           <li> All Posts </li>
+        </small>
         </ul>
-        <select id="sorting-method">
-          <option value="desc">Newest First</option>
-          <option value="asc">Oldest First</option>
-        </select>
-      </small>
+        <ul>
+          
+          <li>
+            <details role="list">
+              <summary aria-haspopup="listbox">Sort by</summary>
+              <ul role="listbox" id="sorting-options">
+                <li><a href="#" data-sort="desc">Newest First</a></li>
+                <li><a href="#" data-sort="asc">Oldest First</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+        
 
     </nav>    <!-- posts -->
     <div id="posts-list"></div>
@@ -127,8 +136,7 @@ function loadPosts() {
   }
 }
 
-function displayPosts() {
-  var sortingMethod = document.getElementById('sorting-method').value;
+function displayPosts(sortingMethod) {
   var sortedPosts = allPosts.slice(); // Create a copy to avoid modifying the original
   if (sortingMethod === 'asc') {
     sortedPosts.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -141,11 +149,18 @@ function displayPosts() {
     `<div class="post-entry"><div class="post-title"><a href="posts/${post.filename}">${post.title}</a></div><div class="post-date">${post.date}</div></div>`));
 }
 
-// Add event listener for sorting method change
-document.getElementById('sorting-method').addEventListener('change', displayPosts);
+// Add event listeners for sorting options
+document.getElementById('sorting-options').addEventListener('click', function (event) {
+  event.preventDefault(); // Prevent the default link behavior
+  if (event.target.tagName === 'A') { // Check if the clicked element is a link
+    var sortingMethod = event.target.getAttribute('data-sort');
+    displayPosts(sortingMethod);
+  }
+});
 
-// Load posts initially
-loadPosts();
+// Load posts initially with default sorting
+loadPosts('desc');
+
 
 
 </script>
