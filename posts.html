@@ -79,6 +79,10 @@
         <ul>
           <li> All Posts </li>
         </ul>
+        <select id="sorting-method">
+          <option value="desc">Newest First</option>
+          <option value="asc">Oldest First</option>
+        </select>
       </small>
 
     </nav>    <!-- posts -->
@@ -107,23 +111,42 @@
     }
   });
 
-  function loadPosts() {
+  var allPosts = []; // Store the posts here
+
+function loadPosts() {
+  if (allPosts.length === 0) {
+    // Fetch the posts if not already loaded
     fetch('posts.json')
-        .then(response => response.json())
-        .then(posts => posts.sort((a, b) => new Date(b.date) - new Date(a.date))
-            .forEach(post => document.getElementById('posts-list')
-                .insertAdjacentHTML('beforeend', `
-                    <div class="post-entry">
-                        <div class="post-title">
-                            <a href="posts/${post.filename}">${post.title}</a>
-                        </div>
-                        <div class="post-date">${post.date}</div>
-                    </div>
-                `)));
+      .then(response => response.json())
+      .then(posts => {
+        allPosts = posts; // Store the posts
+        displayPosts();   // Display the posts
+      });
+  } else {
+    displayPosts(); // Display the posts
+  }
 }
 
+function displayPosts() {
+  var sortingMethod = document.getElementById('sorting-method').value;
+  var sortedPosts = allPosts.slice(); // Create a copy to avoid modifying the original
+  if (sortingMethod === 'asc') {
+    sortedPosts.sort((a, b) => new Date(a.date) - new Date(b.date));
+  } else {
+    sortedPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }
+  var postsDiv = document.getElementById('posts-list');
+  postsDiv.innerHTML = ''; // Clear existing posts
+  sortedPosts.forEach(post => postsDiv.insertAdjacentHTML('beforeend',
+    `<div class="post-entry"><div class="post-title"><a href="posts/${post.filename}">${post.title}</a></div><div class="post-date">${post.date}</div></div>`));
+}
 
+// Add event listener for sorting method change
+document.getElementById('sorting-method').addEventListener('change', displayPosts);
+
+// Load posts initially
 loadPosts();
+
 
 </script>
 
