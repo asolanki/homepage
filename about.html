@@ -5,19 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>
-    Adarsh's 404 page
+    About Adarsh
   </title>
-  <meta name="title" content="Adarsh's 404">
+
+  <meta name="title" content="About Adarsh">
+  <meta name="twitter:card" content="Intro to Adarsh Solanki">
+  <meta name="twitter:title" content="About Adarsh">
   <link rel="stylesheet" href="css/pico.min.css">
 
   <style>
     html,
     body {
       height: 100vh;
-      margin: 0;
-    }
-
-    h2 {
       margin: 0;
     }
 
@@ -31,10 +30,11 @@
       position: absolute;
       top: 40%;
       left: 50%;
+      width: 225px;
     }
 
     .cover {
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out
     }
 
     .cover:hover {
@@ -45,11 +45,25 @@
     .avatar img {
       width: 128px;
       height: auto;
-      transform: translate(-50%, -50%) rotate(180deg);
+      transform: translate(-50%, -50%);
       border-radius: 100%;
       border-style: none;
       overflow: clip;
+    }
 
+
+    .speech-bubble {
+      position: relative;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, .2);
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      margin: 10px 0;
     }
 
     .social-links {
@@ -57,7 +71,17 @@
       margin: 0 auto;
       border-style: none;
       overflow: clip;
-      text-align: center;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      padding: 10px;
+      opacity: 0.4;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .social-links a:hover {
+      opacity: 1;
     }
   </style>
 
@@ -90,20 +114,44 @@
     </nav>
 
 
-    <div class="intro">
+    <div class="speech-bubble">
+      <p>I'm <span style="font-size:1.5em; font-weight:500">Adarsh</span></p>
+      <p>I work in technology, <a href="posts/10years.html">read about my first 10 years.</a></p>
+      <p>I also make a lot of music, listen to some of it <a
+          href="https://open.spotify.com/artist/3JokWXQCj0oyw5J9zrrC1b">here</a></p>
+    </div>
 
-      <div class="social-links">
-        <h2> 404! </h2>
-        <p>Page not found!</p>
-      </div>
+    <div class="intro">
       <div class="avatar">
-        <img class="cover" src="img/cover.jpg" alt="Avatar">
+        <img src="img/avatarbw copy.jpg" alt="Avatar">
       </div>
 
       <!-- SOCIALS -->
+      <div class="social-links">
+        <a href="https://github.com/asolanki" target="_blank" rel="me noopener noreffer">
+          <img src="img/github.svg" alt="GitHub" width="32" height="32">
+        </a>
+
+        <a href="https://linkedin.com/in/adarshsolanki" target="_blank" rel="me noopener noreffer">
+          <img src="img/linkedin.svg" alt="LinkedIn" width="32" height="32">
+        </a>
+
+
+        <a href="https://twitter.com/adarshsolanki" target="_blank" rel="me noopener noreffer">
+          <img src="img/twitter.svg" alt="Twitter" width="32" height="32">
+        </a>
+
+        <a href="https://facebook.com/adarsh.solanki" rel="me noopener noreffer" target="_blank">
+          <img src="img/facebook.svg" alt="Facebook" width="32" height="32">
+        </a>
+      </div>
 
 
     </div>
+
+
+
+
 
 
   </main>
