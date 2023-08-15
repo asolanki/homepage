@@ -26,12 +26,12 @@
       text-align: center;
     }
 
-    .intro {
+    /* .intro {
       position: absolute;
       top: 40%;
       left: 50%;
       width: 225px;
-    }
+    } */
 
     .cover {
       transition: transform 0.3s ease-in-out
@@ -42,16 +42,16 @@
 
     }
 
-    .avatar img {
+    /* .avatar img {
       width: 128px;
       height: auto;
       transform: translate(-50%, -50%);
       border-radius: 100%;
       border-style: none;
       overflow: clip;
-    }
+    } */
 
-
+/* 
     .speech-bubble {
       position: relative;
       padding: 20px;
@@ -60,18 +60,69 @@
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
       text-align: center;
-    }
+    } */
+
+    .speech-bubble {
+      position: relative;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+  width: 80%; /* Set width to 80% */
+  min-width: 200px; /* Set a minimum width */
+  max-width: 800px; /* Optionally set a maximum width */
+  margin-left: auto; /* Center the bubble */
+  margin-right: auto;
+  }
+
+  .speech-bubble::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid rgba(0, 0, 0, .2);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .intro {
+    position: relative; /* Changed from absolute to relative */
+    width: 100%; /* Set to 100% to take full width */
+    text-align: center; /* Center the content */
+    margin-top: 20px; /* Space between speech bubble and intro */
+  }
+
+  .avatar img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* Center the image */
+    width: 128px;
+    height: auto;
+    border-radius: 100%;
+    border-style: none;
+    overflow: clip;
+  }
+
+  .social-links {
+    text-align: center; /* Center the social links */
+    padding-top: 1em;
+  }
 
     p {
       margin: 10px 0;
     }
 
-    .social-links {
+    /* .social-links {
       transform: translate(-50%, -100%);
       margin: 0 auto;
       border-style: none;
       overflow: clip;
-    }
+    } */
 
     .social-links a {
       text-decoration: none;
