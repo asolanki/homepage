@@ -116,6 +116,12 @@ Description: Playing with transformers in the browser
       <!-- POST TITLE -->
       <h3>Mandarin Tone Trainer</h3>
 
+
+      <button id="record-button">Record Audio</button>
+      <p id="status"></p>
+      <div id="labels-container"></div>
+
+<!-- 
       <label class="custom-file-upload">
         <input id="file-upload" type="file" accept="image/*" />
         <img class="upload-icon" src="https://huggingface.co/datasets/Xenova/transformers.js-docs/resolve/main/upload-icon.png" />
@@ -126,21 +132,20 @@ Description: Playing with transformers in the browser
 
       <p></p>
 
-      <!-- header -->
       <h4></h4>
 
       <p></p>
 
-      <!-- subtitle -->
       <h6></h6>
 
-      <!-- inline image-->
       <div class="center">
         <img src="" alt="" width="500px">
         <p class="sub"></p>
       </div>
     </div>
-  </main>
+  </main> 
+
+-->
 
   <footer>
     <div class="container">
@@ -155,6 +160,7 @@ Description: Playing with transformers in the browser
 
 
 <script src="../js/tjs.js" type="module"></script>
+<script src="../js/tone-trainer.js" type="module"></script>
 <script>
   // toggle dark mode
   document.getElementById('toggle-dark').addEventListener('click', function () {
