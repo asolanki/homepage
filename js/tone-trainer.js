@@ -1,6 +1,6 @@
 import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.6.0";
 
-nv.allowLocalModels = false;
+env.allowLocalModels = false;
 
 // DOM elements
 const status = document.getElementById("status");
