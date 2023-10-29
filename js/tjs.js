@@ -7,10 +7,13 @@ const fileUpload = document.getElementById("file-upload");
 const imageContainer = document.getElementById("image-container");
 const status = document.getElementById("status");
 
+// tone trainer
+const recordButton = document.getElementById('record-button');
+const labelsContainer = document.getElementById('labels-container');
+
+// load model
 status.textContent = "Loading model...";
-
 const detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
-
 status.textContent = "Ready";
 
 fileUpload.addEventListener("change", function (e) {
