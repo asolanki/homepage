@@ -101,7 +101,7 @@ function drawBars() {
         let x = 0;
 
         for(let i = 0; i < bufferLength; i++) {
-            barHeight = dataArray[i];
+            barHeight = dataArray[i] * 0.8;
             ctx.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
             ctx.fillRect(x, canvas.height/2 - barHeight/2, barWidth, barHeight/2);
             ctx.fillRect(x, canvas.height/2, barWidth, barHeight/2);
