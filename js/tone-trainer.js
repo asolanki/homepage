@@ -18,7 +18,7 @@ let audioChunks = [];
 let audioContext, source, analyser;
 let isRecording = false;
 let drawVisual; // For the animation frame
-
+let lastWaveformData = null;
 
 document.addEventListener('keydown', async function (event) {
     if (event.code === 'Space' && (!mediaRecorder || mediaRecorder.state === 'inactive')) {
@@ -91,6 +91,7 @@ function drawWaveform() {
 
     function draw() {
         if (!isRecording) {
+            lastWaveformData = dataArray.slice(); // Save the last waveform data
             cancelAnimationFrame(drawVisual);
             return;
         }
@@ -99,20 +100,19 @@ function drawWaveform() {
 
         analyser.getByteTimeDomainData(dataArray);
 
-        ctx.fillStyle = '#f2f2f2';
-        ctx.fillRect(0, 0, WIDTH, HEIGHT);
+        ctx.clearRect(0, 0, WIDTH, HEIGHT); // Clear the canvas
         ctx.lineWidth = 2;
-        ctx.strokeStyle = '#031d44';
+        ctx.strokeStyle = 'rgba(3, 29, 68, 0.6)'; // Lighter color for live waveform
 
         ctx.beginPath();
         let sliceWidth = WIDTH * 1.0 / bufferLength;
         let x = 0;
 
-        for(let i = 0; i < bufferLength; i++) {
+        for (let i = 0; i < bufferLength; i++) {
             let v = dataArray[i] / 128.0;
-            let y = v * HEIGHT/2;
+            let y = v * HEIGHT / 2;
 
-            if(i === 0) {
+            if (i === 0) {
                 ctx.moveTo(x, y);
             } else {
                 ctx.lineTo(x, y);
@@ -121,7 +121,7 @@ function drawWaveform() {
             x += sliceWidth;
         }
 
-        ctx.lineTo(canvas.width, canvas.height/2);
+        ctx.lineTo(canvas.width, canvas.height / 2);
         ctx.stroke();
     }
 
@@ -132,10 +132,34 @@ function drawWaveform() {
 function solidifyWaveform() {
     const canvas = audioVisualizer;
     const ctx = canvas.getContext('2d');
-    ctx.globalAlpha = 1; // Solidify the waveform
-    ctx.fillStyle = '#031d44'; // Darken the color
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    // Redraw the last frame of the waveform here if needed
+    const WIDTH = canvas.width;
+    const HEIGHT = canvas.height;
+
+    ctx.clearRect(0, 0, WIDTH, HEIGHT); // Clear the canvas before redrawing
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#031d44'; // Darker color for the solidified waveform
+
+    if (lastWaveformData) {
+        ctx.beginPath();
+        let sliceWidth = WIDTH * 1.0 / lastWaveformData.length;
+        let x = 0;
+
+        for (let i = 0; i < lastWaveformData.length; i++) {
+            let v = lastWaveformData[i] / 128.0;
+            let y = v * HEIGHT / 2;
+
+            if (i === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+
+            x += sliceWidth;
+        }
+
+        ctx.lineTo(canvas.width, canvas.height / 2);
+        ctx.stroke();
+    }
 }
 
 function animateProcessing() {
