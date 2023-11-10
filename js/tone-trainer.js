@@ -4,23 +4,19 @@ env.allowLocalModels = false;
 
 // DOM elements
 const status = document.getElementById("status");
-const recordButton = document.getElementById('record-button');
-const labelsContainer = document.getElementById('labels-container');
-
 const visualizerContainer = document.getElementById('visualizer-container');
 const audioVisualizer = document.getElementById('audioVisualizer');
-
+const labelsContainer = document.getElementById('labels-container');
 
 // load model
 status.textContent = "Loading model...";
-const classifier = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny");
+const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
 status.textContent = "Ready";
 
 let mediaRecorder;
 let audioChunks = [];
 let audioContext, source, analyser;
 
-// Start recording when the spacebar is held down
 document.addEventListener('keydown', async function (event) {
     if (event.code === 'Space' && (!mediaRecorder || mediaRecorder.state === 'inactive')) {
         visualizerContainer.style.background = '#d1f4d1'; // Start recording UI feedback
@@ -43,41 +39,39 @@ document.addEventListener('keydown', async function (event) {
     }
 });
 
-// Stop recording when the spacebar is released
 document.addEventListener('keyup', async function (event) {
     if (event.code === 'Space' && mediaRecorder && mediaRecorder.state === 'recording') {
         mediaRecorder.stop();
         visualizerContainer.style.background = '#f2d1d1'; // Processing UI feedback
 
-        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-        const audioBuffer = await blobToArrayBuffer(audioBlob);
+        mediaRecorder.onstop = async () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
 
-        // Model inference
-        status.textContent = 'Analysing...';
-        const output = await classifier(audioBuffer, {
-            // Model-specific options
-        });
-        status.textContent = '';
+            // Model inference
+            status.textContent = 'Transcribing...';
+            const output = await transcriber(audioUrl, { return_timestamps: true });
+            status.textContent = 'Transcription Complete';
 
-        // Update UI based on results
-        // (Modify this part according to your actual output processing logic)
-        visualizerContainer.style.background = output.length > 0 ? '#c8e6c9' : '#ffcdd2'; // Success or error color
+            // Handle transcription output
+            labelsContainer.textContent = output.text; // Displaying the transcription result
 
-        // Display top 3 labels
-        const topLabels = output.slice(0, 3); // Assuming output is sorted
-        labelsContainer.innerHTML = '';
-        topLabels.forEach(label => {
-            const labelElement = document.createElement('h1');
-            labelElement.textContent = label.name; // Replace with actual label property
-            labelsContainer.appendChild(labelElement);
-        });
+            // Clean up
+            URL.revokeObjectURL(audioUrl);
+        };
     }
 });
 
-// Helper functions
+// Helper function to convert Blob to ArrayBuffer
 function blobToArrayBuffer(blob) {
-    // ... (Your existing function)
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsArrayBuffer(blob);
+    });
 }
+
 
 function drawWaveform() {
     const canvas = audioVisualizer;
