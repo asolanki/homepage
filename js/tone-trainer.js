@@ -72,19 +72,19 @@ async function toggleRecord() {
     }
 }
 
-toggleButton.addEventListener('click', toggleRecording);
+toggleButton.addEventListener('click', toggleRecord);
 
 document.addEventListener('keydown', async function (event) {
     if (event.code === 'Space' && !isRecording) {
         event.preventDefault(); // Prevent default spacebar action (scrolling)
-        await toggleRecording();
+        await toggleRecord();
     }
 });
 
 document.addEventListener('keyup', async function (event) {
     if (event.code === 'Space' && isRecording) {
         event.preventDefault(); // Prevent default spacebar action (scrolling)
-        await toggleRecording();
+        await toggleRecord();
     }
 });
 
