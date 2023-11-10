@@ -72,13 +72,13 @@ canvas {
 
 .record {
   border-radius: 50%;
-  border: 4px solid white;
   font-size: 0;
   height: 48px;
   width: 48px;
   background: none;
   position: relative;
   overflow: hidden;
+  margin: auto;
 }
 
 .record:after {
@@ -140,14 +140,14 @@ canvas {
     <div id="post-content">
       <!-- POST TITLE -->
       <h3>Mandarin Tone Trainer</h3>
-
+      <p>Hold SPACE or tap record</p>
       <div id="labels-container"></div>
 
       <div id="visualizer-container">
         <canvas id="audioVisualizer"></canvas>
         <button class="record" title="Record" id="toggle">Start Recording</button>
         <audio controls style="display: none;"></audio>
-              </div>
+      </div>
 
 
   <footer>

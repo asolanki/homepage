@@ -2,7 +2,6 @@ import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@xenova/transformers
 env.allowLocalModels = false;
 
 // DOM elements
-const status = document.getElementById("status");
 const toggleButton = document.getElementById('toggle');
 const audioElement = document.querySelector('audio');
 const canvas = document.getElementById('audioVisualizer');
@@ -10,9 +9,7 @@ const ctx = canvas.getContext('2d');
 const labelsContainer = document.getElementById('labels-container');
 
 // load model
-status.textContent = "Loading model...";
 const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
-status.textContent = "Ready";
 
 let mediaRecorder;
 let audioChunks = [];
@@ -59,9 +56,7 @@ async function toggleRecord() {
             const audioUrl = URL.createObjectURL(audioBlob);
 
             // Model inference
-            status.textContent = 'Transcribing...';
             const output = await transcriber(audioUrl, { return_timestamps: true });
-            status.textContent = 'Transcription Complete';
 
             // Handle transcription output
             labelsContainer.textContent = output.text; // Displaying the transcription result
