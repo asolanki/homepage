@@ -16,9 +16,13 @@ status.textContent = "Ready";
 let mediaRecorder;
 let audioChunks = [];
 let audioContext, source, analyser;
+let isRecording = false;
+let drawVisual; // For the animation frame
+
 
 document.addEventListener('keydown', async function (event) {
     if (event.code === 'Space' && (!mediaRecorder || mediaRecorder.state === 'inactive')) {
+        isRecording = true;
         visualizerContainer.style.background = '#d1f4d1'; // Start recording UI feedback
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
         audioChunks = [];
@@ -41,8 +45,11 @@ document.addEventListener('keydown', async function (event) {
 
 document.addEventListener('keyup', async function (event) {
     if (event.code === 'Space' && mediaRecorder && mediaRecorder.state === 'recording') {
+        isRecording = false;
         mediaRecorder.stop();
         visualizerContainer.style.background = '#f2d1d1'; // Processing UI feedback
+
+        solidifyWaveform();
 
         mediaRecorder.onstop = async () => {
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
@@ -58,6 +65,7 @@ document.addEventListener('keyup', async function (event) {
 
             // Clean up
             URL.revokeObjectURL(audioUrl);
+            animateProcessing();
         };
     }
 });
@@ -82,7 +90,12 @@ function drawWaveform() {
     const HEIGHT = canvas.height;
 
     function draw() {
-        requestAnimationFrame(draw);
+        if (!isRecording) {
+            cancelAnimationFrame(drawVisual);
+            return;
+        }
+
+        drawVisual = requestAnimationFrame(draw);
 
         analyser.getByteTimeDomainData(dataArray);
 
@@ -113,4 +126,39 @@ function drawWaveform() {
     }
 
     draw();
+}
+
+// Function to solidify the waveform
+function solidifyWaveform() {
+    const canvas = audioVisualizer;
+    const ctx = canvas.getContext('2d');
+    ctx.globalAlpha = 1; // Solidify the waveform
+    ctx.fillStyle = '#031d44'; // Darken the color
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Redraw the last frame of the waveform here if needed
+}
+
+function animateProcessing() {
+    let opacity = 0.1;
+    let increasing = true;
+    
+    function animate() {
+        if (!increasing && opacity <= 0.1) {
+            increasing = true;
+        } else if (increasing && opacity >= 1) {
+            increasing = false;
+        }
+
+        opacity += increasing ? 0.05 : -0.05;
+        visualizerContainer.style.background = `rgba(255, 0, 0, ${opacity})`; // Red pulsating effect
+
+        if (status.textContent === 'Transcribing...') {
+            requestAnimationFrame(animate);
+        } else {
+            // Reset to original state after processing is done
+            visualizerContainer.style.background = '';
+        }
+    }
+
+    animate();
 }
