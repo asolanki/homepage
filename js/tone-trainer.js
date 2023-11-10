@@ -24,10 +24,10 @@ canvas.height = 200;
 
 const BARS = []
 const fillStyle = ctx.createLinearGradient(
-  ctx.width / 2,
+  canvas.width / 2,
   0,
-  ctx.width / 2,
-  ctx.height
+  canvas.width / 2,
+  canvas.height
 )
 
 toggleButton.addEventListener('click', async function() {
