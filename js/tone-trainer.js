@@ -18,9 +18,6 @@ status.textContent = "Ready";
 
 let mediaRecorder;
 let audioChunks = [];
-
-let mediaRecorder;
-let audioChunks = [];
 let audioContext, source, analyser;
 
 // Start recording when the spacebar is held down
