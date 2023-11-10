@@ -30,7 +30,7 @@ const fillStyle = ctx.createLinearGradient(
   canvas.height
 )
 
-toggleButton.addEventListener('click', async function() {
+async function toggleRecord() {
     if (!isRecording) {
         // Start recording
         isRecording = true;
@@ -70,7 +70,24 @@ toggleButton.addEventListener('click', async function() {
             URL.revokeObjectURL(audioUrl);
         };
     }
+}
+
+toggleButton.addEventListener('click', toggleRecording);
+
+document.addEventListener('keydown', async function (event) {
+    if (event.code === 'Space' && !isRecording) {
+        event.preventDefault(); // Prevent default spacebar action (scrolling)
+        await toggleRecording();
+    }
 });
+
+document.addEventListener('keyup', async function (event) {
+    if (event.code === 'Space' && isRecording) {
+        event.preventDefault(); // Prevent default spacebar action (scrolling)
+        await toggleRecording();
+    }
+});
+
 
 function drawBars() {
     const bufferLength = analyser.frequencyBinCount;
