@@ -7,9 +7,7 @@ const fileUpload = document.getElementById("file-upload");
 const imageContainer = document.getElementById("image-container");
 const status = document.getElementById("status");
 
-// tone trainer
-const recordButton = document.getElementById('record-button');
-const labelsContainer = document.getElementById('labels-container');
+
 
 // load model
 status.textContent = "Loading model...";
