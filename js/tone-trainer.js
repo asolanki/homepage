@@ -9,10 +9,8 @@ const ctx = canvas.getContext('2d');
 const labelsContainer = document.getElementById('labels-container');
 
 // Load model
-const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
-
 labelsContainer.textContent = "Loading model..."
-const detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
+const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
 labelsContainer.textContent = "Ready";
 
 let mediaRecorder;
