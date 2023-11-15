@@ -11,6 +11,10 @@ const labelsContainer = document.getElementById('labels-container');
 // Load model
 const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
 
+labelsContainer.textContent = "Loading model..."
+const detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
+labelsContainer.textContent = "Ready";
+
 let mediaRecorder;
 let audioChunks = [];
 let audioContext, source, analyser;
