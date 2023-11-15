@@ -28,13 +28,30 @@ async function toggleRecord() {
         isRecording = true;
         toggleButton.textContent = 'Stop Recording';
         animationState = 'recording';
-        shrinkFactor = 1; // Reset shrink factor
-        wiggleFactor = 0; // Reset wiggle factor
+        shrinkFactor = 1;
+        wiggleFactor = 0;
 
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         audioChunks = [];
         mediaRecorder = new MediaRecorder(stream);
         mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+
+        mediaRecorder.onstop = async () => {
+            // Handle the end of recording
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+
+            // Model inference
+            const output = await transcriber(audioUrl, { return_timestamps: true });
+
+            // Handle transcription output
+            labelsContainer.textContent = output.text; // Displaying the transcription result
+
+            // Clean up
+            URL.revokeObjectURL(audioUrl);
+            animationState = 'stopped';
+        };
+
         mediaRecorder.start();
 
         if (!audioContext) {
@@ -73,24 +90,22 @@ function drawBars() {
         let x = 0;
 
         for (let i = 0; i < bufferLength; i++) {
-            let barHeight = dataArray[i];
+            let barHeight;
 
             if (animationState === 'shrinking') {
-                barHeight *= shrinkFactor;
+                barHeight = dataArray[i] * shrinkFactor;
                 shrinkFactor -= 0.005;
                 if (shrinkFactor <= 0.1) {
                     animationState = 'wiggling';
                     shrinkFactor = 0.1;
                 }
-            }
-
-            if (animationState === 'wiggling') {
+            } else if (animationState === 'wiggling') {
                 barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.1);
                 wiggleFactor += 0.05;
-            }
-
-            if (animationState === 'stopped') {
+            } else if (animationState === 'stopped') {
                 barHeight = 10; // Fixed small height for dots
+            } else {
+                barHeight = dataArray[i];
             }
 
             ctx.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
@@ -107,18 +122,3 @@ function drawBars() {
 
     draw();
 }
-
-mediaRecorder.onstop = async () => {
-    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-    const audioUrl = URL.createObjectURL(audioBlob);
-
-    // Model inference
-    const output = await transcriber(audioUrl, { return_timestamps: true });
-
-    // Handle transcription output
-    labelsContainer.textContent = output.text; // Displaying the transcription result
-
-    // Clean up
-    URL.revokeObjectURL(audioUrl);
-    animationState = 'stopped';
-};
