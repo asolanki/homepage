@@ -77,32 +77,31 @@ toggleButton.addEventListener('click', toggleRecord);
 function drawBars() {
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
-
     function draw() {
-        requestAnimationFrame(draw);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        if (animationState === 'recording') {
-            analyser.getByteFrequencyData(dataArray);
+        
+        if(animationState !== 'stopped') {
+            requestAnimationFrame(draw);
         }
-
+        
+        analyser.getByteFrequencyData(dataArray);
+        
         const barWidth = (canvas.width / bufferLength) * 2.5;
         let x = 0;
-
-        for (let i = 0; i < bufferLength; i++) {
+        
+        for(let i = 0; i < bufferLength; i++) {
             let barHeight;
 
-            if (animationState === 'shrinking') {
+            if(animationState === 'shrinking') {
                 barHeight = dataArray[i] * shrinkFactor;
-                shrinkFactor -= 0.005;
-                if (shrinkFactor <= 0.1) {
+                shrinkFactor -= 0.001;
+                if(shrinkFactor <= 0.1) {
                     animationState = 'wiggling';
                     shrinkFactor = 0.1;
                 }
-            } else if (animationState === 'wiggling') {
-                barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.1);
-                wiggleFactor += 0.05;
-            } else if (animationState === 'stopped') {
+            } else if(animationState === 'wiggling') {
+                barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.05);
+            } else if(animationState === 'stopped') {
                 barHeight = 10; // Fixed small height for dots
             } else {
                 barHeight = dataArray[i];
@@ -114,10 +113,9 @@ function drawBars() {
 
             x += barWidth + 1;
         }
-
-        if (animationState === 'shrinking' && shrinkFactor <= 0) {
-            animationState = 'wiggling';
-        }
+        
+        // Increase wiggleFactor after every frame
+        wiggleFactor += 0.05;
     }
 
     draw();
