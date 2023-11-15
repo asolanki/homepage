@@ -55,19 +55,21 @@ async function toggleRecord() {
         toggleButton.textContent = 'Start Recording';
         animationState = 'shrinking';
 
+        // Modifications in the toggleRecord function
         mediaRecorder.onstop = async () => {
+            // ... existing code ...
+            animationState = 'shrinking';
+            // Start shrinking animation, which will transition to 'wiggling'
+
+            // Wait for transcription to complete
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
             const audioUrl = URL.createObjectURL(audioBlob);
-
-            // Model inference
             const output = await transcriber(audioUrl, { return_timestamps: true });
-
-            // Handle transcription output
-            labelsContainer.textContent = output.text; // Displaying the transcription result
-
-            // Clean up
-            URL.revokeObjectURL(audioUrl);
+            
+            // Stop the wiggling animation and show the final state
             animationState = 'stopped';
+            labelsContainer.textContent = output.text; // Displaying the transcription result
+            URL.revokeObjectURL(audioUrl);
         };
     }
 }
@@ -117,19 +119,4 @@ function drawBars() {
     draw();
 }
 
-// Modifications in the toggleRecord function
-mediaRecorder.onstop = async () => {
-    // ... existing code ...
-    animationState = 'shrinking';
-    // Start shrinking animation, which will transition to 'wiggling'
 
-    // Wait for transcription to complete
-    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-    const audioUrl = URL.createObjectURL(audioBlob);
-    const output = await transcriber(audioUrl, { return_timestamps: true });
-    
-    // Stop the wiggling animation and show the final state
-    animationState = 'stopped';
-    labelsContainer.textContent = output.text; // Displaying the transcription result
-    URL.revokeObjectURL(audioUrl);
-};
