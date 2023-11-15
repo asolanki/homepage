@@ -9,7 +9,7 @@ const ctx = canvas.getContext('2d');
 const labelsContainer = document.getElementById('labels-container');
 
 // Load model
-labelsContainer.textContent = "Loading model..."
+labelsContainer.textContent = "Loading model...";
 const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
 labelsContainer.textContent = "Ready";
 
