@@ -35,9 +35,9 @@ async function toggleRecord() {
         audioChunks = [];
         mediaRecorder = new MediaRecorder(stream);
         mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+        mediaRecorder.start();
 
         mediaRecorder.onstop = async () => {
-            // Handle the end of recording
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
             const audioUrl = URL.createObjectURL(audioBlob);
 
@@ -45,14 +45,12 @@ async function toggleRecord() {
             const output = await transcriber(audioUrl, { return_timestamps: true });
 
             // Handle transcription output
-            labelsContainer.textContent = output.text; // Displaying the transcription result
+            labelsContainer.textContent = output.text;
 
             // Clean up
             URL.revokeObjectURL(audioUrl);
             animationState = 'stopped';
         };
-
-        mediaRecorder.start();
 
         if (!audioContext) {
             audioContext = new AudioContext();
