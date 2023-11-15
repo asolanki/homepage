@@ -16,16 +16,22 @@ let audioChunks = [];
 let audioContext, source, analyser;
 let isRecording = false;
 let animationState = 'idle'; // Possible states: 'idle', 'recording', 'shrinking', 'wiggling', 'stopped'
+let shrinkFactor = 1; // Factor to shrink the bars
+let wiggleFactor = 0; // Factor for the wiggle animation
+
 
 canvas.width = 500;
 canvas.height = 200;
 
-// Function to toggle recording
 async function toggleRecord() {
     if (!isRecording) {
         // Start recording
         isRecording = true;
         toggleButton.textContent = 'Stop Recording';
+        shrinkFactor = 1; // Reset shrink factor
+        wiggleFactor = 0; // Reset wiggle factor
+        animationState = 'recording';
+
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         audioChunks = [];
         mediaRecorder = new MediaRecorder(stream);
@@ -33,13 +39,15 @@ async function toggleRecord() {
         mediaRecorder.start();
 
         // Set up audio context and analyser for visualization
-        audioContext = new AudioContext();
-        analyser = audioContext.createAnalyser();
-        analyser.fftSize = 2048;
+        if (!audioContext) {
+            audioContext = new AudioContext();
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 2048;
+        }
         source = audioContext.createMediaStreamSource(stream);
         source.connect(analyser);
-        animationState = 'recording';
-        drawBars();
+
+        drawBars(); // Start drawing bars
     } else {
         // Stop recording
         isRecording = false;
@@ -66,43 +74,62 @@ async function toggleRecord() {
 
 toggleButton.addEventListener('click', toggleRecord);
 
-// Drawing function
 function drawBars() {
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
-    let shrinkFactor = 1; // Factor to shrink the bars, starts as 1 (full size)
-    let wiggleFactor = 0; // Factor to control the wiggle animation
 
     function draw() {
         requestAnimationFrame(draw);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (animationState === 'recording') {
+            analyser.getByteFrequencyData(dataArray);
+        }
+
         const barWidth = (canvas.width / bufferLength) * 2.5;
-        let barHeight;
         let x = 0;
 
-        for(let i = 0; i < bufferLength; i++) {
-            barHeight = dataArray[i] * shrinkFactor;
+        for (let i = 0; i < bufferLength; i++) {
+            let barHeight = dataArray[i] * shrinkFactor;
 
-            if (animationState === 'recording') {
-                analyser.getByteFrequencyData(dataArray);
-            } else if (animationState === 'shrinking') {
-                shrinkFactor -= 0.01;
-                if (shrinkFactor <= 0.1) {
-                    animationState = 'wiggling';
-                    shrinkFactor = 0.1;
-                }
-            } else if (animationState === 'wiggling') {
-                wiggleFactor += 0.1;
-                barHeight = (1 + Math.sin(wiggleFactor + i)) * 20;
-            } else if (animationState === 'stopped') {
-                barHeight = 10; // Fixed small height for dots
+            if (animationState === 'wiggling') {
+                barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.1);
             }
 
-            ctx.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
-            ctx.fillRect(x, canvas.height/2 - barHeight/2, barWidth, barHeight/2);
-            ctx.fillRect(x, canvas.height/2, barWidth, barHeight/2);
+            ctx.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
+            ctx.fillRect(x, canvas.height / 2 - barHeight / 2, barWidth, barHeight / 2);
+            ctx.fillRect(x, canvas.height / 2, barWidth, barHeight / 2);
+
             x += barWidth + 1;
         }
+
+        if (animationState === 'shrinking') {
+            shrinkFactor -= 0.01;
+            if (shrinkFactor <= 0.1) {
+                shrinkFactor = 0.1;
+                animationState = 'wiggling';
+            }
+        } else if (animationState === 'wiggling') {
+            wiggleFactor += 0.05;
+        }
     }
+
     draw();
 }
+
+// Modifications in the toggleRecord function
+mediaRecorder.onstop = async () => {
+    // ... existing code ...
+    animationState = 'shrinking';
+    // Start shrinking animation, which will transition to 'wiggling'
+
+    // Wait for transcription to complete
+    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+    const audioUrl = URL.createObjectURL(audioBlob);
+    const output = await transcriber(audioUrl, { return_timestamps: true });
+    
+    // Stop the wiggling animation and show the final state
+    animationState = 'stopped';
+    labelsContainer.textContent = output.text; // Displaying the transcription result
+    URL.revokeObjectURL(audioUrl);
+};
