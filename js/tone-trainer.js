@@ -88,16 +88,15 @@ function drawBars() {
         
         const barWidth = (canvas.width / bufferLength) * 2.5;
         let x = 0;
+        let barHeight;
         
         for(let i = 0; i < bufferLength; i++) {
-            let barHeight;
 
             if(animationState === 'shrinking') {
                 barHeight = dataArray[i] * shrinkFactor;
                 shrinkFactor -= 0.001;
                 if(shrinkFactor <= 0.1) {
                     animationState = 'wiggling';
-                    shrinkFactor = 0.1;
                 }
             } else if(animationState === 'wiggling') {
                 barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.05);
@@ -114,8 +113,8 @@ function drawBars() {
             x += barWidth + 1;
         }
         
-        // Increase wiggleFactor after every frame
-        wiggleFactor += 0.05;
+        // Increase wiggleFactor after each redraw
+        wiggleFactor += 0.05; 
     }
 
     draw();
