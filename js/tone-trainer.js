@@ -8,25 +8,19 @@ const canvas = document.getElementById('audioVisualizer');
 const ctx = canvas.getContext('2d');
 const labelsContainer = document.getElementById('labels-container');
 
-// load model
+// Load model
 const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
 
 let mediaRecorder;
 let audioChunks = [];
 let audioContext, source, analyser;
 let isRecording = false;
+let animationState = 'idle'; // Possible states: 'idle', 'recording', 'shrinking', 'wiggling', 'stopped'
 
 canvas.width = 500;
 canvas.height = 200;
 
-const BARS = []
-const fillStyle = ctx.createLinearGradient(
-  canvas.width / 2,
-  0,
-  canvas.width / 2,
-  canvas.height
-)
-
+// Function to toggle recording
 async function toggleRecord() {
     if (!isRecording) {
         // Start recording
@@ -41,16 +35,18 @@ async function toggleRecord() {
         // Set up audio context and analyser for visualization
         audioContext = new AudioContext();
         analyser = audioContext.createAnalyser();
-        analyser.fftSize = 2048; // FFT size for the analyser
+        analyser.fftSize = 2048;
         source = audioContext.createMediaStreamSource(stream);
         source.connect(analyser);
-        drawBars(); // Start drawing bars
+        animationState = 'recording';
+        drawBars();
     } else {
         // Stop recording
         isRecording = false;
         mediaRecorder.stop();
         toggleButton.textContent = 'Start Recording';
-        
+        animationState = 'shrinking';
+
         mediaRecorder.onstop = async () => {
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
             const audioUrl = URL.createObjectURL(audioBlob);
@@ -63,51 +59,50 @@ async function toggleRecord() {
 
             // Clean up
             URL.revokeObjectURL(audioUrl);
+            animationState = 'stopped';
         };
     }
 }
 
 toggleButton.addEventListener('click', toggleRecord);
 
-document.addEventListener('keydown', async function (event) {
-    if (event.code === 'Space' && !isRecording) {
-        event.preventDefault(); // Prevent default spacebar action (scrolling)
-        await toggleRecord();
-    }
-});
-
-document.addEventListener('keyup', async function (event) {
-    if (event.code === 'Space' && isRecording) {
-        event.preventDefault(); // Prevent default spacebar action (scrolling)
-        await toggleRecord();
-    }
-});
-
+// Drawing function
 function drawBars() {
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
+    let shrinkFactor = 1; // Factor to shrink the bars, starts as 1 (full size)
+    let wiggleFactor = 0; // Factor to control the wiggle animation
 
     function draw() {
-        if (!isRecording) {
-            requestAnimationFrame(draw);
-            return;
-        }
-
-        analyser.getByteFrequencyData(dataArray);
-
+        requestAnimationFrame(draw);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         const barWidth = (canvas.width / bufferLength) * 2.5;
         let barHeight;
         let x = 0;
 
         for(let i = 0; i < bufferLength; i++) {
-            barHeight = dataArray[i] * 0.8;
+            barHeight = dataArray[i] * shrinkFactor;
+
+            if (animationState === 'recording') {
+                analyser.getByteFrequencyData(dataArray);
+            } else if (animationState === 'shrinking') {
+                shrinkFactor -= 0.01;
+                if (shrinkFactor <= 0.1) {
+                    animationState = 'wiggling';
+                    shrinkFactor = 0.1;
+                }
+            } else if (animationState === 'wiggling') {
+                wiggleFactor += 0.1;
+                barHeight = (1 + Math.sin(wiggleFactor + i)) * 20;
+            } else if (animationState === 'stopped') {
+                barHeight = 10; // Fixed small height for dots
+            }
+
             ctx.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
             ctx.fillRect(x, canvas.height/2 - barHeight/2, barWidth, barHeight/2);
             ctx.fillRect(x, canvas.height/2, barWidth, barHeight/2);
             x += barWidth + 1;
         }
-        requestAnimationFrame(draw);
     }
     draw();
 }
