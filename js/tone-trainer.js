@@ -19,7 +19,6 @@ let animationState = 'idle'; // Possible states: 'idle', 'recording', 'shrinking
 let shrinkFactor = 1; // Factor to shrink the bars
 let wiggleFactor = 0; // Factor for the wiggle animation
 
-
 canvas.width = 500;
 canvas.height = 200;
 
@@ -28,9 +27,9 @@ async function toggleRecord() {
         // Start recording
         isRecording = true;
         toggleButton.textContent = 'Stop Recording';
+        animationState = 'recording';
         shrinkFactor = 1; // Reset shrink factor
         wiggleFactor = 0; // Reset wiggle factor
-        animationState = 'recording';
 
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         audioChunks = [];
@@ -47,30 +46,13 @@ async function toggleRecord() {
         source = audioContext.createMediaStreamSource(stream);
         source.connect(analyser);
 
-        drawBars(); // Start drawing bars
+        drawBars();
     } else {
         // Stop recording
         isRecording = false;
         mediaRecorder.stop();
         toggleButton.textContent = 'Start Recording';
         animationState = 'shrinking';
-
-        // Modifications in the toggleRecord function
-        mediaRecorder.onstop = async () => {
-            // ... existing code ...
-            animationState = 'shrinking';
-            // Start shrinking animation, which will transition to 'wiggling'
-
-            // Wait for transcription to complete
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-            const audioUrl = URL.createObjectURL(audioBlob);
-            const output = await transcriber(audioUrl, { return_timestamps: true });
-            
-            // Stop the wiggling animation and show the final state
-            animationState = 'stopped';
-            labelsContainer.textContent = output.text; // Displaying the transcription result
-            URL.revokeObjectURL(audioUrl);
-        };
     }
 }
 
@@ -92,10 +74,22 @@ function drawBars() {
         let x = 0;
 
         for (let i = 0; i < bufferLength; i++) {
-            let barHeight = dataArray[i] * shrinkFactor;
+            let barHeight;
 
-            if (animationState === 'wiggling') {
+            if (animationState === 'recording') {
+                barHeight = dataArray[i];
+            } else if (animationState === 'shrinking') {
+                barHeight = dataArray[i] * shrinkFactor;
+                shrinkFactor -= 0.005;
+                if (shrinkFactor <= 0.1) {
+                    animationState = 'wiggling';
+                    shrinkFactor = 0.1;
+                }
+            } else if (animationState === 'wiggling') {
                 barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.1);
+                wiggleFactor += 0.05;
+            } else if (animationState === 'stopped') {
+                barHeight = 10; // Fixed small height for dots
             }
 
             ctx.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
@@ -105,18 +99,26 @@ function drawBars() {
             x += barWidth + 1;
         }
 
-        if (animationState === 'shrinking') {
-            shrinkFactor -= 0.01;
-            if (shrinkFactor <= 0.1) {
-                shrinkFactor = 0.1;
-                animationState = 'wiggling';
-            }
-        } else if (animationState === 'wiggling') {
-            wiggleFactor += 0.05;
+        if (animationState === 'shrinking' && shrinkFactor <= 0) {
+            shrinkFactor = 0;
+            animationState = 'wiggling';
         }
     }
 
     draw();
 }
 
+mediaRecorder.onstop = async () => {
+    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+    const audioUrl = URL.createObjectURL(audioBlob);
 
+    // Model inference
+    const output = await transcriber(audioUrl, { return_timestamps: true });
+
+    // Handle transcription output
+    labelsContainer.textContent = output.text; // Displaying the transcription result
+
+    // Clean up
+    URL.revokeObjectURL(audioUrl);
+    animationState = 'stopped';
+};
