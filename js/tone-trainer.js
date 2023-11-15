@@ -74,7 +74,7 @@ async function toggleRecord() {
 
 toggleButton.addEventListener('click', toggleRecord);
 
-ffunction drawBars() {
+function drawBars() {
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
@@ -82,7 +82,7 @@ ffunction drawBars() {
         requestAnimationFrame(draw);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        if (animationState === 'recording' || animationState === 'shrinking') {
+        if (animationState === 'recording') {
             analyser.getByteFrequencyData(dataArray);
         }
 
@@ -100,7 +100,7 @@ ffunction drawBars() {
                     shrinkFactor = 0.1;
                 }
             } else if (animationState === 'wiggling') {
-                barHeight = 10 + 5 * Math.sin(wiggleFactor);
+                barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.1);
                 wiggleFactor += 0.05;
             } else if (animationState === 'stopped') {
                 barHeight = 10; // Fixed small height for dots
