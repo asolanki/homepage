@@ -1,5 +1,8 @@
-import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.6.0";
-env.allowLocalModels = false;
+// import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.6.0";
+// env.allowLocalModels = false;
+
+import * as ort from "https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.10.0/ort.min.js";
+
 
 // DOM elements
 const toggleButton = document.getElementById('toggle');
@@ -10,7 +13,8 @@ const labelsContainer = document.getElementById('labels-container');
 
 // Load model
 labelsContainer.textContent = "Loading model...";
-const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
+// const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
+const session = await ort.InferenceSession.create("./hubert-finetuned-231114.ort");
 labelsContainer.textContent = "Ready";
 
 let mediaRecorder;
@@ -43,8 +47,10 @@ async function toggleRecord() {
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
             const audioUrl = URL.createObjectURL(audioBlob);
 
-            // Model inference
-            const output = await transcriber(audioUrl, { return_timestamps: true });
+            // // Model inference
+            // const output = await transcriber(audioUrl, { return_timestamps: true });
+
+            const output = await session.run(audioUrl);
 
             // Handle transcription output
             labelsContainer.textContent = output.text;
