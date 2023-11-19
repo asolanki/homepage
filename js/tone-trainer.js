@@ -62,7 +62,7 @@ async function toggleRecord() {
             }
 
 
-            const inputTensor = new ort.Tensor('float32', audioData, [1, audioData.length]);
+            const inputTensor = new ort.Tensor('float32', audioDataFloat32, [1, audioDataFloat32.length]);
             const feeds = { 'audio': inputTensor }; // Replace 'input_tensor' with your model's input name
 
 
