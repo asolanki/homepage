@@ -14,7 +14,7 @@ const labelsContainer = document.getElementById('labels-container');
 // Load model
 labelsContainer.textContent = "Loading model...";
 // const transcriber = await pipeline("automatic-speech-recognition", "Xenova/whisper-tiny.en");
-const session = await ort.InferenceSession.create("https://pub-dfa70e1019964092ac78f742e425ddce.r2.dev/model.onnx");
+const session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
 labelsContainer.textContent = "Ready";
 
 let mediaRecorder;
