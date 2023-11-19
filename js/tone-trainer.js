@@ -98,29 +98,18 @@ async function toggleRecord() {
             // Handle transcription output
             console.log(JSON.stringify(output["1425"]["data"]))
 
-            // extract logits
-            const logits = Object.values(output["1425"].data);
-            const probabilities = softmax(logits);
+          
+            // Define your mappings (assuming id2tone is defined as before)
 
-            const indexedProbabilities = probabilities.map((p, index) => [index, p]);
-            const sortedProbabilities = indexedProbabilities.sort((a, b) => b[1] - a[1]);
-            const top3Results = sortedProbabilities.slice(0, 3);
+            // Process both outputs
+            const toneResults = processOutput(output["1425"], "Tone", id2tone);
+            const soundResults = processOutput(output["1427"], "Sound", id2sound);
 
-            // Log or use these top 3 results
-            console.log("Top 3 Results:");
-            top3Results.forEach(([index, probability]) => {
-                console.log(`Index: ${index}, Probability: ${probability}`);
-            });
-            
-            // Assuming top3Results is an array of [index, probability] pairs
-            const resultsText = top3Results.map(([index, probability], rank) => {
-                const tone = id2tone[index]; // Map the index to a tone using id2tone
-                return `Rank ${rank + 1}: Tone ${tone} with Probability ${(probability * 100).toFixed(2)}%`;
-            }).join('\n');
+            // Concatenate and display the results
+            labelsContainer.textContent = toneResults + '\n\n' + soundResults;
 
 
 
-            labelsContainer.textContent = resultsText;
 
             // Clean up
             URL.revokeObjectURL(audioUrl);
@@ -198,4 +187,20 @@ function softmax(arr) {
     const scores = arr.map((logit) => Math.exp(logit - maxLogit));
     const sum = scores.reduce((a, b) => a + b, 0);
     return scores.map((score) => score / sum);
+}
+
+function processOutput(tensor, labelType, idMapping) {
+    const logits = Object.values(tensor.data);
+    const probabilities = softmax(logits);
+
+    const indexedProbabilities = probabilities.map((p, index) => [index, p]);
+    const sortedProbabilities = indexedProbabilities.sort((a, b) => b[1] - a[1]);
+    const top3Results = sortedProbabilities.slice(0, 3);
+
+    const resultsText = top3Results.map(([index, probability], rank) => {
+        const label = idMapping[index]; // Map the index to a label using the provided mapping
+        return `Rank ${rank + 1}: ${labelType} ${label} with Probability ${(probability * 100).toFixed(2)}%`;
+    }).join('\n');
+
+    return resultsText;
 }
