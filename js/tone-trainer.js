@@ -81,14 +81,15 @@ async function toggleRecord() {
 
             // // Model inference
             // const output = await transcriber(audioUrl, { return_timestamps: true });
-
+            let output
             try {
-                const output = await session.run(feeds);
+                output = await session.run(feeds);
                 // Process the output
             } catch (error) {
                 console.error('Error during model inference:', error);
             }
             // Handle transcription output
+            console.log(output)
             labelsContainer.textContent = output.text;
 
             // Clean up
