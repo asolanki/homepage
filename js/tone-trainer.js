@@ -50,7 +50,11 @@ async function toggleRecord() {
             const audioUrl = URL.createObjectURL(audioBlob);
 
             const arrayBuffer = await audioBlob.arrayBuffer();
-            const audioData = new Int16Array(arrayBuffer);
+
+            // Ensure the byte length is a multiple of 2
+            const byteLength = arrayBuffer.byteLength - (arrayBuffer.byteLength % 2);
+            const audioData = new Int16Array(arrayBuffer, 0, byteLength / 2);
+
             const inputTensor = new ort.Tensor('float32', audioData, [1, audioData.length]);
             const feeds = { 'audio': inputTensor }; // Replace 'input_tensor' with your model's input name
 
