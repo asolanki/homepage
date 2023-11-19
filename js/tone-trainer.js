@@ -51,15 +51,15 @@ async function toggleRecord() {
 
             const arrayBuffer = await audioBlob.arrayBuffer();
             const audioData = new Int16Array(arrayBuffer);
-            const inputTensor = new ort.Tensor('int16', audioData, [1, audioData.length]);
-            const feeds = { 'input_tensor': inputTensor }; // Replace 'input_tensor' with your model's input name
+            const inputTensor = new ort.Tensor('float32', audioData, [1, audioData.length]);
+            const feeds = { 'audio': inputTensor }; // Replace 'input_tensor' with your model's input name
 
 
 
             // // Model inference
             // const output = await transcriber(audioUrl, { return_timestamps: true });
 
-            const output = await session.run(audioUrl);
+            const output = await session.run(feeds);
 
             // Handle transcription output
             labelsContainer.textContent = output.text;
