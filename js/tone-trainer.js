@@ -1,7 +1,9 @@
 // import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.6.0";
 // env.allowLocalModels = false;
 
-import * as ort from "https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.10.0/ort.min.js";
+// import * as ort from "https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.10.0/ort.min.js";
+import * as ort from "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/esm/<file-name>";
+
 
 
 // DOM elements
