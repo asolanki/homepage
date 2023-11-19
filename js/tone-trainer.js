@@ -56,7 +56,7 @@ async function toggleRecord() {
             const audioDataInt16 = new Int16Array(arrayBuffer, 0, byteLength / 2);
 
             // Convert Int16Array to Float32Array
-            const audioDataFloat32 = new Float32Array(audioDataInt16.length);
+            let audioDataFloat32 = new Float32Array(audioDataInt16.length);
             for (let i = 0; i < audioDataInt16.length; i++) {
                 audioDataFloat32[i] = audioDataInt16[i] / 32768.0; // Normalize the audio data
             }
