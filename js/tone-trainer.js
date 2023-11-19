@@ -99,8 +99,9 @@ async function toggleRecord() {
             console.log(JSON.stringify(output["1425"]["data"]))
 
             // extract logits
-            const logits = Object.values(output["1427"].data);
+            const logits = Object.values(output["1425"].data);
             const probabilities = softmax(logits);
+
             const indexedProbabilities = probabilities.map((p, index) => [index, p]);
             const sortedProbabilities = indexedProbabilities.sort((a, b) => b[1] - a[1]);
             const top3Results = sortedProbabilities.slice(0, 3);
