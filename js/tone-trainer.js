@@ -53,7 +53,14 @@ async function toggleRecord() {
 
             // Ensure the byte length is a multiple of 2
             const byteLength = arrayBuffer.byteLength - (arrayBuffer.byteLength % 2);
-            const audioData = new Int16Array(arrayBuffer, 0, byteLength / 2);
+            const audioDataInt16 = new Int16Array(arrayBuffer, 0, byteLength / 2);
+
+            // Convert Int16Array to Float32Array
+            const audioDataFloat32 = new Float32Array(audioDataInt16.length);
+            for (let i = 0; i < audioDataInt16.length; i++) {
+                audioDataFloat32[i] = audioDataInt16[i] / 32768.0; // Normalize the audio data
+            }
+
 
             const inputTensor = new ort.Tensor('float32', audioData, [1, audioData.length]);
             const feeds = { 'audio': inputTensor }; // Replace 'input_tensor' with your model's input name
