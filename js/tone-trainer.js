@@ -61,17 +61,33 @@ async function toggleRecord() {
                 audioDataFloat32[i] = audioDataInt16[i] / 32768.0; // Normalize the audio data
             }
 
+            // pad or trim to 2s (32000 samples)
+            if (audioDataFloat32.length > 32000) {
+                audioDataFloat32 = audioDataFloat32.slice(0, 32000);
+            }
+            if (audioDataFloat32.length < 32000) {
+                const paddedAudioData = new Float32Array(32000);
+                paddedAudioData.set(audioDataFloat32);
+                audioDataFloat32 = paddedAudioData;
+            }
+            
+            
 
-            const inputTensor = new ort.Tensor('float32', audioDataFloat32, [1, audioDataFloat32.length]);
-            const feeds = { 'audio': inputTensor }; // Replace 'input_tensor' with your model's input name
+
+            const inputTensor = new ort.Tensor('float32', audioDataFloat32, [1, 32000]);
+            const feeds = { 'onnx::Unsqueeze_0': inputTensor };
 
 
 
             // // Model inference
             // const output = await transcriber(audioUrl, { return_timestamps: true });
 
-            const output = await session.run(feeds);
-
+            try {
+                const output = await session.run(feeds);
+                // Process the output
+            } catch (error) {
+                console.error('Error during model inference:', error);
+            }
             // Handle transcription output
             labelsContainer.textContent = output.text;
 
