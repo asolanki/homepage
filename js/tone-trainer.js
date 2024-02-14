@@ -244,8 +244,8 @@ async function performInference(audioData) {
     try {
         const output = await session.run(feeds);
         // Assuming your output tensor names are "1425" for tone and "1427" for syllable
-        const toneResults = processOutput(output["1425"], "Tone", id2tone);
-        const soundResults = processOutput(output["1427"], "Sound", id2sound);
+        const toneResults = processOutput(output["2"], "Tone", id2tone);
+        const soundResults = processOutput(output["196"], "Sound", id2sound);
         labelsContainer.textContent = `${toneResults}\n\n${soundResults}`;
     } catch (error) {
         console.error('Error during model inference:', error);
