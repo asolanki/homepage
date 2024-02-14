@@ -239,7 +239,7 @@ async function fetchAndProcessAudio(audioUrl) {
 // Function to perform inference
 async function performInference(audioData) {
     const inputTensor = new ort.Tensor('float32', audioData, [1, 32000]);
-    const feeds = { input: inputTensor }; // Adjust 'input' based on the expected input name in your ONNX model
+    const feeds = { 'onnx::Unsqueeze_0': inputTensor };
 
     try {
         const output = await session.run(feeds);
