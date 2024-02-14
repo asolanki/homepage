@@ -204,3 +204,54 @@ function processOutput(tensor, labelType, idMapping) {
 
     return resultsText;
 }
+
+
+
+
+// testing with sample audio
+
+// Assuming ort (ONNX Runtime Web) is already imported and initialized
+
+// Function to fetch and process audio from URL
+async function fetchAndProcessAudio(audioUrl) {
+    const response = await fetch(audioUrl);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioContext = new AudioContext();
+    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+    // Assuming the audio is mono; if not, take only one channel
+    const audioData = audioBuffer.getChannelData(0);
+
+    // pad or trim to 2s (32000 samples at 16kHz)
+    let processedAudioData;
+    if (audioData.length > 32000) {
+        processedAudioData = audioData.slice(0, 32000);
+    } else if (audioData.length < 32000) {
+        processedAudioData = new Float32Array(32000);
+        processedAudioData.set(audioData, 0);
+    } else {
+        processedAudioData = audioData;
+    }
+
+    return processedAudioData;
+}
+
+// Function to perform inference
+async function performInference(audioData) {
+    const inputTensor = new ort.Tensor('float32', audioData, [1, 32000]);
+    const feeds = { input: inputTensor }; // Adjust 'input' based on the expected input name in your ONNX model
+
+    try {
+        const output = await session.run(feeds);
+        // Assuming your output tensor names are "1425" for tone and "1427" for syllable
+        const toneResults = processOutput(output["1425"], "Tone", id2tone);
+        const soundResults = processOutput(output["1427"], "Sound", id2sound);
+        labelsContainer.textContent = `${toneResults}\n\n${soundResults}`;
+    } catch (error) {
+        console.error('Error during model inference:', error);
+    }
+}
+
+// Fetch audio and perform inference
+const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
+fetchAndProcessAudio(audioUrl).then(performInference);
