@@ -50,22 +50,46 @@ async function toggleRecord() {
             const audioUrl = URL.createObjectURL(audioBlob);
 
             const arrayBuffer = await audioBlob.arrayBuffer();
+            const audioContext = new AudioContext({
+                sampleRate: 16000
+            });
+            const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
-            // Ensure the byte length is a multiple of 2
-            const byteLength = arrayBuffer.byteLength - (arrayBuffer.byteLength % 2);
-            const audioDataInt16 = new Int16Array(arrayBuffer, 0, byteLength / 2);
 
-            // Convert Int16Array to Float32Array
-            let audioDataFloat32 = new Float32Array(audioDataInt16.length);
-            for (let i = 0; i < audioDataInt16.length; i++) {
-                audioDataFloat32[i] = audioDataInt16[i] / 32768.0; // Normalize the audio data
+            let audioDataFloat32;
+            if (audioBuffer.numberOfChannels === 2) {
+                // If stereo, average the two channels to convert to mono
+                const leftChannel = audioBuffer.getChannelData(0);
+                const rightChannel = audioBuffer.getChannelData(1);
+                audioDataFloat32 = new Float32Array(leftChannel.length);
+                for (let i = 0; i < leftChannel.length; i++) {
+                    audioDataFloat32[i] = (leftChannel[i] + rightChannel[i]) / 2;
+                }
+            } else {
+                // If already mono, use the data as is
+                audioDataFloat32 = audioBuffer.getChannelData(0);
             }
+        
+            // Normalize the audio data
+            for (let i = 0; i < audioDataFloat32.length; i++) {
+                audioDataFloat32[i] = audioDataFloat32[i] / Math.max(...audioDataFloat32);
+            }
+        
+
+            // // Ensure the byte length is a multiple of 2
+            // const byteLength = arrayBuffer.byteLength - (arrayBuffer.byteLength % 2);
+            // const audioDataInt16 = new Int16Array(arrayBuffer, 0, byteLength / 2);
+
+            // // Convert Int16Array to Float32Array
+            // let audioDataFloat32 = new Float32Array(audioDataInt16.length);
+            // for (let i = 0; i < audioDataInt16.length; i++) {
+            //     audioDataFloat32[i] = audioDataInt16[i] / 32768.0; // Normalize the audio data
+            // }
 
             // pad or trim to 2s (32000 samples)
             if (audioDataFloat32.length > 32000) {
                 audioDataFloat32 = audioDataFloat32.slice(0, 32000);
-            }
-            if (audioDataFloat32.length < 32000) {
+            } else if (audioDataFloat32.length < 32000) {
                 const paddedAudioData = new Float32Array(32000);
                 paddedAudioData.set(audioDataFloat32);
                 audioDataFloat32 = paddedAudioData;
@@ -79,8 +103,7 @@ async function toggleRecord() {
 
 
 
-            // // Model inference
-            // const output = await transcriber(audioUrl, { return_timestamps: true });
+            // Model inference
             let output
             try {
                 output = await session.run(feeds);
