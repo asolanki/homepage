@@ -86,7 +86,7 @@ async function toggleRecord() {
             
 
 
-            const inputTensor = new ort.Tensor('float32', audioDataFloat32, [1, 32000]);
+            const inputTensor = new ort.Tensor('float32', finalAudioData, [1, 32000]);
             const feeds = { 'onnx::Unsqueeze_0': inputTensor };
 
 
