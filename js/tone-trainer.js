@@ -3,6 +3,7 @@ const loadModelButton = document.getElementById('loadModelButton');
 const toggleButton = document.getElementById('toggle');
 const canvas = document.getElementById('audioVisualizer');
 const ctx = canvas.getContext('2d');
+const visualizerContainer = document.getElementById('visualizer-container');
 const labelsContainer = document.getElementById('labels-container');
 
 let session;
