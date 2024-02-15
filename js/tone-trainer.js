@@ -237,6 +237,10 @@ async function fetchAndProcessAudio(audioUrl) {
         processedAudioData = processedAudioData;
     }
 
+    const processedBlob = new Blob([processedAudioData.buffer], { type: 'audio/wav' });
+    const processedUrl = URL.createObjectURL(processedBlob);
+
+    
     const link = document.createElement('a');
     link.href = processedUrl;
     link.download = "Preprocessed Audio.wav"; // Name the file as you wish
