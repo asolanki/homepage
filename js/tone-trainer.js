@@ -212,10 +212,21 @@ async function fetchAndProcessAudio(audioUrl) {
     const audioContext = new AudioContext();
     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
-    const audioData = audioBuffer.getChannelData(0);
 
     // pad or trim to 2s (32000 samples at 16kHz)
     let processedAudioData;
+
+    if (audioBuffer.numberOfChannels === 2) {
+        const leftChannel = audioBuffer.getChannelData(0);
+        const rightChannel = audioBuffer.getChannelData(1);
+        const monoData = new Float32Array(leftChannel.length);
+        for (let i = 0; i < leftChannel.length; i++) {
+            monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
+        }
+        processedAudioData = monoData;
+    }
+    
+
     if (audioData.length > 32000) {
         processedAudioData = audioData.slice(0, 32000);
     } else if (audioData.length < 32000) {
@@ -232,6 +243,8 @@ async function fetchAndProcessAudio(audioUrl) {
 async function performInference(audioData) {
     const inputTensor = new ort.Tensor('float32', audioData, [1, 32000]);
     const feeds = { 'onnx::Unsqueeze_0': inputTensor };
+    console.log("onnx session input names: " + session.inputNames);
+
 
     try {
         const output = await session.run(feeds);
