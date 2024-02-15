@@ -132,41 +132,32 @@ canvas {
       </ul>
     </nav>
 
-    <!-- POST TITLE -->
     <nav aria-label="breadcrumb">
       <small>
         <ul>
-          <li>
-            <a href="../posts.html">All Posts</a>
-          </li>
-          <li>
-            Mandarin Tone Trainer
-          </li>
+          <li> <a href="../posts.html">All Posts</a> </li>
+          <li> Mandarin Tone Trainer </li>
         </ul>
       </small>
 
     </nav>
-    <!-- POST CONTENT -->
     <div id="post-content">
-      <!-- POST TITLE -->
       <h3>Mandarin Tone Trainer</h3>
       <p>Hold SPACE or tap record</p>
       <div id="labels-container"></div>
 
-      <div id="visualizer-container">
-        <canvas id="audioVisualizer"></canvas>
-        <button class="record" title="Record" id="toggle">Start Recording</button>
-        <audio controls style="display: none;"></audio>
+      <button id="loadModelButton">Download Model (379 MB)</button>
+      <div id="visualizer-container" style="display: none;">
+          <canvas id="audioVisualizer"></canvas>
+          <button class="record" title="Record" id="toggle">Start Recording</button>
+          <audio controls style="display: none;"></audio>
       </div>
+      
     </div>
 
 
   <footer>
-    <div class="container">
-      <small>
-        <p>© 2023 Adarsh Solanki</p>
-      </small>
-    </div>
+    <div class="container"> <small> <p>© 2023 Adarsh Solanki</p> </small> </div>
   </footer>
 
 
