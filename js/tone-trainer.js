@@ -39,7 +39,9 @@ async function toggleRecord() {
         shrinkFactor = 1;
         wiggleFactor = 0;
 
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+            audio: true 
+        });
         audioChunks = [];
         mediaRecorder = new MediaRecorder(stream);
         mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
@@ -47,64 +49,40 @@ async function toggleRecord() {
 
         mediaRecorder.onstop = async () => {
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-            const arrayBuffer = await audioBlob.arrayBuffer();
         
             // Decode the original audio data to get an AudioBuffer
             const audioContext = new AudioContext();
-            const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+            const audioBuffer = await audioContext.decodeAudioData(await audioBlob.arrayBuffer());
         
-            // Create an OfflineAudioContext for resampling
-            const offlineCtx = new OfflineAudioContext(audioBuffer.numberOfChannels, audioBuffer.length, 16000);
+
+            // Convert stereo to mono if necessary
+            let audioData = audioBuffer.getChannelData(0);
+            if (audioBuffer.numberOfChannels === 2) {
+                const rightChannel = audioBuffer.getChannelData(1);
+                audioData = audioData.map((val, index) => (val + rightChannel[index]) / 2);
+            }
+
+            // Resample the audio to 16000 Hz using OfflineAudioContext
+            const offlineCtx = new OfflineAudioContext(1, audioBuffer.length, 16000);
             const offlineSource = offlineCtx.createBufferSource();
-            offlineSource.buffer = audioBuffer;
-        
-            // Connect the source to the OfflineAudioContext destination
+            offlineSource.buffer = audioContext.createBuffer(1, audioData.length, audioContext.sampleRate);
+            offlineSource.buffer.copyToChannel(audioData, 0);
             offlineSource.connect(offlineCtx.destination);
             offlineSource.start(0);
-        
-            // Start rendering (resampling) and wait for the promise to resolve
             const resampledAudioBuffer = await offlineCtx.startRendering();
-        
-            // Use the resampled audio data
-            let audioDataFloat32 = resampledAudioBuffer.getChannelData(0); // Assuming mono for simplicity
-                    if (audioBuffer.numberOfChannels === 2) {
-                // If stereo, average the two channels to convert to mono
-                const leftChannel = audioBuffer.getChannelData(0);
-                const rightChannel = audioBuffer.getChannelData(1);
-                audioDataFloat32 = new Float32Array(leftChannel.length);
-                for (let i = 0; i < leftChannel.length; i++) {
-                    audioDataFloat32[i] = (leftChannel[i] + rightChannel[i]) / 2;
-                }
-            } else {
-                // If already mono, use the data as is
-                audioDataFloat32 = audioBuffer.getChannelData(0);
-            }
-        
-            // Normalize the audio data
-            for (let i = 0; i < audioDataFloat32.length; i++) {
-                audioDataFloat32[i] = audioDataFloat32[i] / Math.max(...audioDataFloat32);
-            }
-        
 
-            // // Ensure the byte length is a multiple of 2
-            // const byteLength = arrayBuffer.byteLength - (arrayBuffer.byteLength % 2);
-            // const audioDataInt16 = new Int16Array(arrayBuffer, 0, byteLength / 2);
+            // Get the resampled audio data
+            const resampledAudioData = resampledAudioBuffer.getChannelData(0);
 
-            // // Convert Int16Array to Float32Array
-            // let audioDataFloat32 = new Float32Array(audioDataInt16.length);
-            // for (let i = 0; i < audioDataInt16.length; i++) {
-            //     audioDataFloat32[i] = audioDataInt16[i] / 32768.0; // Normalize the audio data
-            // }
-
-            // pad or trim to 2s (32000 samples)
-            if (audioDataFloat32.length > 32000) {
-                audioDataFloat32 = audioDataFloat32.slice(0, 32000);
-            } else if (audioDataFloat32.length < 32000) {
-                const paddedAudioData = new Float32Array(32000);
-                paddedAudioData.set(audioDataFloat32);
-                audioDataFloat32 = paddedAudioData;
+            // Trim or pad the audio data to 32000 samples
+            let finalAudioData = resampledAudioData;
+            if (resampledAudioData.length > 32000) {
+                finalAudioData = resampledAudioData.slice(0, 32000);
+            } else if (resampledAudioData.length < 32000) {
+                finalAudioData = new Float32Array(32000);
+                finalAudioData.set(resampledAudioData);
             }
-            
+
             
 
 
