@@ -237,6 +237,14 @@ async function fetchAndProcessAudio(audioUrl) {
         processedAudioData = processedAudioData;
     }
 
+    const link = document.createElement('a');
+    link.href = processedUrl;
+    link.download = "Preprocessed Audio.wav"; // Name the file as you wish
+    link.textContent = "Download Preprocessed Audio";
+    labelsContainer.appendChild(link);
+    labelsContainer.appendChild(document.createElement('br')); // For spacing
+
+
     return processedAudioData;
 }
 
@@ -345,7 +353,15 @@ async function fetchProcessAndAddPlayers(audioUrl) {
 
 }
 
-
+// Function to download audio
+function downloadAudio(audioUrl, title) {
+    const link = document.createElement('a');
+    link.href = audioUrl;
+    link.download = title;
+    link.textContent = `Download ${title}`;
+    labelsContainer.appendChild(link);
+    labelsContainer.appendChild(document.createElement('br'));
+}
 
 // Fetch audio and perform inference
 // const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
@@ -357,3 +373,11 @@ const newButton = document.createElement('button');
 newButton.textContent = 'Process Sample Audio';
 newButton.addEventListener('click', handleNewButtonClick);
 labelsContainer.appendChild(newButton); // Add the new button to the buttons container
+
+
+const preprocessButton = document.createElement('button');
+preprocessButton.textContent = 'Preprocess and Download Audio';
+preprocessButton.addEventListener('click', () => {
+    fetchAndProcessAudio('https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3');
+});
+labelsContainer.appendChild(preprocessButton);
