@@ -227,13 +227,13 @@ async function fetchAndProcessAudio(audioUrl) {
     }
     
 
-    if (audioData.length > 32000) {
-        processedAudioData = audioData.slice(0, 32000);
+    if (processedAudioData.length > 32000) {
+        processedAudioData = processedAudioData.slice(0, 32000);
     } else if (audioData.length < 32000) {
         processedAudioData = new Float32Array(32000);
-        processedAudioData.set(audioData, 0);
+        processedAudioData.set(processedAudioData, 0);
     } else {
-        processedAudioData = audioData;
+        processedAudioData = processedAudioData;
     }
 
     return processedAudioData;
