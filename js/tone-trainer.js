@@ -239,7 +239,9 @@ async function performInference(audioData) {
         // const soundResults = processOutput(output["196"], "Sound", id2sound);
 
 
-
+        console.log(output)
+        console.log(JSON.stringify(output["1425"]["data"]))
+        console.log(JSON.stringify(output["1427"]["data"]))
         const toneResults = processOutput(output["1425"], "Tone", id2tone);
         const soundResults = processOutput(output["1427"], "Sound", id2sound);
         labelsContainer.textContent = toneResults + '\n\n' + soundResults;
