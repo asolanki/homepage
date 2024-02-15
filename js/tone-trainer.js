@@ -240,7 +240,7 @@ async function fetchAndProcessAudio(audioUrl) {
     const processedBlob = new Blob([processedAudioData.buffer], { type: 'audio/wav' });
     const processedUrl = URL.createObjectURL(processedBlob);
 
-    
+
     const link = document.createElement('a');
     link.href = processedUrl;
     link.download = "Preprocessed Audio.wav"; // Name the file as you wish
@@ -385,3 +385,68 @@ preprocessButton.addEventListener('click', () => {
     fetchAndProcessAudio('https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3');
 });
 labelsContainer.appendChild(preprocessButton);
+
+
+
+// SIMPLE FN TEST!!!!!  TEST TEST TEST
+
+
+async function fetchProcessAndPlay(audioUrl) {
+    // Fetch the original audio
+    const response = await fetch(audioUrl);
+    const arrayBuffer = await response.arrayBuffer();
+    const audioContext = new AudioContext();
+    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+    // Process the audio data
+    let processedAudioData;
+    if (audioBuffer.numberOfChannels === 2) {
+        // Convert stereo to mono by averaging the two channels
+        const leftChannel = audioBuffer.getChannelData(0);
+        const rightChannel = audioBuffer.getChannelData(1);
+        const monoData = new Float32Array(leftChannel.length);
+        for (let i = 0; i < leftChannel.length; i++) {
+            monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
+        }
+        processedAudioData = monoData;
+    } else {
+        // Use the first channel if it's already mono
+        processedAudioData = audioBuffer.getChannelData(0);
+    }
+
+    // Trim or pad the audio data to 32000 samples (2 seconds at 16kHz)
+    let finalAudioData;
+    if (processedAudioData.length > 32000) {
+        finalAudioData = processedAudioData.slice(0, 32000);
+    } else {
+        finalAudioData = new Float32Array(32000).fill(0);
+        finalAudioData.set(processedAudioData, 0);
+    }
+
+    // Play the processed audio
+    const processedBuffer = audioContext.createBuffer(1, finalAudioData.length, audioContext.sampleRate);
+    processedBuffer.copyToChannel(finalAudioData, 0, 0);
+    const source = audioContext.createBufferSource();
+    source.buffer = processedBuffer;
+    source.connect(audioContext.destination);
+    source.start();
+
+    // Clean up
+    source.onended = () => {
+        source.disconnect();
+        audioContext.close();
+    };
+}
+
+// Function to add a simple button to trigger the processing and playback
+function addPlaybackButton() {
+    const button = document.createElement('button');
+    button.textContent = 'Play Processed Audio';
+    button.addEventListener('click', function() {
+        fetchProcessAndPlay('https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3');
+    });
+    document.body.appendChild(button);
+}
+
+// Call this function to add the playback button to the page
+addPlaybackButton();
