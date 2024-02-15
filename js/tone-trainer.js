@@ -212,7 +212,6 @@ async function fetchAndProcessAudio(audioUrl) {
     const audioContext = new AudioContext();
     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
-    // Assuming the audio is mono; if not, take only one channel
     const audioData = audioBuffer.getChannelData(0);
 
     // pad or trim to 2s (32000 samples at 16kHz)
@@ -236,9 +235,18 @@ async function performInference(audioData) {
 
     try {
         const output = await session.run(feeds);
-        const toneResults = processOutput(output["2"], "Tone", id2tone);
-        const soundResults = processOutput(output["196"], "Sound", id2sound);
-        labelsContainer.textContent = `${toneResults}\n\n${soundResults}`;
+        // const toneResults = processOutput(output["2"], "Tone", id2tone);
+        // const soundResults = processOutput(output["196"], "Sound", id2sound);
+
+
+
+        const toneResults = processOutput(output["1425"], "Tone", id2tone);
+        const soundResults = processOutput(output["1427"], "Sound", id2sound);
+        labelsContainer.textContent = toneResults + '\n\n' + soundResults;
+
+        // Clean up
+        URL.revokeObjectURL(audioUrl);
+        
     } catch (error) {
         console.error('Error during model inference:', error);
     }
