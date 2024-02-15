@@ -273,9 +273,9 @@ async function handleNewButtonClick() {
     labelsContainer.textContent = "Processing... Please wait.";
     const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
     // const processedAudioData = await fetchAndProcessAudio(audioUrl);
-    fetchProcessAndAddPlayers(audioUrl);
 
     // await performInference(processedAudioData);
+    fetchProcessAndAddPlayers(audioUrl);
 }
 
 // Function to add an audio player to the container
