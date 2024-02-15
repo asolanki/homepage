@@ -1,10 +1,3 @@
-// import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@xenova/transformers@2.6.0";
-// env.allowLocalModels = false;
-
-// import * as ort from "https://cdnjs.cloudflare.com/ajax/libs/onnxruntime-web/1.10.0/ort.min.js";
-// import * as ort from "https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/esm/ort.min.js";
-
-
 
 // DOM elements
 const toggleButton = document.getElementById('toggle');
@@ -243,7 +236,6 @@ async function performInference(audioData) {
 
     try {
         const output = await session.run(feeds);
-        // Assuming your output tensor names are "1425" for tone and "1427" for syllable
         const toneResults = processOutput(output["2"], "Tone", id2tone);
         const soundResults = processOutput(output["196"], "Sound", id2sound);
         labelsContainer.textContent = `${toneResults}\n\n${soundResults}`;
@@ -255,3 +247,16 @@ async function performInference(audioData) {
 // Fetch audio and perform inference
 const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
 fetchAndProcessAudio(audioUrl).then(performInference);
+
+const newButton = document.createElement('button');
+newButton.textContent = 'Process Sample Audio';
+newButton.addEventListener('click', handleNewButtonClick);
+labelsContainer.appendChild(newButton); // Add the new button to the buttons container
+
+
+async function handleNewButtonClick() {
+    labelsContainer.textContent = "Processing... Please wait.";
+    const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
+    const processedAudioData = await fetchAndProcessAudio(audioUrl);
+    await performInference(processedAudioData);
+}
