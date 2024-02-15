@@ -213,255 +213,255 @@ function processOutput(tensor, labelType, idMapping) {
 
 
 
-// testing testing testing
-// test test test 
-// testing with sample audio
+// // testing testing testing
+// // test test test 
+// // testing with sample audio
 
-// Assuming ort (ONNX Runtime Web) is already imported and initialized
+// // Assuming ort (ONNX Runtime Web) is already imported and initialized
 
-// Function to fetch and process audio from URL
-async function fetchAndProcessAudio(audioUrl) {
-    const response = await fetch(audioUrl);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioContext = new AudioContext({
-        sampleRate: 16000 
-    });
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+// // Function to fetch and process audio from URL
+// async function fetchAndProcessAudio(audioUrl) {
+//     const response = await fetch(audioUrl);
+//     const arrayBuffer = await response.arrayBuffer();
+//     const audioContext = new AudioContext({
+//         sampleRate: 16000 
+//     });
+//     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
 
-    // pad or trim to 2s (32000 samples at 16kHz)
-    let processedAudioData;
+//     // pad or trim to 2s (32000 samples at 16kHz)
+//     let processedAudioData;
 
-    if (audioBuffer.numberOfChannels === 2) {
-        const leftChannel = audioBuffer.getChannelData(0);
-        const rightChannel = audioBuffer.getChannelData(1);
-        const monoData = new Float32Array(leftChannel.length);
-        for (let i = 0; i < leftChannel.length; i++) {
-            monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
-        }
-        processedAudioData = monoData;
-    }
+//     if (audioBuffer.numberOfChannels === 2) {
+//         const leftChannel = audioBuffer.getChannelData(0);
+//         const rightChannel = audioBuffer.getChannelData(1);
+//         const monoData = new Float32Array(leftChannel.length);
+//         for (let i = 0; i < leftChannel.length; i++) {
+//             monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
+//         }
+//         processedAudioData = monoData;
+//     }
     
 
-    if (processedAudioData.length > 32000) {
-        processedAudioData = processedAudioData.slice(0, 32000);
-    } else if (audioData.length < 32000) {
-        processedAudioData = new Float32Array(32000);
-        processedAudioData.set(processedAudioData, 0);
-    } else {
-        processedAudioData = processedAudioData;
-    }
+//     if (processedAudioData.length > 32000) {
+//         processedAudioData = processedAudioData.slice(0, 32000);
+//     } else if (audioData.length < 32000) {
+//         processedAudioData = new Float32Array(32000);
+//         processedAudioData.set(processedAudioData, 0);
+//     } else {
+//         processedAudioData = processedAudioData;
+//     }
 
-    const processedBlob = new Blob([processedAudioData.buffer], { type: 'audio/wav' });
-    const processedUrl = URL.createObjectURL(processedBlob);
-
-
-    const link = document.createElement('a');
-    link.href = processedUrl;
-    link.download = "Preprocessed Audio.wav"; // Name the file as you wish
-    link.textContent = "Download Preprocessed Audio";
-    labelsContainer.appendChild(link);
-    labelsContainer.appendChild(document.createElement('br')); // For spacing
+//     const processedBlob = new Blob([processedAudioData.buffer], { type: 'audio/wav' });
+//     const processedUrl = URL.createObjectURL(processedBlob);
 
 
-    return processedAudioData;
-}
-
-// Function to perform inference
-async function performInference(audioData) {
-    const inputTensor = new ort.Tensor('float32', audioData, [1, 32000]);
-    const feeds = { 'onnx::Unsqueeze_0': inputTensor };
-    console.log("onnx session input names: " + session.inputNames);
+//     const link = document.createElement('a');
+//     link.href = processedUrl;
+//     link.download = "Preprocessed Audio.wav"; // Name the file as you wish
+//     link.textContent = "Download Preprocessed Audio";
+//     labelsContainer.appendChild(link);
+//     labelsContainer.appendChild(document.createElement('br')); // For spacing
 
 
-    try {
-        const output = await session.run(feeds);
-        // const toneResults = processOutput(output["2"], "Tone", id2tone);
-        // const soundResults = processOutput(output["196"], "Sound", id2sound);
+//     return processedAudioData;
+// }
+
+// // Function to perform inference
+// async function performInference(audioData) {
+//     const inputTensor = new ort.Tensor('float32', audioData, [1, 32000]);
+//     const feeds = { 'onnx::Unsqueeze_0': inputTensor };
+//     console.log("onnx session input names: " + session.inputNames);
 
 
-        console.log(output)
-        console.log(JSON.stringify(output["1425"]["data"]))
-        console.log(JSON.stringify(output["1427"]["data"]))
-        const toneResults = processOutput(output["1425"], "Tone", id2tone);
-        const soundResults = processOutput(output["1427"], "Sound", id2sound);
-        labelsContainer.textContent = toneResults + '\n\n' + soundResults;
+//     try {
+//         const output = await session.run(feeds);
+//         // const toneResults = processOutput(output["2"], "Tone", id2tone);
+//         // const soundResults = processOutput(output["196"], "Sound", id2sound);
 
-        // Clean up
-        URL.revokeObjectURL(audioUrl);
+
+//         console.log(output)
+//         console.log(JSON.stringify(output["1425"]["data"]))
+//         console.log(JSON.stringify(output["1427"]["data"]))
+//         const toneResults = processOutput(output["1425"], "Tone", id2tone);
+//         const soundResults = processOutput(output["1427"], "Sound", id2sound);
+//         labelsContainer.textContent = toneResults + '\n\n' + soundResults;
+
+//         // Clean up
+//         URL.revokeObjectURL(audioUrl);
         
-    } catch (error) {
-        console.error('Error during model inference:', error);
-    }
-}
+//     } catch (error) {
+//         console.error('Error during model inference:', error);
+//     }
+// }
 
 
-async function handleNewButtonClick() {
-    labelsContainer.textContent = "Processing... Please wait.";
-    const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
-    // const processedAudioData = await fetchAndProcessAudio(audioUrl);
+// async function handleNewButtonClick() {
+//     labelsContainer.textContent = "Processing... Please wait.";
+//     const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
+//     // const processedAudioData = await fetchAndProcessAudio(audioUrl);
 
-    // await performInference(processedAudioData);
-    fetchProcessAndAddPlayers(audioUrl);
-}
+//     // await performInference(processedAudioData);
+//     fetchProcessAndAddPlayers(audioUrl);
+// }
 
-// Function to add an audio player to the container
-function addAudioPlayer(container, src, title) {
-    const playerTitle = document.createElement('h3');
-    playerTitle.textContent = title;
-    const audioPlayer = document.createElement('audio');
-    audioPlayer.controls = true;
-    audioPlayer.src = src;
-    container.appendChild(playerTitle);
-    container.appendChild(audioPlayer);
-}
+// // Function to add an audio player to the container
+// function addAudioPlayer(container, src, title) {
+//     const playerTitle = document.createElement('h3');
+//     playerTitle.textContent = title;
+//     const audioPlayer = document.createElement('audio');
+//     audioPlayer.controls = true;
+//     audioPlayer.src = src;
+//     container.appendChild(playerTitle);
+//     container.appendChild(audioPlayer);
+// }
 
-// Function to convert audio buffer to Blob and then to URL
-function bufferToUrl(audioBuffer, sampleRate) {
-    const wavBlob = audioBufferToWavBlob(audioBuffer, sampleRate);
-    return URL.createObjectURL(wavBlob);
-}
+// // Function to convert audio buffer to Blob and then to URL
+// function bufferToUrl(audioBuffer, sampleRate) {
+//     const wavBlob = audioBufferToWavBlob(audioBuffer, sampleRate);
+//     return URL.createObjectURL(wavBlob);
+// }
 
-// Function to convert Float32Array audio buffer to WAV Blob
-function audioBufferToWavBlob(audioBuffer, sampleRate) {
-    // Use the toWav function here, similar to the previous implementation
-    const wav = toWav(audioBuffer, sampleRate);
-    return new Blob([wav], { type: 'audio/wav' });
-}
+// // Function to convert Float32Array audio buffer to WAV Blob
+// function audioBufferToWavBlob(audioBuffer, sampleRate) {
+//     // Use the toWav function here, similar to the previous implementation
+//     const wav = toWav(audioBuffer, sampleRate);
+//     return new Blob([wav], { type: 'audio/wav' });
+// }
 
-// Function to fetch and process audio, then add audio players
-async function fetchProcessAndAddPlayers(audioUrl) {
-    // Fetch original audio
-    const response = await fetch(audioUrl);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioContext = new AudioContext();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+// // Function to fetch and process audio, then add audio players
+// async function fetchProcessAndAddPlayers(audioUrl) {
+//     // Fetch original audio
+//     const response = await fetch(audioUrl);
+//     const arrayBuffer = await response.arrayBuffer();
+//     const audioContext = new AudioContext();
+//     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
-    // Add original audio player
-    addAudioPlayer(labelsContainer, audioUrl, 'Original Audio');
+//     // Add original audio player
+//     addAudioPlayer(labelsContainer, audioUrl, 'Original Audio');
 
-    let processedAudioData;
+//     let processedAudioData;
 
-    if (audioBuffer.numberOfChannels === 2) {
-        const leftChannel = audioBuffer.getChannelData(0);
-        const rightChannel = audioBuffer.getChannelData(1);
-        const monoData = new Float32Array(leftChannel.length);
-        for (let i = 0; i < leftChannel.length; i++) {
-            monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
-        }
-        processedAudioData = monoData;
-    }
+//     if (audioBuffer.numberOfChannels === 2) {
+//         const leftChannel = audioBuffer.getChannelData(0);
+//         const rightChannel = audioBuffer.getChannelData(1);
+//         const monoData = new Float32Array(leftChannel.length);
+//         for (let i = 0; i < leftChannel.length; i++) {
+//             monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
+//         }
+//         processedAudioData = monoData;
+//     }
     
 
-    if (processedAudioData.length > 32000) {
-        processedAudioData = processedAudioData.slice(0, 32000);
-    } else if (audioData.length < 32000) {
-        processedAudioData = new Float32Array(32000);
-        processedAudioData.set(processedAudioData, 0);
-    } else {
-        processedAudioData = processedAudioData;
-    }
+//     if (processedAudioData.length > 32000) {
+//         processedAudioData = processedAudioData.slice(0, 32000);
+//     } else if (audioData.length < 32000) {
+//         processedAudioData = new Float32Array(32000);
+//         processedAudioData.set(processedAudioData, 0);
+//     } else {
+//         processedAudioData = processedAudioData;
+//     }
 
-    // Convert processed audio data to URL
-    const processedAudioUrl = bufferToUrl(processedAudioData, audioContext.sampleRate);
+//     // Convert processed audio data to URL
+//     const processedAudioUrl = bufferToUrl(processedAudioData, audioContext.sampleRate);
 
-    // Add preprocessed audio player
-    addAudioPlayer(labelsContainer, processedAudioUrl, 'Preprocessed Audio');
+//     // Add preprocessed audio player
+//     addAudioPlayer(labelsContainer, processedAudioUrl, 'Preprocessed Audio');
 
 
 
-}
+// }
 
-// Function to download audio
-function downloadAudio(audioUrl, title) {
-    const link = document.createElement('a');
-    link.href = audioUrl;
-    link.download = title;
-    link.textContent = `Download ${title}`;
-    labelsContainer.appendChild(link);
-    labelsContainer.appendChild(document.createElement('br'));
-}
+// // Function to download audio
+// function downloadAudio(audioUrl, title) {
+//     const link = document.createElement('a');
+//     link.href = audioUrl;
+//     link.download = title;
+//     link.textContent = `Download ${title}`;
+//     labelsContainer.appendChild(link);
+//     labelsContainer.appendChild(document.createElement('br'));
+// }
 
-// Fetch audio and perform inference
+// // Fetch audio and perform inference
+// // const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
+// // fetchAndProcessAudio(audioUrl).then(performInference);
 // const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
-// fetchAndProcessAudio(audioUrl).then(performInference);
-const audioUrl = 'https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3';
 
 
-const newButton = document.createElement('button');
-newButton.textContent = 'Process Sample Audio';
-newButton.addEventListener('click', handleNewButtonClick);
-labelsContainer.appendChild(newButton); // Add the new button to the buttons container
+// const newButton = document.createElement('button');
+// newButton.textContent = 'Process Sample Audio';
+// newButton.addEventListener('click', handleNewButtonClick);
+// labelsContainer.appendChild(newButton); // Add the new button to the buttons container
 
 
-const preprocessButton = document.createElement('button');
-preprocessButton.textContent = 'Preprocess and Download Audio';
-preprocessButton.addEventListener('click', () => {
-    fetchAndProcessAudio('https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3');
-});
-labelsContainer.appendChild(preprocessButton);
+// const preprocessButton = document.createElement('button');
+// preprocessButton.textContent = 'Preprocess and Download Audio';
+// preprocessButton.addEventListener('click', () => {
+//     fetchAndProcessAudio('https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3');
+// });
+// labelsContainer.appendChild(preprocessButton);
 
 
 
-// SIMPLE FN TEST!!!!!  TEST TEST TEST
+// // SIMPLE FN TEST!!!!!  TEST TEST TEST
 
 
-async function fetchProcessAndPlay(audioUrl) {
-    // Fetch the original audio
-    const response = await fetch(audioUrl);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioContext = new AudioContext();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+// async function fetchProcessAndPlay(audioUrl) {
+//     // Fetch the original audio
+//     const response = await fetch(audioUrl);
+//     const arrayBuffer = await response.arrayBuffer();
+//     const audioContext = new AudioContext();
+//     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
-    // Process the audio data
-    let processedAudioData;
-    if (audioBuffer.numberOfChannels === 2) {
-        // Convert stereo to mono by averaging the two channels
-        const leftChannel = audioBuffer.getChannelData(0);
-        const rightChannel = audioBuffer.getChannelData(1);
-        const monoData = new Float32Array(leftChannel.length);
-        for (let i = 0; i < leftChannel.length; i++) {
-            monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
-        }
-        processedAudioData = monoData;
-    } else {
-        // Use the first channel if it's already mono
-        processedAudioData = audioBuffer.getChannelData(0);
-    }
+//     // Process the audio data
+//     let processedAudioData;
+//     if (audioBuffer.numberOfChannels === 2) {
+//         // Convert stereo to mono by averaging the two channels
+//         const leftChannel = audioBuffer.getChannelData(0);
+//         const rightChannel = audioBuffer.getChannelData(1);
+//         const monoData = new Float32Array(leftChannel.length);
+//         for (let i = 0; i < leftChannel.length; i++) {
+//             monoData[i] = (leftChannel[i] + rightChannel[i]) / 2;
+//         }
+//         processedAudioData = monoData;
+//     } else {
+//         // Use the first channel if it's already mono
+//         processedAudioData = audioBuffer.getChannelData(0);
+//     }
 
-    // Trim or pad the audio data to 32000 samples (2 seconds at 16kHz)
-    let finalAudioData;
-    if (processedAudioData.length > 32000) {
-        finalAudioData = processedAudioData.slice(0, 32000);
-    } else {
-        finalAudioData = new Float32Array(32000).fill(0);
-        finalAudioData.set(processedAudioData, 0);
-    }
+//     // Trim or pad the audio data to 32000 samples (2 seconds at 16kHz)
+//     let finalAudioData;
+//     if (processedAudioData.length > 32000) {
+//         finalAudioData = processedAudioData.slice(0, 32000);
+//     } else {
+//         finalAudioData = new Float32Array(32000).fill(0);
+//         finalAudioData.set(processedAudioData, 0);
+//     }
 
-    // Play the processed audio
-    const processedBuffer = audioContext.createBuffer(1, finalAudioData.length, audioContext.sampleRate);
-    processedBuffer.copyToChannel(finalAudioData, 0, 0);
-    const source = audioContext.createBufferSource();
-    source.buffer = processedBuffer;
-    source.connect(audioContext.destination);
-    source.start();
+//     // Play the processed audio
+//     const processedBuffer = audioContext.createBuffer(1, finalAudioData.length, audioContext.sampleRate);
+//     processedBuffer.copyToChannel(finalAudioData, 0, 0);
+//     const source = audioContext.createBufferSource();
+//     source.buffer = processedBuffer;
+//     source.connect(audioContext.destination);
+//     source.start();
 
-    // Clean up
-    source.onended = () => {
-        source.disconnect();
-        audioContext.close();
-    };
-}
+//     // Clean up
+//     source.onended = () => {
+//         source.disconnect();
+//         audioContext.close();
+//     };
+// }
 
-// Function to add a simple button to trigger the processing and playback
-function addPlaybackButton() {
-    const button = document.createElement('button');
-    button.textContent = 'Play Processed Audio';
-    button.addEventListener('click', function() {
-        fetchProcessAndPlay('https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3');
-    });
-    document.body.appendChild(button);
-}
+// // Function to add a simple button to trigger the processing and playback
+// function addPlaybackButton() {
+//     const button = document.createElement('button');
+//     button.textContent = 'Play Processed Audio';
+//     button.addEventListener('click', function() {
+//         fetchProcessAndPlay('https://r2.adarshsolanki.com/chong4_FV2_MP3.mp3');
+//     });
+//     document.body.appendChild(button);
+// }
 
-// Call this function to add the playback button to the page
-addPlaybackButton();
+// // Call this function to add the playback button to the page
+// addPlaybackButton();
