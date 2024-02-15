@@ -110,7 +110,9 @@ async function toggleRecord() {
         };
 
         if (!audioContext) {
-            audioContext = new AudioContext();
+            audioContext = new AudioContext({
+                sampleRate: 16000
+            });
             analyser = audioContext.createAnalyser();
             analyser.fftSize = 2048;
         }
@@ -210,7 +212,9 @@ function processOutput(tensor, labelType, idMapping) {
 async function fetchAndProcessAudio(audioUrl) {
     const response = await fetch(audioUrl);
     const arrayBuffer = await response.arrayBuffer();
-    const audioContext = new AudioContext();
+    const audioContext = new AudioContext({
+        sampleRate: 16000 
+    });
     const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
 
