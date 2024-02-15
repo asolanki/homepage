@@ -47,17 +47,27 @@ async function toggleRecord() {
 
         mediaRecorder.onstop = async () => {
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
-            const audioUrl = URL.createObjectURL(audioBlob);
-
             const arrayBuffer = await audioBlob.arrayBuffer();
-            const audioContext = new AudioContext({
-                sampleRate: 16000
-            });
+        
+            // Decode the original audio data to get an AudioBuffer
+            const audioContext = new AudioContext();
             const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-
-            let audioDataFloat32;
-            if (audioBuffer.numberOfChannels === 2) {
+        
+            // Create an OfflineAudioContext for resampling
+            const offlineCtx = new OfflineAudioContext(audioBuffer.numberOfChannels, audioBuffer.length, 16000);
+            const offlineSource = offlineCtx.createBufferSource();
+            offlineSource.buffer = audioBuffer;
+        
+            // Connect the source to the OfflineAudioContext destination
+            offlineSource.connect(offlineCtx.destination);
+            offlineSource.start(0);
+        
+            // Start rendering (resampling) and wait for the promise to resolve
+            const resampledAudioBuffer = await offlineCtx.startRendering();
+        
+            // Use the resampled audio data
+            let audioDataFloat32 = resampledAudioBuffer.getChannelData(0); // Assuming mono for simplicity
+                    if (audioBuffer.numberOfChannels === 2) {
                 // If stereo, average the two channels to convert to mono
                 const leftChannel = audioBuffer.getChannelData(0);
                 const rightChannel = audioBuffer.getChannelData(1);
