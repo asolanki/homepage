@@ -8,6 +8,17 @@ const labelsContainer = document.getElementById('labels-container');
 
 let session;
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./mandarin-worker.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful with scope:', registration.scope);
+        })
+        .catch(error => {
+          console.log('ServiceWorker registration failed:', error);
+        });
+    });
+  }
 async function loadModel() {
     labelsContainer.textContent = "Loading model, please wait...";
     session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
@@ -121,7 +132,6 @@ async function toggleRecord() {
 
 
             // Clean up
-            URL.revokeObjectURL(audioUrl);
             animationState = 'stopped';
         };
 
@@ -172,7 +182,7 @@ function drawBars() {
                     animationState = 'wiggling';
                 }
             } else if(animationState === 'wiggling') {
-                barHeight = 10 + 5 * Math.sin(wiggleFactor + i * 0.05);
+                barHeight = 10 + 10 * Math.sin(wiggleFactor + i * 0.05);
             } else if(animationState === 'stopped') {
                 barHeight = 10; // Fixed small height for dots
             } else {
