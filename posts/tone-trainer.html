@@ -67,7 +67,7 @@ Description: Playing with transformers in the browser
 
   canvas {
     height: 200px;
-    width: 500px;
+    width: 100%;
   }
 
   .record {
@@ -227,17 +227,17 @@ Description: Playing with transformers in the browser
             <label for="showPinyinToggle">Show Pinyin:</label>
           </div>
           <button id="updateGameButton">New word</button>
+          <div id="labels-container" class="grid"></div>
+          <div id="visualizer-container" style="display: none;">
+            <canvas id="audioVisualizer"></canvas>
+            <button class="record" title="Record" id="toggle">Start
+              Recording</button>
+            <audio controls style="display: none;"></audio>
+          </div>
         </div>
 
-        <div id="labels-container" class="grid"></div>
 
         <button id="loadModelButton">Load Model (379 MB)</button>
-        <div id="visualizer-container" style="display: none;">
-          <canvas id="audioVisualizer"></canvas>
-          <button class="record" title="Record" id="toggle">Start
-            Recording</button>
-          <audio controls style="display: none;"></audio>
-        </div>
 
       </div>
 
