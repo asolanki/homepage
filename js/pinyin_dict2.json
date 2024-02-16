@@ -1,0 +1,6317 @@
+{
+    "rao3": {
+        "pinyin": "rǎo",
+        "character_simplified": "['扰']",
+        "speaker": "MV3"
+    },
+    "dan3": {
+        "pinyin": "dǎn",
+        "character_simplified": "['胆', '掸']",
+        "speaker": "MV2"
+    },
+    "shai4": {
+        "pinyin": "shài",
+        "character_simplified": "['晒']",
+        "speaker": "FV3"
+    },
+    "ben3": {
+        "pinyin": "běn",
+        "character_simplified": "['本']",
+        "speaker": "FV2"
+    },
+    "ha2": {
+        "pinyin": "há",
+        "character_simplified": "['蛤']",
+        "speaker": "FV2"
+    },
+    "zhai4": {
+        "pinyin": "zhài",
+        "character_simplified": "['债']",
+        "speaker": "FV2"
+    },
+    "gui4": {
+        "pinyin": "guì",
+        "character_simplified": "['贵', '桂', '跪']",
+        "speaker": "FV2"
+    },
+    "chao1": {
+        "pinyin": "chāo",
+        "character_simplified": "['超', '抄']",
+        "speaker": "FV2"
+    },
+    "chan4": {
+        "pinyin": "chàn",
+        "character_simplified": "['颤']",
+        "speaker": "FV2"
+    },
+    "yi1": {
+        "pinyin": "yī",
+        "character_simplified": "['一', '衣', '医']",
+        "speaker": "FV2"
+    },
+    "miu4": {
+        "pinyin": "miù",
+        "character_simplified": "['谬']",
+        "speaker": "FV2"
+    },
+    "o2": {
+        "pinyin": "ó",
+        "character_simplified": "['哦']",
+        "speaker": "MV2"
+    },
+    "ting4": {
+        "pinyin": "tìng",
+        "character_simplified": "['听']",
+        "speaker": "MV2"
+    },
+    "dai1": {
+        "pinyin": "dāi",
+        "character_simplified": "['呆', '待']",
+        "speaker": "FV2"
+    },
+    "zi3": {
+        "pinyin": "zǐ",
+        "character_simplified": "['子', '紫', '仔']",
+        "speaker": "FV3"
+    },
+    "bei1": {
+        "pinyin": "bēi",
+        "character_simplified": "['背', '悲', '杯']",
+        "speaker": "MV2"
+    },
+    "ci4": {
+        "pinyin": "cì",
+        "character_simplified": "['次', '刺']",
+        "speaker": "FV2"
+    },
+    "chuai1": {
+        "pinyin": "chuāi",
+        "character_simplified": "['揣']",
+        "speaker": "FV3"
+    },
+    "guo3": {
+        "pinyin": "guǒ",
+        "character_simplified": "['果']",
+        "speaker": "MV2"
+    },
+    "zhao3": {
+        "pinyin": "zhǎo",
+        "character_simplified": "['找']",
+        "speaker": "MV2"
+    },
+    "meng1": {
+        "pinyin": "mēng",
+        "character_simplified": "['蒙']",
+        "speaker": "MV3"
+    },
+    "kui3": {
+        "pinyin": "kuǐ",
+        "character_simplified": "['傀']",
+        "speaker": "MV3"
+    },
+    "deng1": {
+        "pinyin": "dēng",
+        "character_simplified": "['灯', '登', '蹬']",
+        "speaker": "MV2"
+    },
+    "nen4": {
+        "pinyin": "nèn",
+        "character_simplified": "['嫩']",
+        "speaker": "MV3"
+    },
+    "la3": {
+        "pinyin": "lǎ",
+        "character_simplified": "['喇']",
+        "speaker": "FV2"
+    },
+    "cou4": {
+        "pinyin": "còu",
+        "character_simplified": "['凑']",
+        "speaker": "FV2"
+    },
+    "bu4": {
+        "pinyin": "bù",
+        "character_simplified": "['不', '部', '步']",
+        "speaker": "FV2"
+    },
+    "tiao3": {
+        "pinyin": "tiǎo",
+        "character_simplified": "['挑']",
+        "speaker": "MV2"
+    },
+    "shu3": {
+        "pinyin": "shǔ",
+        "character_simplified": "['属', '数', '鼠']",
+        "speaker": "MV2"
+    },
+    "feng3": {
+        "pinyin": "fěng",
+        "character_simplified": "['讽']",
+        "speaker": "MV3"
+    },
+    "xu1": {
+        "pinyin": "xū",
+        "character_simplified": "['须', '需', '虚']",
+        "speaker": "FV2"
+    },
+    "lie1": {
+        "pinyin": "liē",
+        "character_simplified": "['咧']",
+        "speaker": "FV3"
+    },
+    "mian4": {
+        "pinyin": "miàn",
+        "character_simplified": "['面']",
+        "speaker": "FV2"
+    },
+    "miao1": {
+        "pinyin": "miāo",
+        "character_simplified": "['喵']",
+        "speaker": "FV2"
+    },
+    "po3": {
+        "pinyin": "pǒ",
+        "character_simplified": "['叵']",
+        "speaker": "FV3"
+    },
+    "lu2": {
+        "pinyin": "lú",
+        "character_simplified": "['炉', '卢', '芦']",
+        "speaker": "MV2"
+    },
+    "gen4": {
+        "pinyin": "gèn",
+        "character_simplified": "['亘']",
+        "speaker": "FV2"
+    },
+    "zang4": {
+        "pinyin": "zàng",
+        "character_simplified": "['藏', '脏', '葬']",
+        "speaker": "FV3"
+    },
+    "wan1": {
+        "pinyin": "wān",
+        "character_simplified": "['湾', '弯', '豌']",
+        "speaker": "MV3"
+    },
+    "nv4": {
+        "pinyin": "nǜ",
+        "character_simplified": "['衄']",
+        "speaker": "MV2"
+    },
+    "sang4": {
+        "pinyin": "sàng",
+        "character_simplified": "['丧']",
+        "speaker": "FV2"
+    },
+    "ze4": {
+        "pinyin": "zè",
+        "character_simplified": "['仄']",
+        "speaker": "FV2"
+    },
+    "tuo1": {
+        "pinyin": "tuō",
+        "character_simplified": "['托', '脱', '拖']",
+        "speaker": "MV3"
+    },
+    "huo2": {
+        "pinyin": "huó",
+        "character_simplified": "['活', '和']",
+        "speaker": "MV3"
+    },
+    "tun4": {
+        "pinyin": "tùn",
+        "character_simplified": "['褪']",
+        "speaker": "MV3"
+    },
+    "e2": {
+        "pinyin": "é",
+        "character_simplified": "['俄', '额', '鹅']",
+        "speaker": "FV3"
+    },
+    "sha2": {
+        "pinyin": "shá",
+        "character_simplified": "['啥 ']",
+        "speaker": "FV2"
+    },
+    "fa4": {
+        "pinyin": "fà",
+        "character_simplified": "['发']",
+        "speaker": "MV2"
+    },
+    "leng2": {
+        "pinyin": "léng",
+        "character_simplified": "['楞']",
+        "speaker": "MV2"
+    },
+    "hu3": {
+        "pinyin": "hǔ",
+        "character_simplified": "['虎', '唬', '浒']",
+        "speaker": "MV2"
+    },
+    "fou3": {
+        "pinyin": "fǒu",
+        "character_simplified": "['否']",
+        "speaker": "FV2"
+    },
+    "ge2": {
+        "pinyin": "gé",
+        "character_simplified": "['格', '革', '隔']",
+        "speaker": "FV3"
+    },
+    "ken3": {
+        "pinyin": "kěn",
+        "character_simplified": "['肯', '恳', '啃']",
+        "speaker": "MV3"
+    },
+    "lin4": {
+        "pinyin": "lìn",
+        "character_simplified": "['吝', '赁']",
+        "speaker": "MV2"
+    },
+    "guai4": {
+        "pinyin": "guài",
+        "character_simplified": "['怪']",
+        "speaker": "MV3"
+    },
+    "niu2": {
+        "pinyin": "niú",
+        "character_simplified": "['牛']",
+        "speaker": "MV2"
+    },
+    "mi2": {
+        "pinyin": "mí",
+        "character_simplified": "['迷', '弥', '谜']",
+        "speaker": "MV2"
+    },
+    "piao3": {
+        "pinyin": "piǎo",
+        "character_simplified": "['瞟']",
+        "speaker": "MV3"
+    },
+    "xi2": {
+        "pinyin": "xí",
+        "character_simplified": "['习', '席', '袭']",
+        "speaker": "FV2"
+    },
+    "sa4": {
+        "pinyin": "sà",
+        "character_simplified": "['萨']",
+        "speaker": "FV2"
+    },
+    "peng3": {
+        "pinyin": "pěng",
+        "character_simplified": "['捧']",
+        "speaker": "FV2"
+    },
+    "du4": {
+        "pinyin": "dù",
+        "character_simplified": "['度', '杜', '渡']",
+        "speaker": "FV3"
+    },
+    "beng3": {
+        "pinyin": "běng",
+        "character_simplified": "['绷']",
+        "speaker": "MV2"
+    },
+    "xie3": {
+        "pinyin": "xiě",
+        "character_simplified": "['写', '血']",
+        "speaker": "MV2"
+    },
+    "chang3": {
+        "pinyin": "chǎng",
+        "character_simplified": "['场', '厂']",
+        "speaker": "FV2"
+    },
+    "lan2": {
+        "pinyin": "lán",
+        "character_simplified": "['蓝', '兰', '拦']",
+        "speaker": "FV3"
+    },
+    "zao2": {
+        "pinyin": "záo",
+        "character_simplified": "['凿']",
+        "speaker": "FV2"
+    },
+    "pan1": {
+        "pinyin": "pān",
+        "character_simplified": "['潘', '攀']",
+        "speaker": "FV3"
+    },
+    "pao4": {
+        "pinyin": "pào",
+        "character_simplified": "['炮', '泡']",
+        "speaker": "FV3"
+    },
+    "fan4": {
+        "pinyin": "fàn",
+        "character_simplified": "['饭', '犯', '范']",
+        "speaker": "FV2"
+    },
+    "ying4": {
+        "pinyin": "yìng",
+        "character_simplified": "['应', '硬', '映']",
+        "speaker": "MV2"
+    },
+    "yu2": {
+        "pinyin": "yú",
+        "character_simplified": "['于', '余', '鱼']",
+        "speaker": "FV2"
+    },
+    "bie1": {
+        "pinyin": "biē",
+        "character_simplified": "['憋']",
+        "speaker": "FV2"
+    },
+    "bing4": {
+        "pinyin": "bìng",
+        "character_simplified": "['并', '病']",
+        "speaker": "FV3"
+    },
+    "suo1": {
+        "pinyin": "suō",
+        "character_simplified": "['缩']",
+        "speaker": "FV3"
+    },
+    "yun2": {
+        "pinyin": "yún",
+        "character_simplified": "['云']",
+        "speaker": "FV2"
+    },
+    "za1": {
+        "pinyin": "zā",
+        "character_simplified": "['咂']",
+        "speaker": "MV3"
+    },
+    "chou3": {
+        "pinyin": "chǒu",
+        "character_simplified": "['丑']",
+        "speaker": "FV2"
+    },
+    "heng2": {
+        "pinyin": "héng",
+        "character_simplified": "['横', '衡', '恒']",
+        "speaker": "MV3"
+    },
+    "hong4": {
+        "pinyin": "hòng",
+        "character_simplified": "['哄']",
+        "speaker": "MV2"
+    },
+    "song4": {
+        "pinyin": "sòng",
+        "character_simplified": "['送', '宋', '诵']",
+        "speaker": "FV3"
+    },
+    "zong4": {
+        "pinyin": "zòng",
+        "character_simplified": "['纵']",
+        "speaker": "FV2"
+    },
+    "cen2": {
+        "pinyin": "cén",
+        "character_simplified": "['岑']",
+        "speaker": "FV2"
+    },
+    "yao4": {
+        "pinyin": "yào",
+        "character_simplified": "['要', '药', '耀']",
+        "speaker": "MV2"
+    },
+    "dou4": {
+        "pinyin": "dòu",
+        "character_simplified": "['斗', '豆', '逗']",
+        "speaker": "MV2"
+    },
+    "nou2": {
+        "pinyin": "nóu",
+        "character_simplified": "['羺']",
+        "speaker": "MV3"
+    },
+    "yan1": {
+        "pinyin": "yān",
+        "character_simplified": "['烟', '燕', '咽']",
+        "speaker": "MV2"
+    },
+    "zhou1": {
+        "pinyin": "zhōu",
+        "character_simplified": "['周', '州', '洲']",
+        "speaker": "MV2"
+    },
+    "zun4": {
+        "pinyin": "zùn",
+        "character_simplified": "['銌']",
+        "speaker": "MV2"
+    },
+    "zuo1": {
+        "pinyin": "zuō",
+        "character_simplified": "['嘬']",
+        "speaker": "MV2"
+    },
+    "zuan4": {
+        "pinyin": "zuàn",
+        "character_simplified": "['钻']",
+        "speaker": "MV2"
+    },
+    "suan4": {
+        "pinyin": "suàn",
+        "character_simplified": "['算']",
+        "speaker": "MV3"
+    },
+    "ya3": {
+        "pinyin": "yǎ",
+        "character_simplified": "['雅']",
+        "speaker": "MV2"
+    },
+    "huan4": {
+        "pinyin": "huàn",
+        "character_simplified": "['换', '幻', '唤']",
+        "speaker": "FV2"
+    },
+    "wu4": {
+        "pinyin": "wù",
+        "character_simplified": "['物', '务', '误']",
+        "speaker": "MV2"
+    },
+    "lang4": {
+        "pinyin": "làng",
+        "character_simplified": "['浪']",
+        "speaker": "MV2"
+    },
+    "can3": {
+        "pinyin": "cǎn",
+        "character_simplified": "['惨']",
+        "speaker": "FV2"
+    },
+    "wang4": {
+        "pinyin": "wàng",
+        "character_simplified": "['望', '忘', '旺']",
+        "speaker": "FV3"
+    },
+    "cai1": {
+        "pinyin": "cāi",
+        "character_simplified": "['猜']",
+        "speaker": "MV2"
+    },
+    "che3": {
+        "pinyin": "chě",
+        "character_simplified": "['扯']",
+        "speaker": "FV2"
+    },
+    "jiu4": {
+        "pinyin": "jiù",
+        "character_simplified": "['就', '救', '旧']",
+        "speaker": "MV2"
+    },
+    "kua1": {
+        "pinyin": "kuā",
+        "character_simplified": "['夸']",
+        "speaker": "FV3"
+    },
+    "li1": {
+        "pinyin": "lī",
+        "character_simplified": "['哩']",
+        "speaker": "MV2"
+    },
+    "yi2": {
+        "pinyin": "yí",
+        "character_simplified": "['疑', '遗', '移']",
+        "speaker": "MV2"
+    },
+    "chao2": {
+        "pinyin": "cháo",
+        "character_simplified": "['朝', '潮']",
+        "speaker": "MV2"
+    },
+    "ha1": {
+        "pinyin": "hā",
+        "character_simplified": "['哈']",
+        "speaker": "MV2"
+    },
+    "sou3": {
+        "pinyin": "sǒu",
+        "character_simplified": "['叟', '擞']",
+        "speaker": "FV3"
+    },
+    "jie3": {
+        "pinyin": "jiě",
+        "character_simplified": "['解', '姐']",
+        "speaker": "FV3"
+    },
+    "nai4": {
+        "pinyin": "nài",
+        "character_simplified": "['奈', '耐']",
+        "speaker": "MV3"
+    },
+    "yin4": {
+        "pinyin": "yìn",
+        "character_simplified": "['印', '荫']",
+        "speaker": "MV3"
+    },
+    "o1": {
+        "pinyin": "ō",
+        "character_simplified": "['噢']",
+        "speaker": "FV2"
+    },
+    "chu4": {
+        "pinyin": "chù",
+        "character_simplified": "['处', '触']",
+        "speaker": "MV3"
+    },
+    "ka3": {
+        "pinyin": "kǎ",
+        "character_simplified": "['卡']",
+        "speaker": "MV3"
+    },
+    "tao1": {
+        "pinyin": "tāo",
+        "character_simplified": "['掏', '涛', '滔']",
+        "speaker": "MV3"
+    },
+    "ban1": {
+        "pinyin": "bān",
+        "character_simplified": "['般', '班', '搬']",
+        "speaker": "MV2"
+    },
+    "hao2": {
+        "pinyin": "háo",
+        "character_simplified": "['毫', '豪', '嚎']",
+        "speaker": "MV3"
+    },
+    "tan4": {
+        "pinyin": "tàn",
+        "character_simplified": "['探', '叹', '炭']",
+        "speaker": "MV3"
+    },
+    "bao4": {
+        "pinyin": "bào",
+        "character_simplified": "['报', '抱', '暴']",
+        "speaker": "MV2"
+    },
+    "dong4": {
+        "pinyin": "dòng",
+        "character_simplified": "['动', '洞', '冻']",
+        "speaker": "FV3"
+    },
+    "xu2": {
+        "pinyin": "xú",
+        "character_simplified": "['徐']",
+        "speaker": "MV2"
+    },
+    "zhen4": {
+        "pinyin": "zhèn",
+        "character_simplified": "['阵', '振', '镇']",
+        "speaker": "FV2"
+    },
+    "duan4": {
+        "pinyin": "duàn",
+        "character_simplified": "['断', '段']",
+        "speaker": "MV3"
+    },
+    "bai3": {
+        "pinyin": "bǎi",
+        "character_simplified": "['百', '摆', '柏']",
+        "speaker": "FV2"
+    },
+    "shen4": {
+        "pinyin": "shèn",
+        "character_simplified": "['甚', '慎']",
+        "speaker": "FV3"
+    },
+    "dei3": {
+        "pinyin": "děi",
+        "character_simplified": "['得']",
+        "speaker": "MV2"
+    },
+    "miao2": {
+        "pinyin": "miáo",
+        "character_simplified": "['描', '苗']",
+        "speaker": "MV2"
+    },
+    "ne4": {
+        "pinyin": "nè",
+        "character_simplified": "['讷']",
+        "speaker": "FV2"
+    },
+    "zha1": {
+        "pinyin": "zhā",
+        "character_simplified": "['扎']",
+        "speaker": "FV3"
+    },
+    "lu1": {
+        "pinyin": "lū",
+        "character_simplified": "['噜', '撸']",
+        "speaker": "FV2"
+    },
+    "men1": {
+        "pinyin": "mēn",
+        "character_simplified": "['闷']",
+        "speaker": "MV3"
+    },
+    "ji2": {
+        "pinyin": "jí",
+        "character_simplified": "['即', '及', '极']",
+        "speaker": "FV3"
+    },
+    "qiang4": {
+        "pinyin": "qiàng",
+        "character_simplified": "['跄']",
+        "speaker": "MV3"
+    },
+    "shang3": {
+        "pinyin": "shǎng",
+        "character_simplified": "['赏']",
+        "speaker": "FV2"
+    },
+    "ning4": {
+        "pinyin": "nìng",
+        "character_simplified": "['拧']",
+        "speaker": "MV2"
+    },
+    "sha1": {
+        "pinyin": "shā",
+        "character_simplified": "['杀', '沙']",
+        "speaker": "MV2"
+    },
+    "ou3": {
+        "pinyin": "ǒu",
+        "character_simplified": "['偶', '呕', '藕']",
+        "speaker": "FV3"
+    },
+    "kai3": {
+        "pinyin": "kǎi",
+        "character_simplified": "['凯', '慨', '楷']",
+        "speaker": "MV3"
+    },
+    "dui1": {
+        "pinyin": "duī",
+        "character_simplified": "['堆']",
+        "speaker": "FV2"
+    },
+    "zhang3": {
+        "pinyin": "zhǎng",
+        "character_simplified": "['长', '掌']",
+        "speaker": "MV2"
+    },
+    "ni3": {
+        "pinyin": "nǐ",
+        "character_simplified": "['你', '拟']",
+        "speaker": "FV3"
+    },
+    "weng1": {
+        "pinyin": "wēng",
+        "character_simplified": "['翁']",
+        "speaker": "MV3"
+    },
+    "xiang4": {
+        "pinyin": "xiàng",
+        "character_simplified": "['向', '相', '像']",
+        "speaker": "FV3"
+    },
+    "gao3": {
+        "pinyin": "gǎo",
+        "character_simplified": "['搞', '稿']",
+        "speaker": "MV2"
+    },
+    "zou3": {
+        "pinyin": "zǒu",
+        "character_simplified": "['走']",
+        "speaker": "MV2"
+    },
+    "niao3": {
+        "pinyin": "niǎo",
+        "character_simplified": "['鸟']",
+        "speaker": "MV2"
+    },
+    "geng3": {
+        "pinyin": "gěng",
+        "character_simplified": "['梗', '耿', '哽']",
+        "speaker": "FV2"
+    },
+    "liao1": {
+        "pinyin": "liāo",
+        "character_simplified": "['撩']",
+        "speaker": "MV3"
+    },
+    "chuo1": {
+        "pinyin": "chuō",
+        "character_simplified": "['戳']",
+        "speaker": "FV2"
+    },
+    "lian4": {
+        "pinyin": "liàn",
+        "character_simplified": "['练', '恋']",
+        "speaker": "MV3"
+    },
+    "mi1": {
+        "pinyin": "mī",
+        "character_simplified": "['咪', '眯', '瞇']",
+        "speaker": "FV2"
+    },
+    "niu1": {
+        "pinyin": "niū",
+        "character_simplified": "['妞']",
+        "speaker": "FV2"
+    },
+    "xiu4": {
+        "pinyin": "xiù",
+        "character_simplified": "['秀', '宿', '袖']",
+        "speaker": "FV3"
+    },
+    "pin4": {
+        "pinyin": "pìn",
+        "character_simplified": "['聘']",
+        "speaker": "FV2"
+    },
+    "dun3": {
+        "pinyin": "dǔn",
+        "character_simplified": "['盹']",
+        "speaker": "MV2"
+    },
+    "chuang4": {
+        "pinyin": "chuàng",
+        "character_simplified": "['创']",
+        "speaker": "MV2"
+    },
+    "shui4": {
+        "pinyin": "shuì",
+        "character_simplified": "['睡', '税']",
+        "speaker": "FV3"
+    },
+    "wei1": {
+        "pinyin": "wēi",
+        "character_simplified": "['微', '威', '危']",
+        "speaker": "MV3"
+    },
+    "wo3": {
+        "pinyin": "wǒ",
+        "character_simplified": "['我']",
+        "speaker": "MV2"
+    },
+    "jiong3": {
+        "pinyin": "jiǒng",
+        "character_simplified": "['炯']",
+        "speaker": "FV2"
+    },
+    "zhui4": {
+        "pinyin": "zhuì",
+        "character_simplified": "['坠']",
+        "speaker": "FV2"
+    },
+    "gai4": {
+        "pinyin": "gài",
+        "character_simplified": "['概', '盖', '丐']",
+        "speaker": "FV2"
+    },
+    "reng2": {
+        "pinyin": "réng",
+        "character_simplified": "['仍']",
+        "speaker": "MV3"
+    },
+    "he4": {
+        "pinyin": "hè",
+        "character_simplified": "['贺', '鹤', '赫']",
+        "speaker": "FV3"
+    },
+    "xi1": {
+        "pinyin": "xī",
+        "character_simplified": "['西', '息', '希']",
+        "speaker": "MV2"
+    },
+    "cui1": {
+        "pinyin": "cuī",
+        "character_simplified": "['催']",
+        "speaker": "MV2"
+    },
+    "bo3": {
+        "pinyin": "bǒ",
+        "character_simplified": "['簸', '跛']",
+        "speaker": "FV2"
+    },
+    "shi3": {
+        "pinyin": "shǐ",
+        "character_simplified": "['使', '始', '史']",
+        "speaker": "FV2"
+    },
+    "cun3": {
+        "pinyin": "cǔn",
+        "character_simplified": "['忖']",
+        "speaker": "FV2"
+    },
+    "pei1": {
+        "pinyin": "pēi",
+        "character_simplified": "['呸', '胚']",
+        "speaker": "FV3"
+    },
+    "lei2": {
+        "pinyin": "léi",
+        "character_simplified": "['雷', '擂', '累']",
+        "speaker": "FV3"
+    },
+    "fei4": {
+        "pinyin": "fèi",
+        "character_simplified": "['费', '废', '肺']",
+        "speaker": "FV2"
+    },
+    "bi4": {
+        "pinyin": "bì",
+        "character_simplified": "['必', '毕', '避']",
+        "speaker": "MV2"
+    },
+    "kuai4": {
+        "pinyin": "kuài",
+        "character_simplified": "['快', '块']",
+        "speaker": "FV2"
+    },
+    "ao1": {
+        "pinyin": "āo",
+        "character_simplified": "['凹', '熬']",
+        "speaker": "FV3"
+    },
+    "an4": {
+        "pinyin": "àn",
+        "character_simplified": "['暗', '案', '岸']",
+        "speaker": "FV3"
+    },
+    "hua4": {
+        "pinyin": "huà",
+        "character_simplified": "['话', '化', '华']",
+        "speaker": "FV3"
+    },
+    "cu4": {
+        "pinyin": "cù",
+        "character_simplified": "['促']",
+        "speaker": "MV2"
+    },
+    "zan4": {
+        "pinyin": "zàn",
+        "character_simplified": "['赞', '暂']",
+        "speaker": "MV2"
+    },
+    "zao1": {
+        "pinyin": "zāo",
+        "character_simplified": "['遭', '糟']",
+        "speaker": "MV2"
+    },
+    "gou1": {
+        "pinyin": "gōu",
+        "character_simplified": "['沟', '勾', '钩']",
+        "speaker": "MV2"
+    },
+    "fo2": {
+        "pinyin": "fó",
+        "character_simplified": "['佛']",
+        "speaker": "FV2"
+    },
+    "ta4": {
+        "pinyin": "tà",
+        "character_simplified": "['踏', '榻']",
+        "speaker": "MV3"
+    },
+    "dang4": {
+        "pinyin": "dàng",
+        "character_simplified": "['荡', '档', '当']",
+        "speaker": "FV2"
+    },
+    "ma3": {
+        "pinyin": "mǎ",
+        "character_simplified": "['马', '码', '玛']",
+        "speaker": "MV2"
+    },
+    "lai3": {
+        "pinyin": "lǎi",
+        "character_simplified": "['襰']",
+        "speaker": "FV3"
+    },
+    "bie2": {
+        "pinyin": "bié",
+        "character_simplified": "['别']",
+        "speaker": "MV2"
+    },
+    "yu1": {
+        "pinyin": "yū",
+        "character_simplified": "['迂']",
+        "speaker": "MV2"
+    },
+    "zhe4": {
+        "pinyin": "zhè",
+        "character_simplified": "['这']",
+        "speaker": "MV2"
+    },
+    "yun1": {
+        "pinyin": "yūn",
+        "character_simplified": "['晕']",
+        "speaker": "MV2"
+    },
+    "na1": {
+        "pinyin": "nā",
+        "character_simplified": "['那']",
+        "speaker": "MV3"
+    },
+    "mu2": {
+        "pinyin": "mú",
+        "character_simplified": "['模']",
+        "speaker": "FV2"
+    },
+    "qiao3": {
+        "pinyin": "qiǎo",
+        "character_simplified": "['巧']",
+        "speaker": "FV2"
+    },
+    "seng1": {
+        "pinyin": "sēng",
+        "character_simplified": "['僧']",
+        "speaker": "MV2"
+    },
+    "sao1": {
+        "pinyin": "sāo",
+        "character_simplified": "['骚', '搔']",
+        "speaker": "FV3"
+    },
+    "yan2": {
+        "pinyin": "yán",
+        "character_simplified": "['言', '严', '研']",
+        "speaker": "FV2"
+    },
+    "san4": {
+        "pinyin": "sàn",
+        "character_simplified": "['散']",
+        "speaker": "FV3"
+    },
+    "cen1": {
+        "pinyin": "cēn",
+        "character_simplified": "['参']",
+        "speaker": "MV2"
+    },
+    "zeng1": {
+        "pinyin": "zēng",
+        "character_simplified": "['曾', '增']",
+        "speaker": "MV3"
+    },
+    "liang2": {
+        "pinyin": "liáng",
+        "character_simplified": "['良', '量', '凉']",
+        "speaker": "FV3"
+    },
+    "shuai1": {
+        "pinyin": "shuāi",
+        "character_simplified": "['摔']",
+        "speaker": "FV3"
+    },
+    "jiao3": {
+        "pinyin": "jiǎo",
+        "character_simplified": "['脚', '角']",
+        "speaker": "MV3"
+    },
+    "qi4": {
+        "pinyin": "qì",
+        "character_simplified": "['气', '器', '汽']",
+        "speaker": "FV3"
+    },
+    "she4": {
+        "pinyin": "shè",
+        "character_simplified": "['社', '设', '射']",
+        "speaker": "FV3"
+    },
+    "zuo2": {
+        "pinyin": "zuó",
+        "character_simplified": "['昨']",
+        "speaker": "FV2"
+    },
+    "lun2": {
+        "pinyin": "lún",
+        "character_simplified": "['伦', '轮']",
+        "speaker": "FV3"
+    },
+    "a4": {
+        "pinyin": "à",
+        "character_simplified": "['阿', '啊']",
+        "speaker": "FV2"
+    },
+    "zhou2": {
+        "pinyin": "zhóu",
+        "character_simplified": "['轴']",
+        "speaker": "FV2"
+    },
+    "zhuai1": {
+        "pinyin": "zhuāi",
+        "character_simplified": "['拽']",
+        "speaker": "MV3"
+    },
+    "pu4": {
+        "pinyin": "pù",
+        "character_simplified": "['铺', '堡', '瀑']",
+        "speaker": "FV3"
+    },
+    "zhi3": {
+        "pinyin": "zhǐ",
+        "character_simplified": "['只', '指', '止']",
+        "speaker": "MV3"
+    },
+    "xiong4": {
+        "pinyin": "xiòng",
+        "character_simplified": "['诇']",
+        "speaker": "FV2"
+    },
+    "ga4": {
+        "pinyin": "gà",
+        "character_simplified": "['尬']",
+        "speaker": "FV2"
+    },
+    "ju1": {
+        "pinyin": "jū",
+        "character_simplified": "['居']",
+        "speaker": "FV3"
+    },
+    "li2": {
+        "pinyin": "lí",
+        "character_simplified": "['离', '黎', '璃']",
+        "speaker": "FV2"
+    },
+    "qing4": {
+        "pinyin": "qìng",
+        "character_simplified": "['庆']",
+        "speaker": "FV2"
+    },
+    "jiang3": {
+        "pinyin": "jiǎng",
+        "character_simplified": "['讲', '蒋']",
+        "speaker": "FV3"
+    },
+    "cai2": {
+        "pinyin": "cái",
+        "character_simplified": "['才', '财', '材']",
+        "speaker": "FV2"
+    },
+    "xing4": {
+        "pinyin": "xìng",
+        "character_simplified": "['性', '兴', '幸']",
+        "speaker": "FV3"
+    },
+    "lang3": {
+        "pinyin": "lǎng",
+        "character_simplified": "['朗']",
+        "speaker": "MV2"
+    },
+    "zheng1": {
+        "pinyin": "zhēng",
+        "character_simplified": "['争', '征', '正']",
+        "speaker": "FV2"
+    },
+    "cao1": {
+        "pinyin": "cāo",
+        "character_simplified": "['操']",
+        "speaker": "FV2"
+    },
+    "hou4": {
+        "pinyin": "hòu",
+        "character_simplified": "['后', '候', '厚']",
+        "speaker": "FV3"
+    },
+    "can4": {
+        "pinyin": "càn",
+        "character_simplified": "['灿']",
+        "speaker": "FV2"
+    },
+    "sen1": {
+        "pinyin": "sēn",
+        "character_simplified": "['森']",
+        "speaker": "MV3"
+    },
+    "che4": {
+        "pinyin": "chè",
+        "character_simplified": "['撤', '彻']",
+        "speaker": "FV2"
+    },
+    "qie4": {
+        "pinyin": "qiè",
+        "character_simplified": "['窃']",
+        "speaker": "FV3"
+    },
+    "gang1": {
+        "pinyin": "gāng",
+        "character_simplified": "['刚', '钢', '冈']",
+        "speaker": "MV2"
+    },
+    "su2": {
+        "pinyin": "sú",
+        "character_simplified": "['俗']",
+        "speaker": "MV2"
+    },
+    "jiu3": {
+        "pinyin": "jiǔ",
+        "character_simplified": "['九', '久', '酒']",
+        "speaker": "MV2"
+    },
+    "nang1": {
+        "pinyin": "nāng",
+        "character_simplified": "['囔']",
+        "speaker": "MV3"
+    },
+    "hong3": {
+        "pinyin": "hǒng",
+        "character_simplified": "['哄']",
+        "speaker": "MV2"
+    },
+    "ca1": {
+        "pinyin": "cā",
+        "character_simplified": "['擦']",
+        "speaker": "MV2"
+    },
+    "juan1": {
+        "pinyin": "juān",
+        "character_simplified": "['娟']",
+        "speaker": "FV3"
+    },
+    "chou4": {
+        "pinyin": "chòu",
+        "character_simplified": "['臭']",
+        "speaker": "FV2"
+    },
+    "sheng1": {
+        "pinyin": "shēng",
+        "character_simplified": "['生', '声', '升']",
+        "speaker": "MV2"
+    },
+    "cuan1": {
+        "pinyin": "cuān",
+        "character_simplified": "['蹿']",
+        "speaker": "FV2"
+    },
+    "zong3": {
+        "pinyin": "zǒng",
+        "character_simplified": "['总']",
+        "speaker": "FV2"
+    },
+    "tu1": {
+        "pinyin": "tū",
+        "character_simplified": "['突', '秃', '凸']",
+        "speaker": "MV3"
+    },
+    "yao3": {
+        "pinyin": "yǎo",
+        "character_simplified": "['咬']",
+        "speaker": "MV2"
+    },
+    "dou3": {
+        "pinyin": "dǒu",
+        "character_simplified": "['斗', '抖', '陡']",
+        "speaker": "MV2"
+    },
+    "zui1": {
+        "pinyin": "zuī",
+        "character_simplified": "['纗']",
+        "speaker": "FV2"
+    },
+    "quan1": {
+        "pinyin": "quān",
+        "character_simplified": "['圈']",
+        "speaker": "MV2"
+    },
+    "qian2": {
+        "pinyin": "qián",
+        "character_simplified": "['前', '钱', '潜']",
+        "speaker": "MV2"
+    },
+    "ya4": {
+        "pinyin": "yà",
+        "character_simplified": "['亚', '压']",
+        "speaker": "MV2"
+    },
+    "zuan3": {
+        "pinyin": "zuǎn",
+        "character_simplified": "['纂']",
+        "speaker": "MV2"
+    },
+    "zun3": {
+        "pinyin": "zǔn",
+        "character_simplified": "['撙']",
+        "speaker": "MV2"
+    },
+    "luo3": {
+        "pinyin": "luǒ",
+        "character_simplified": "['裸']",
+        "speaker": "MV3"
+    },
+    "gua1": {
+        "pinyin": "guā",
+        "character_simplified": "['瓜']",
+        "speaker": "MV2"
+    },
+    "nu4": {
+        "pinyin": "nù",
+        "character_simplified": "['怒']",
+        "speaker": "MV3"
+    },
+    "cong1": {
+        "pinyin": "cōng",
+        "character_simplified": "['匆', '聪']",
+        "speaker": "MV2"
+    },
+    "liu2": {
+        "pinyin": "liú",
+        "character_simplified": "['流', '留', '刘']",
+        "speaker": "FV2"
+    },
+    "huan3": {
+        "pinyin": "huǎn",
+        "character_simplified": "['缓']",
+        "speaker": "FV2"
+    },
+    "wu3": {
+        "pinyin": "wǔ",
+        "character_simplified": "['五', '武', '午']",
+        "speaker": "MV2"
+    },
+    "sui1": {
+        "pinyin": "suī",
+        "character_simplified": "['虽']",
+        "speaker": "MV3"
+    },
+    "fan3": {
+        "pinyin": "fǎn",
+        "character_simplified": "['反', '返']",
+        "speaker": "FV2"
+    },
+    "mou3": {
+        "pinyin": "mǒu",
+        "character_simplified": "['某']",
+        "speaker": "FV3"
+    },
+    "chi3": {
+        "pinyin": "chǐ",
+        "character_simplified": "['尺', '齿']",
+        "speaker": "FV3"
+    },
+    "le1": {
+        "pinyin": "lē",
+        "character_simplified": "['嘞']",
+        "speaker": "MV3"
+    },
+    "wa2": {
+        "pinyin": "wá",
+        "character_simplified": "['娃']",
+        "speaker": "FV2"
+    },
+    "ying3": {
+        "pinyin": "yǐng",
+        "character_simplified": "['影', '颖']",
+        "speaker": "MV2"
+    },
+    "en1": {
+        "pinyin": "ēn",
+        "character_simplified": "['恩', '嗯']",
+        "speaker": "MV3"
+    },
+    "lia3": {
+        "pinyin": "liǎ",
+        "character_simplified": "['俩']",
+        "speaker": "MV2"
+    },
+    "ping3": {
+        "pinyin": "pǐng",
+        "character_simplified": "['屛\\xa0']",
+        "speaker": "MV3"
+    },
+    "qin1": {
+        "pinyin": "qīn",
+        "character_simplified": "['亲', '侵']",
+        "speaker": "MV2"
+    },
+    "min2": {
+        "pinyin": "mín",
+        "character_simplified": "['民']",
+        "speaker": "MV2"
+    },
+    "fang2": {
+        "pinyin": "fáng",
+        "character_simplified": "['房', '防', '妨']",
+        "speaker": "MV3"
+    },
+    "jue2": {
+        "pinyin": "jué",
+        "character_simplified": "['觉', '决', '绝']",
+        "speaker": "MV2"
+    },
+    "tie3": {
+        "pinyin": "tiě",
+        "character_simplified": "['铁', '帖']",
+        "speaker": "FV3"
+    },
+    "pai4": {
+        "pinyin": "pài",
+        "character_simplified": "['派', '湃']",
+        "speaker": "MV3"
+    },
+    "pa1": {
+        "pinyin": "pā",
+        "character_simplified": "['啪', '趴']",
+        "speaker": "FV3"
+    },
+    "fen2": {
+        "pinyin": "fén",
+        "character_simplified": "['坟', '焚']",
+        "speaker": "FV2"
+    },
+    "biao4": {
+        "pinyin": "biào",
+        "character_simplified": "['鳔']",
+        "speaker": "FV3"
+    },
+    "bian1": {
+        "pinyin": "biān",
+        "character_simplified": "['边', '编']",
+        "speaker": "FV3"
+    },
+    "gu1": {
+        "pinyin": "gū",
+        "character_simplified": "['姑', '孤', '估']",
+        "speaker": "FV2"
+    },
+    "yuan2": {
+        "pinyin": "yuán",
+        "character_simplified": "['原', '员', '元']",
+        "speaker": "MV2"
+    },
+    "peng4": {
+        "pinyin": "pèng",
+        "character_simplified": "['碰']",
+        "speaker": "FV2"
+    },
+    "jia2": {
+        "pinyin": "jiá",
+        "character_simplified": "['夹']",
+        "speaker": "FV2"
+    },
+    "yong2": {
+        "pinyin": "yóng",
+        "character_simplified": "['喁']",
+        "speaker": "FV2"
+    },
+    "sa3": {
+        "pinyin": "sǎ",
+        "character_simplified": "['撒', '洒']",
+        "speaker": "FV2"
+    },
+    "beng4": {
+        "pinyin": "bèng",
+        "character_simplified": "['蹦', '迸', '泵']",
+        "speaker": "MV2"
+    },
+    "xie4": {
+        "pinyin": "xiè",
+        "character_simplified": "['谢', '解']",
+        "speaker": "MV2"
+    },
+    "chang4": {
+        "pinyin": "chàng",
+        "character_simplified": "['唱']",
+        "speaker": "FV2"
+    },
+    "ke2": {
+        "pinyin": "ké",
+        "character_simplified": "['壳', '咳']",
+        "speaker": "MV2"
+    },
+    "cuo2": {
+        "pinyin": "cuó",
+        "character_simplified": "['矬']",
+        "speaker": "MV2"
+    },
+    "guan1": {
+        "pinyin": "guān",
+        "character_simplified": "['关', '官', '观']",
+        "speaker": "FV3"
+    },
+    "mo2": {
+        "pinyin": "mó",
+        "character_simplified": "['魔', '模', '摩']",
+        "speaker": "FV2"
+    },
+    "chui2": {
+        "pinyin": "chuí",
+        "character_simplified": "['垂']",
+        "speaker": "FV2"
+    },
+    "fa3": {
+        "pinyin": "fǎ",
+        "character_simplified": "['法']",
+        "speaker": "MV2"
+    },
+    "nian2": {
+        "pinyin": "nián",
+        "character_simplified": "['年']",
+        "speaker": "FV2"
+    },
+    "long3": {
+        "pinyin": "lǒng",
+        "character_simplified": "['拢']",
+        "speaker": "MV3"
+    },
+    "hu4": {
+        "pinyin": "hù",
+        "character_simplified": "['护', '户', '互']",
+        "speaker": "MV2"
+    },
+    "man4": {
+        "pinyin": "màn",
+        "character_simplified": "['慢', '漫', '曼']",
+        "speaker": "FV3"
+    },
+    "mao1": {
+        "pinyin": "māo",
+        "character_simplified": "['猫']",
+        "speaker": "FV3"
+    },
+    "qu3": {
+        "pinyin": "qǔ",
+        "character_simplified": "['取', '曲']",
+        "speaker": "MV3"
+    },
+    "ang1": {
+        "pinyin": "āng",
+        "character_simplified": "['肮']",
+        "speaker": "MV2"
+    },
+    "xun4": {
+        "pinyin": "xùn",
+        "character_simplified": "['迅', '训', '讯']",
+        "speaker": "FV2"
+    },
+    "nuo4": {
+        "pinyin": "nuò",
+        "character_simplified": "['诺']",
+        "speaker": "FV3"
+    },
+    "lin3": {
+        "pinyin": "lǐn",
+        "character_simplified": "['凛']",
+        "speaker": "MV2"
+    },
+    "duo2": {
+        "pinyin": "duó",
+        "character_simplified": "['夺']",
+        "speaker": "FV2"
+    },
+    "qia1": {
+        "pinyin": "qiā",
+        "character_simplified": "['掐']",
+        "speaker": "MV2"
+    },
+    "luan3": {
+        "pinyin": "luǎn",
+        "character_simplified": "['卵']",
+        "speaker": "FV3"
+    },
+    "gong1": {
+        "pinyin": "gōng",
+        "character_simplified": "['公', '工', '功']",
+        "speaker": "MV3"
+    },
+    "cha1": {
+        "pinyin": "chā",
+        "character_simplified": "['差', '插']",
+        "speaker": "MV3"
+    },
+    "ti2": {
+        "pinyin": "tí",
+        "character_simplified": "['提', '题', '啼']",
+        "speaker": "MV3"
+    },
+    "ba2": {
+        "pinyin": "bá",
+        "character_simplified": "['拔', '跋']",
+        "speaker": "MV2"
+    },
+    "huang2": {
+        "pinyin": "huáng",
+        "character_simplified": "['黄', '皇']",
+        "speaker": "MV3"
+    },
+    "shuang1": {
+        "pinyin": "shuāng",
+        "character_simplified": "['双']",
+        "speaker": "MV2"
+    },
+    "sang3": {
+        "pinyin": "sǎng",
+        "character_simplified": "['嗓', '搡']",
+        "speaker": "FV2"
+    },
+    "hui2": {
+        "pinyin": "huí",
+        "character_simplified": "['回']",
+        "speaker": "FV3"
+    },
+    "tui1": {
+        "pinyin": "tuī",
+        "character_simplified": "['推']",
+        "speaker": "FV3"
+    },
+    "gen3": {
+        "pinyin": "gěn",
+        "character_simplified": "['艮']",
+        "speaker": "FV2"
+    },
+    "si1": {
+        "pinyin": "sī",
+        "character_simplified": "['斯', '思', '司']",
+        "speaker": "MV2"
+    },
+    "nv3": {
+        "pinyin": "nǚ",
+        "character_simplified": "['女']",
+        "speaker": "MV2"
+    },
+    "que1": {
+        "pinyin": "quē",
+        "character_simplified": "['缺']",
+        "speaker": "FV2"
+    },
+    "wai4": {
+        "pinyin": "wài",
+        "character_simplified": "['外']",
+        "speaker": "FV3"
+    },
+    "guang3": {
+        "pinyin": "guǎng",
+        "character_simplified": "['广']",
+        "speaker": "FV3"
+    },
+    "zhu4": {
+        "pinyin": "zhù",
+        "character_simplified": "['住', '注', '助']",
+        "speaker": "FV3"
+    },
+    "pi3": {
+        "pinyin": "pǐ",
+        "character_simplified": "['否', '匹', '劈']",
+        "speaker": "MV3"
+    },
+    "cang1": {
+        "pinyin": "cāng",
+        "character_simplified": "['苍', '舱', '仓']",
+        "speaker": "MV3"
+    },
+    "han3": {
+        "pinyin": "hǎn",
+        "character_simplified": "['喊']",
+        "speaker": "FV3"
+    },
+    "la4": {
+        "pinyin": "là",
+        "character_simplified": "['腊', '辣', '蜡']",
+        "speaker": "FV2"
+    },
+    "tian1": {
+        "pinyin": "tiān",
+        "character_simplified": "['天', '添']",
+        "speaker": "MV2"
+    },
+    "tuan2": {
+        "pinyin": "tuán",
+        "character_simplified": "['团']",
+        "speaker": "MV2"
+    },
+    "tiao4": {
+        "pinyin": "tiào",
+        "character_simplified": "['跳']",
+        "speaker": "MV2"
+    },
+    "chen2": {
+        "pinyin": "chén",
+        "character_simplified": "['陈', '沉', '臣']",
+        "speaker": "FV2"
+    },
+    "bu3": {
+        "pinyin": "bǔ",
+        "character_simplified": "['补', '捕', '卜']",
+        "speaker": "FV2"
+    },
+    "shu4": {
+        "pinyin": "shù",
+        "character_simplified": "['数', '树', '术']",
+        "speaker": "MV2"
+    },
+    "teng4": {
+        "pinyin": "tèng",
+        "character_simplified": "['霯']",
+        "speaker": "FV3"
+    },
+    "tong2": {
+        "pinyin": "tóng",
+        "character_simplified": "['同', '童', '铜']",
+        "speaker": "FV2"
+    },
+    "xue1": {
+        "pinyin": "xuē",
+        "character_simplified": "['薛', '削', '靴']",
+        "speaker": "MV3"
+    },
+    "mian3": {
+        "pinyin": "miǎn",
+        "character_simplified": "['免']",
+        "speaker": "FV2"
+    },
+    "dian3": {
+        "pinyin": "diǎn",
+        "character_simplified": "['点', '典']",
+        "speaker": "FV3"
+    },
+    "kuang1": {
+        "pinyin": "kuāng",
+        "character_simplified": "['筐']",
+        "speaker": "FV3"
+    },
+    "gui3": {
+        "pinyin": "guǐ",
+        "character_simplified": "['鬼']",
+        "speaker": "FV2"
+    },
+    "zhai3": {
+        "pinyin": "zhǎi",
+        "character_simplified": "['窄']",
+        "speaker": "FV2"
+    },
+    "chuan4": {
+        "pinyin": "chuàn",
+        "character_simplified": "['串']",
+        "speaker": "MV3"
+    },
+    "dao1": {
+        "pinyin": "dāo",
+        "character_simplified": "['刀', '叨']",
+        "speaker": "MV2"
+    },
+    "you1": {
+        "pinyin": "yōu",
+        "character_simplified": "['优', '忧', '幽']",
+        "speaker": "MV2"
+    },
+    "dan4": {
+        "pinyin": "dàn",
+        "character_simplified": "['但', '担', '淡']",
+        "speaker": "MV2"
+    },
+    "hen2": {
+        "pinyin": "hén",
+        "character_simplified": "['痕']",
+        "speaker": "FV3"
+    },
+    "er2": {
+        "pinyin": "ér",
+        "character_simplified": "['而', '儿']",
+        "speaker": "MV3"
+    },
+    "ben4": {
+        "pinyin": "bèn",
+        "character_simplified": "['奔', '笨']",
+        "speaker": "FV2"
+    },
+    "chan3": {
+        "pinyin": "chǎn",
+        "character_simplified": "['产']",
+        "speaker": "FV2"
+    },
+    "fu2": {
+        "pinyin": "fú",
+        "character_simplified": "['服', '福', '伏']",
+        "speaker": "FV2"
+    },
+    "ting3": {
+        "pinyin": "tǐng",
+        "character_simplified": "['挺', '艇']",
+        "speaker": "MV2"
+    },
+    "chai1": {
+        "pinyin": "chāi",
+        "character_simplified": "['差', '拆']",
+        "speaker": "MV2"
+    },
+    "yo1": {
+        "pinyin": "yō",
+        "character_simplified": "['哟']",
+        "speaker": "MV2"
+    },
+    "pang2": {
+        "pinyin": "páng",
+        "character_simplified": "['旁', '膀', '庞']",
+        "speaker": "FV2"
+    },
+    "xia1": {
+        "pinyin": "xiā",
+        "character_simplified": "['瞎', '虾']",
+        "speaker": "FV3"
+    },
+    "ci3": {
+        "pinyin": "cǐ",
+        "character_simplified": "['此']",
+        "speaker": "FV2"
+    },
+    "kang2": {
+        "pinyin": "káng",
+        "character_simplified": "['扛']",
+        "speaker": "MV3"
+    },
+    "zhao4": {
+        "pinyin": "zhào",
+        "character_simplified": "['照', '赵', '罩']",
+        "speaker": "MV2"
+    },
+    "zhan1": {
+        "pinyin": "zhān",
+        "character_simplified": "['占', '沾']",
+        "speaker": "MV2"
+    },
+    "guo4": {
+        "pinyin": "guò",
+        "character_simplified": "['过']",
+        "speaker": "MV2"
+    },
+    "shao4": {
+        "pinyin": "shào",
+        "character_simplified": "['绍']",
+        "speaker": "MV3"
+    },
+    "chong4": {
+        "pinyin": "chòng",
+        "character_simplified": "['冲']",
+        "speaker": "FV3"
+    },
+    "cheng2": {
+        "pinyin": "chéng",
+        "character_simplified": "['成', '城', '程']",
+        "speaker": "FV2"
+    },
+    "shan1": {
+        "pinyin": "shān",
+        "character_simplified": "['山', '扇', '杉']",
+        "speaker": "MV3"
+    },
+    "zhong4": {
+        "pinyin": "zhòng",
+        "character_simplified": "['种', '重', '众']",
+        "speaker": "MV3"
+    },
+    "cao2": {
+        "pinyin": "cáo",
+        "character_simplified": "['曹']",
+        "speaker": "MV2"
+    },
+    "ga3": {
+        "pinyin": "gǎ",
+        "character_simplified": "['尕']",
+        "speaker": "FV2"
+    },
+    "su1": {
+        "pinyin": "sū",
+        "character_simplified": "['苏', '酥']",
+        "speaker": "FV2"
+    },
+    "jing3": {
+        "pinyin": "jǐng",
+        "character_simplified": "['警', '景', '井']",
+        "speaker": "MV3"
+    },
+    "jun4": {
+        "pinyin": "jùn",
+        "character_simplified": "['俊']",
+        "speaker": "MV3"
+    },
+    "da1": {
+        "pinyin": "dā",
+        "character_simplified": "['搭', '嗒', '耷']",
+        "speaker": "FV3"
+    },
+    "yue3": {
+        "pinyin": "yuě",
+        "character_simplified": "['哕']",
+        "speaker": "FV3"
+    },
+    "zhuan4": {
+        "pinyin": "zhuàn",
+        "character_simplified": "['转', '传']",
+        "speaker": "FV3"
+    },
+    "qing3": {
+        "pinyin": "qǐng",
+        "character_simplified": "['请']",
+        "speaker": "FV2"
+    },
+    "xiao4": {
+        "pinyin": "xiào",
+        "character_simplified": "['笑', '校', '效']",
+        "speaker": "FV3"
+    },
+    "xuan2": {
+        "pinyin": "xuán",
+        "character_simplified": "['旋', '玄', '悬']",
+        "speaker": "FV3"
+    },
+    "xian1": {
+        "pinyin": "xiān",
+        "character_simplified": "['先', '鲜', '仙']",
+        "speaker": "FV3"
+    },
+    "qiao4": {
+        "pinyin": "qiào",
+        "character_simplified": "['壳']",
+        "speaker": "FV2"
+    },
+    "quan2": {
+        "pinyin": "quán",
+        "character_simplified": "['全', '权', '拳']",
+        "speaker": "FV2"
+    },
+    "qian1": {
+        "pinyin": "qiān",
+        "character_simplified": "['千', '牵', '签']",
+        "speaker": "FV2"
+    },
+    "cuan2": {
+        "pinyin": "cuán",
+        "character_simplified": "['攒']",
+        "speaker": "MV2"
+    },
+    "sheng2": {
+        "pinyin": "shéng",
+        "character_simplified": "['绳']",
+        "speaker": "FV2"
+    },
+    "huai2": {
+        "pinyin": "huái",
+        "character_simplified": "['怀']",
+        "speaker": "FV2"
+    },
+    "liu1": {
+        "pinyin": "liū",
+        "character_simplified": "['溜']",
+        "speaker": "MV2"
+    },
+    "ceng4": {
+        "pinyin": "cèng",
+        "character_simplified": "['蹭']",
+        "speaker": "FV3"
+    },
+    "cong2": {
+        "pinyin": "cóng",
+        "character_simplified": "['从', '丛']",
+        "speaker": "FV2"
+    },
+    "shuan4": {
+        "pinyin": "shuàn",
+        "character_simplified": "['涮']",
+        "speaker": "MV3"
+    },
+    "sai1": {
+        "pinyin": "sāi",
+        "character_simplified": "['塞', '腮']",
+        "speaker": "MV3"
+    },
+    "a3": {
+        "pinyin": "ǎ",
+        "character_simplified": "['啊']",
+        "speaker": "FV2"
+    },
+    "zhua1": {
+        "pinyin": "zhuā",
+        "character_simplified": "['抓']",
+        "speaker": "MV2"
+    },
+    "ma4": {
+        "pinyin": "mà",
+        "character_simplified": "['骂']",
+        "speaker": "MV2"
+    },
+    "lao3": {
+        "pinyin": "lǎo",
+        "character_simplified": "['老', '姥', '佬']",
+        "speaker": "MV3"
+    },
+    "zan3": {
+        "pinyin": "zǎn",
+        "character_simplified": "['攒']",
+        "speaker": "MV2"
+    },
+    "dang3": {
+        "pinyin": "dǎng",
+        "character_simplified": "['党', '挡']",
+        "speaker": "FV2"
+    },
+    "zhe3": {
+        "pinyin": "zhě",
+        "character_simplified": "['者']",
+        "speaker": "MV2"
+    },
+    "qin2": {
+        "pinyin": "qín",
+        "character_simplified": "['秦', '琴', '勤']",
+        "speaker": "FV2"
+    },
+    "zai1": {
+        "pinyin": "zāi",
+        "character_simplified": "['灾']",
+        "speaker": "FV2"
+    },
+    "jue1": {
+        "pinyin": "juē",
+        "character_simplified": "['撅']",
+        "speaker": "FV2"
+    },
+    "tang1": {
+        "pinyin": "tāng",
+        "character_simplified": "['汤']",
+        "speaker": "MV3"
+    },
+    "wa1": {
+        "pinyin": "wā",
+        "character_simplified": "['挖', '哇', '蛙']",
+        "speaker": "MV2"
+    },
+    "yuan1": {
+        "pinyin": "yuān",
+        "character_simplified": "['渊', '冤']",
+        "speaker": "FV2"
+    },
+    "ai1": {
+        "pinyin": "āi",
+        "character_simplified": "['埃', '哀', '挨']",
+        "speaker": "MV3"
+    },
+    "rong3": {
+        "pinyin": "rǒng",
+        "character_simplified": "['冗']",
+        "speaker": "MV2"
+    },
+    "pian2": {
+        "pinyin": "pián",
+        "character_simplified": "['便']",
+        "speaker": "FV3"
+    },
+    "fen1": {
+        "pinyin": "fēn",
+        "character_simplified": "['分', '纷', '芬']",
+        "speaker": "MV2"
+    },
+    "pen4": {
+        "pinyin": "pèn",
+        "character_simplified": "['喷']",
+        "speaker": "MV3"
+    },
+    "bo4": {
+        "pinyin": "bò",
+        "character_simplified": "['薄', '簸']",
+        "speaker": "FV2"
+    },
+    "shi4": {
+        "pinyin": "shì",
+        "character_simplified": "['是', '事', '世']",
+        "speaker": "FV2"
+    },
+    "kou1": {
+        "pinyin": "kōu",
+        "character_simplified": "['抠']",
+        "speaker": "FV3"
+    },
+    "kuan1": {
+        "pinyin": "kuān",
+        "character_simplified": "['宽']",
+        "speaker": "MV2"
+    },
+    "die4": {
+        "pinyin": "diè",
+        "character_simplified": "['哋\\xa0']",
+        "speaker": "FV2"
+    },
+    "fei3": {
+        "pinyin": "fěi",
+        "character_simplified": "['匪', '斐', '翡']",
+        "speaker": "FV2"
+    },
+    "bi3": {
+        "pinyin": "bǐ",
+        "character_simplified": "['比', '笔', '彼']",
+        "speaker": "MV2"
+    },
+    "kuai3": {
+        "pinyin": "kuǎi",
+        "character_simplified": "['蒯']",
+        "speaker": "FV2"
+    },
+    "cuo1": {
+        "pinyin": "cuō",
+        "character_simplified": "['搓']",
+        "speaker": "FV2"
+    },
+    "ke1": {
+        "pinyin": "kē",
+        "character_simplified": "['科', '颗', '棵']",
+        "speaker": "FV2"
+    },
+    "cun4": {
+        "pinyin": "cùn",
+        "character_simplified": "['寸']",
+        "speaker": "FV2"
+    },
+    "kong1": {
+        "pinyin": "kōng",
+        "character_simplified": "['空']",
+        "speaker": "FV2"
+    },
+    "jia1": {
+        "pinyin": "jiā",
+        "character_simplified": "['家', '加', '夹']",
+        "speaker": "MV2"
+    },
+    "ruan3": {
+        "pinyin": "ruǎn",
+        "character_simplified": "['软']",
+        "speaker": "FV2"
+    },
+    "yong1": {
+        "pinyin": "yōng",
+        "character_simplified": "['拥']",
+        "speaker": "MV2"
+    },
+    "wen4": {
+        "pinyin": "wèn",
+        "character_simplified": "['问', '汶']",
+        "speaker": "FV3"
+    },
+    "lou1": {
+        "pinyin": "lōu",
+        "character_simplified": "['搂']",
+        "speaker": "MV3"
+    },
+    "gan1": {
+        "pinyin": "gān",
+        "character_simplified": "['干', '甘', '杆']",
+        "speaker": "MV2"
+    },
+    "zhun1": {
+        "pinyin": "zhūn",
+        "character_simplified": "['谆']",
+        "speaker": "MV2"
+    },
+    "gao4": {
+        "pinyin": "gào",
+        "character_simplified": "['告', '诰']",
+        "speaker": "MV2"
+    },
+    "zou4": {
+        "pinyin": "zòu",
+        "character_simplified": "['奏']",
+        "speaker": "MV2"
+    },
+    "rui3": {
+        "pinyin": "ruǐ",
+        "character_simplified": "['蕊']",
+        "speaker": "FV3"
+    },
+    "zhang4": {
+        "pinyin": "zhàng",
+        "character_simplified": "['丈', '仗', '帐']",
+        "speaker": "MV2"
+    },
+    "shuo4": {
+        "pinyin": "shuò",
+        "character_simplified": "['烁']",
+        "speaker": "MV3"
+    },
+    "chui1": {
+        "pinyin": "chuī",
+        "character_simplified": "['吹']",
+        "speaker": "MV2"
+    },
+    "mo1": {
+        "pinyin": "mō",
+        "character_simplified": "['摸']",
+        "speaker": "MV2"
+    },
+    "nian1": {
+        "pinyin": "niān",
+        "character_simplified": "['拈']",
+        "speaker": "MV2"
+    },
+    "niao4": {
+        "pinyin": "niào",
+        "character_simplified": "['尿']",
+        "speaker": "MV2"
+    },
+    "chun3": {
+        "pinyin": "chǔn",
+        "character_simplified": "['蠢']",
+        "speaker": "FV2"
+    },
+    "nong2": {
+        "pinyin": "nóng",
+        "character_simplified": "['农', '浓']",
+        "speaker": "FV2"
+    },
+    "ru2": {
+        "pinyin": "rú",
+        "character_simplified": "['如']",
+        "speaker": "FV2"
+    },
+    "geng4": {
+        "pinyin": "gèng",
+        "character_simplified": "['更']",
+        "speaker": "FV2"
+    },
+    "wo4": {
+        "pinyin": "wò",
+        "character_simplified": "['握', '卧', '沃']",
+        "speaker": "MV2"
+    },
+    "gai3": {
+        "pinyin": "gǎi",
+        "character_simplified": "['改']",
+        "speaker": "FV2"
+    },
+    "duo1": {
+        "pinyin": "duō",
+        "character_simplified": "['多']",
+        "speaker": "MV2"
+    },
+    "chuang3": {
+        "pinyin": "chuǎng",
+        "character_simplified": "['闯']",
+        "speaker": "MV2"
+    },
+    "pin3": {
+        "pinyin": "pǐn",
+        "character_simplified": "['品']",
+        "speaker": "FV2"
+    },
+    "dun4": {
+        "pinyin": "dùn",
+        "character_simplified": "['顿']",
+        "speaker": "MV2"
+    },
+    "ang2": {
+        "pinyin": "áng",
+        "character_simplified": "['昂']",
+        "speaker": "FV2"
+    },
+    "kao3": {
+        "pinyin": "kǎo",
+        "character_simplified": "['考', '烤', '拷']",
+        "speaker": "FV3"
+    },
+    "shang4": {
+        "pinyin": "shàng",
+        "character_simplified": "['上', '尚']",
+        "speaker": "FV2"
+    },
+    "ba1": {
+        "pinyin": "bā",
+        "character_simplified": "['八', '吧', '巴']",
+        "speaker": "FV2"
+    },
+    "ye2": {
+        "pinyin": "yé",
+        "character_simplified": "['爷']",
+        "speaker": "MV3"
+    },
+    "ning3": {
+        "pinyin": "nǐng",
+        "character_simplified": "['拧']",
+        "speaker": "MV2"
+    },
+    "jin1": {
+        "pinyin": "jīn",
+        "character_simplified": "['金', '今', '津']",
+        "speaker": "MV2"
+    },
+    "mei4": {
+        "pinyin": "mèi",
+        "character_simplified": "['妹', '媚', '昧']",
+        "speaker": "FV3"
+    },
+    "que2": {
+        "pinyin": "qué",
+        "character_simplified": "['瘸']",
+        "speaker": "MV2"
+    },
+    "tian2": {
+        "pinyin": "tián",
+        "character_simplified": "['田', '甜']",
+        "speaker": "FV2"
+    },
+    "tuan1": {
+        "pinyin": "tuān",
+        "character_simplified": "['湍']",
+        "speaker": "FV2"
+    },
+    "di3": {
+        "pinyin": "dǐ",
+        "character_simplified": "['底', '抵', '邸']",
+        "speaker": "MV3"
+    },
+    "chen1": {
+        "pinyin": "chēn",
+        "character_simplified": "['嗔']",
+        "speaker": "MV2"
+    },
+    "bao3": {
+        "pinyin": "bǎo",
+        "character_simplified": "['保', '宝', '堡']",
+        "speaker": "MV2"
+    },
+    "ren3": {
+        "pinyin": "rěn",
+        "character_simplified": "['忍']",
+        "speaker": "FV3"
+    },
+    "hai2": {
+        "pinyin": "hái",
+        "character_simplified": "['还', '孩', '骸']",
+        "speaker": "FV3"
+    },
+    "tai1": {
+        "pinyin": "tāi",
+        "character_simplified": "['胎', '苔']",
+        "speaker": "FV3"
+    },
+    "bai4": {
+        "pinyin": "bài",
+        "character_simplified": "['败', '拜', '稗']",
+        "speaker": "FV2"
+    },
+    "zhen3": {
+        "pinyin": "zhěn",
+        "character_simplified": "['枕', '诊']",
+        "speaker": "FV2"
+    },
+    "tong1": {
+        "pinyin": "tōng",
+        "character_simplified": "['通']",
+        "speaker": "MV2"
+    },
+    "fu1": {
+        "pinyin": "fū",
+        "character_simplified": "['夫', '肤', '敷']",
+        "speaker": "MV2"
+    },
+    "rang3": {
+        "pinyin": "rǎng",
+        "character_simplified": "['嚷']",
+        "speaker": "MV3"
+    },
+    "ming2": {
+        "pinyin": "míng",
+        "character_simplified": "['明', '名', '鸣']",
+        "speaker": "MV2"
+    },
+    "nao4": {
+        "pinyin": "nào",
+        "character_simplified": "['闹', '淖']",
+        "speaker": "FV3"
+    },
+    "ran2": {
+        "pinyin": "rán",
+        "character_simplified": "['然', '燃']",
+        "speaker": "FV3"
+    },
+    "dao2": {
+        "pinyin": "dáo",
+        "character_simplified": "['捯']",
+        "speaker": "FV2"
+    },
+    "you2": {
+        "pinyin": "yóu",
+        "character_simplified": "['由', '游', '油']",
+        "speaker": "FV2"
+    },
+    "nan1": {
+        "pinyin": "nān",
+        "character_simplified": "['囡']",
+        "speaker": "FV3"
+    },
+    "cheng1": {
+        "pinyin": "chēng",
+        "character_simplified": "['称', '撑']",
+        "speaker": "MV2"
+    },
+    "bang1": {
+        "pinyin": "bāng",
+        "character_simplified": "['帮', '邦', '傍']",
+        "speaker": "FV2"
+    },
+    "chai2": {
+        "pinyin": "chái",
+        "character_simplified": "['柴']",
+        "speaker": "FV2"
+    },
+    "yang1": {
+        "pinyin": "yāng",
+        "character_simplified": "['央', '秧', '殃']",
+        "speaker": "MV3"
+    },
+    "pang1": {
+        "pinyin": "pāng",
+        "character_simplified": "['乓']",
+        "speaker": "MV2"
+    },
+    "qiu3": {
+        "pinyin": "qiǔ",
+        "character_simplified": "['糗']",
+        "speaker": "MV2"
+    },
+    "da2": {
+        "pinyin": "dá",
+        "character_simplified": "['答', '达', '打']",
+        "speaker": "FV1"
+    },
+    "wang3": {
+        "pinyin": "wǎng",
+        "character_simplified": "['往', '网', '枉']",
+        "speaker": "MV1"
+    },
+    "zhuang1": {
+        "pinyin": "zhuāng",
+        "character_simplified": "['装', '庄']",
+        "speaker": "MV1"
+    },
+    "lv2": {
+        "pinyin": "lǘ",
+        "character_simplified": "['驴']",
+        "speaker": "FV1"
+    },
+    "xin1": {
+        "pinyin": "xīn",
+        "character_simplified": "['心', '新', '辛']",
+        "speaker": "MV1"
+    },
+    "song3": {
+        "pinyin": "sǒng",
+        "character_simplified": "['耸']",
+        "speaker": "MV1"
+    },
+    "xian2": {
+        "pinyin": "xián",
+        "character_simplified": "['闲', '贤', '嫌']",
+        "speaker": "FV1"
+    },
+    "xuan1": {
+        "pinyin": "xuān",
+        "character_simplified": "['宣']",
+        "speaker": "FV1"
+    },
+    "bing3": {
+        "pinyin": "bǐng",
+        "character_simplified": "['柄', '饼', '禀']",
+        "speaker": "MV1"
+    },
+    "sun3": {
+        "pinyin": "sǔn",
+        "character_simplified": "['损']",
+        "speaker": "MV1"
+    },
+    "rua2": {
+        "pinyin": "ruá",
+        "character_simplified": "['挼']",
+        "speaker": "MV1"
+    },
+    "tang2": {
+        "pinyin": "táng",
+        "character_simplified": "['唐', '堂', '糖']",
+        "speaker": "MV1"
+    },
+    "pao3": {
+        "pinyin": "pǎo",
+        "character_simplified": "['跑']",
+        "speaker": "MV1"
+    },
+    "du3": {
+        "pinyin": "dǔ",
+        "character_simplified": "['赌', '堵', '睹']",
+        "speaker": "MV1"
+    },
+    "nie1": {
+        "pinyin": "niē",
+        "character_simplified": "['捏']",
+        "speaker": "FV1"
+    },
+    "ai2": {
+        "pinyin": "ái",
+        "character_simplified": "['挨', '癌', '皑']",
+        "speaker": "MV1"
+    },
+    "pian1": {
+        "pinyin": "piān",
+        "character_simplified": "['片', '篇', '偏']",
+        "speaker": "FV1"
+    },
+    "piao4": {
+        "pinyin": "piào",
+        "character_simplified": "['票', '漂']",
+        "speaker": "FV1"
+    },
+    "niang2": {
+        "pinyin": "niáng",
+        "character_simplified": "['娘']",
+        "speaker": "MV1"
+    },
+    "guai3": {
+        "pinyin": "guǎi",
+        "character_simplified": "['拐']",
+        "speaker": "FV1"
+    },
+    "ken4": {
+        "pinyin": "kèn",
+        "character_simplified": "['裉']",
+        "speaker": "FV1"
+    },
+    "pou1": {
+        "pinyin": "pōu",
+        "character_simplified": "['剖']",
+        "speaker": "MV1"
+    },
+    "lou2": {
+        "pinyin": "lóu",
+        "character_simplified": "['楼', '喽', '髅']",
+        "speaker": "MV1"
+    },
+    "ye1": {
+        "pinyin": "yē",
+        "character_simplified": "['耶']",
+        "speaker": "MV1"
+    },
+    "tun3": {
+        "pinyin": "tǔn",
+        "character_simplified": "['氽']",
+        "speaker": "FV1"
+    },
+    "ce4": {
+        "pinyin": "cè",
+        "character_simplified": "['策', '侧', '测']",
+        "speaker": "MV1"
+    },
+    "zang3": {
+        "pinyin": "zǎng",
+        "character_simplified": "['驵']",
+        "speaker": "MV1"
+    },
+    "po4": {
+        "pinyin": "pò",
+        "character_simplified": "['破', '迫', '魄']",
+        "speaker": "MV1"
+    },
+    "ling2": {
+        "pinyin": "líng",
+        "character_simplified": "['灵', '零', '铃']",
+        "speaker": "MV1"
+    },
+    "feng4": {
+        "pinyin": "fèng",
+        "character_simplified": "['凤', '缝', '奉']",
+        "speaker": "FV1"
+    },
+    "tai2": {
+        "pinyin": "tái",
+        "character_simplified": "['台', '抬', '苔']",
+        "speaker": "FV1"
+    },
+    "hai1": {
+        "pinyin": "hāi",
+        "character_simplified": "['咳', '嗨']",
+        "speaker": "FV1"
+    },
+    "kui4": {
+        "pinyin": "kuì",
+        "character_simplified": "['愧']",
+        "speaker": "FV1"
+    },
+    "shei2": {
+        "pinyin": "shéi",
+        "character_simplified": "['谁']",
+        "speaker": "MV1"
+    },
+    "zi4": {
+        "pinyin": "zì",
+        "character_simplified": "['自', '字']",
+        "speaker": "MV1"
+    },
+    "yang2": {
+        "pinyin": "yáng",
+        "character_simplified": "['阳', '洋', '杨']",
+        "speaker": "MV1"
+    },
+    "ding1": {
+        "pinyin": "dīng",
+        "character_simplified": "['丁', '盯', '钉']",
+        "speaker": "MV1"
+    },
+    "shai3": {
+        "pinyin": "shǎi",
+        "character_simplified": "['色']",
+        "speaker": "MV1"
+    },
+    "nan2": {
+        "pinyin": "nán",
+        "character_simplified": "['难', '南', '男']",
+        "speaker": "FV1"
+    },
+    "rao4": {
+        "pinyin": "rào",
+        "character_simplified": "['绕']",
+        "speaker": "FV1"
+    },
+    "jiang4": {
+        "pinyin": "jiàng",
+        "character_simplified": "['将', '降']",
+        "speaker": "MV1"
+    },
+    "mie4": {
+        "pinyin": "miè",
+        "character_simplified": "['灭']",
+        "speaker": "FV1"
+    },
+    "xing3": {
+        "pinyin": "xǐng",
+        "character_simplified": "['醒', '省']",
+        "speaker": "MV1"
+    },
+    "nang2": {
+        "pinyin": "náng",
+        "character_simplified": "['囊']",
+        "speaker": "MV1"
+    },
+    "tou4": {
+        "pinyin": "tòu",
+        "character_simplified": "['透']",
+        "speaker": "FV1"
+    },
+    "zhi4": {
+        "pinyin": "zhì",
+        "character_simplified": "['至', '制', '志']",
+        "speaker": "FV1"
+    },
+    "pu3": {
+        "pinyin": "pǔ",
+        "character_simplified": "['普', '浦', '朴']",
+        "speaker": "MV1"
+    },
+    "she3": {
+        "pinyin": "shě",
+        "character_simplified": "['舍']",
+        "speaker": "MV1"
+    },
+    "qi3": {
+        "pinyin": "qǐ",
+        "character_simplified": "['起', '岂', '企']",
+        "speaker": "MV1"
+    },
+    "jian1": {
+        "pinyin": "jiān",
+        "character_simplified": "['间', '坚', '尖']",
+        "speaker": "FV1"
+    },
+    "jiao4": {
+        "pinyin": "jiào",
+        "character_simplified": "['叫', '觉', '教']",
+        "speaker": "FV1"
+    },
+    "san3": {
+        "pinyin": "sǎn",
+        "character_simplified": "['散', '伞']",
+        "speaker": "MV1"
+    },
+    "tu2": {
+        "pinyin": "tú",
+        "character_simplified": "['图', '徒', '途']",
+        "speaker": "MV1"
+    },
+    "lai4": {
+        "pinyin": "lài",
+        "character_simplified": "['赖', '籁', '癞']",
+        "speaker": "MV1"
+    },
+    "fang1": {
+        "pinyin": "fāng",
+        "character_simplified": "['方', '芳']",
+        "speaker": "MV1"
+    },
+    "ta3": {
+        "pinyin": "tǎ",
+        "character_simplified": "['塔']",
+        "speaker": "FV1"
+    },
+    "mang3": {
+        "pinyin": "mǎng",
+        "character_simplified": "['莽', '蟒']",
+        "speaker": "MV1"
+    },
+    "sui2": {
+        "pinyin": "suí",
+        "character_simplified": "['随']",
+        "speaker": "MV1"
+    },
+    "shua1": {
+        "pinyin": "shuā",
+        "character_simplified": "['刷']",
+        "speaker": "FV1"
+    },
+    "an3": {
+        "pinyin": "ǎn",
+        "character_simplified": "['俺']",
+        "speaker": "MV1"
+    },
+    "pa2": {
+        "pinyin": "pá",
+        "character_simplified": "['爬', '扒']",
+        "speaker": "FV1"
+    },
+    "shui3": {
+        "pinyin": "shuǐ",
+        "character_simplified": "['水']",
+        "speaker": "MV1"
+    },
+    "nun2": {
+        "pinyin": "nún",
+        "character_simplified": "['黁']",
+        "speaker": "FV1"
+    },
+    "ruo4": {
+        "pinyin": "ruò",
+        "character_simplified": "['若', '弱']",
+        "speaker": "FV1"
+    },
+    "cha2": {
+        "pinyin": "chá",
+        "character_simplified": "['查', '察', '茶']",
+        "speaker": "MV1"
+    },
+    "ti1": {
+        "pinyin": "tī",
+        "character_simplified": "['梯', '踢', '剔']",
+        "speaker": "MV1"
+    },
+    "xiu3": {
+        "pinyin": "xiǔ",
+        "character_simplified": "['宿']",
+        "speaker": "MV1"
+    },
+    "lian3": {
+        "pinyin": "liǎn",
+        "character_simplified": "['脸']",
+        "speaker": "FV1"
+    },
+    "ni4": {
+        "pinyin": "nì",
+        "character_simplified": "['逆', '腻', '匿']",
+        "speaker": "MV1"
+    },
+    "mao2": {
+        "pinyin": "máo",
+        "character_simplified": "['毛', '矛', '茅']",
+        "speaker": "FV1"
+    },
+    "xiang3": {
+        "pinyin": "xiǎng",
+        "character_simplified": "['想', '响', '享']",
+        "speaker": "MV1"
+    },
+    "kai4": {
+        "pinyin": "kài",
+        "character_simplified": "['忾']",
+        "speaker": "FV1"
+    },
+    "cang2": {
+        "pinyin": "cáng",
+        "character_simplified": "['藏']",
+        "speaker": "MV1"
+    },
+    "ou4": {
+        "pinyin": "òu",
+        "character_simplified": "['沤', '怄']",
+        "speaker": "MV1"
+    },
+    "qiang3": {
+        "pinyin": "qiǎng",
+        "character_simplified": "['抢']",
+        "speaker": "FV1"
+    },
+    "huang1": {
+        "pinyin": "huāng",
+        "character_simplified": "['荒', '慌']",
+        "speaker": "MV1"
+    },
+    "tui2": {
+        "pinyin": "tuí",
+        "character_simplified": "['颓']",
+        "speaker": "FV1"
+    },
+    "hui1": {
+        "pinyin": "huī",
+        "character_simplified": "['挥', '灰', '恢']",
+        "speaker": "FV1"
+    },
+    "kuang2": {
+        "pinyin": "kuáng",
+        "character_simplified": "['狂']",
+        "speaker": "FV1"
+    },
+    "duan3": {
+        "pinyin": "duǎn",
+        "character_simplified": "['短']",
+        "speaker": "FV1"
+    },
+    "xue2": {
+        "pinyin": "xué",
+        "character_simplified": "['学', '穴']",
+        "speaker": "MV1"
+    },
+    "shen3": {
+        "pinyin": "shěn",
+        "character_simplified": "['审', '沈']",
+        "speaker": "MV1"
+    },
+    "dong3": {
+        "pinyin": "dǒng",
+        "character_simplified": "['懂', '董']",
+        "speaker": "MV1"
+    },
+    "tan3": {
+        "pinyin": "tǎn",
+        "character_simplified": "['坦', '毯']",
+        "speaker": "FV1"
+    },
+    "xia2": {
+        "pinyin": "xiá",
+        "character_simplified": "['侠', '霞']",
+        "speaker": "FV1"
+    },
+    "chu3": {
+        "pinyin": "chǔ",
+        "character_simplified": "['楚', '处']",
+        "speaker": "FV1"
+    },
+    "nai3": {
+        "pinyin": "nǎi",
+        "character_simplified": "['奶', '乃']",
+        "speaker": "FV1"
+    },
+    "jie4": {
+        "pinyin": "jiè",
+        "character_simplified": "['届', '介', '借']",
+        "speaker": "MV1"
+    },
+    "kang1": {
+        "pinyin": "kāng",
+        "character_simplified": "['康', '慷']",
+        "speaker": "MV1"
+    },
+    "yin3": {
+        "pinyin": "yǐn",
+        "character_simplified": "['引', '隐', '饮']",
+        "speaker": "FV1"
+    },
+    "sou4": {
+        "pinyin": "sòu",
+        "character_simplified": "['嗽']",
+        "speaker": "MV1"
+    },
+    "chong3": {
+        "pinyin": "chǒng",
+        "character_simplified": "['宠']",
+        "speaker": "MV1"
+    },
+    "shao3": {
+        "pinyin": "shǎo",
+        "character_simplified": "['少']",
+        "speaker": "FV1"
+    },
+    "chuan3": {
+        "pinyin": "chuǎn",
+        "character_simplified": "['喘']",
+        "speaker": "FV1"
+    },
+    "dian4": {
+        "pinyin": "diàn",
+        "character_simplified": "['电', '店', '殿']",
+        "speaker": "MV1"
+    },
+    "kuo4": {
+        "pinyin": "kuò",
+        "character_simplified": "['阔', '括', '扩']",
+        "speaker": "MV1"
+    },
+    "diao1": {
+        "pinyin": "diāo",
+        "character_simplified": "['雕']",
+        "speaker": "MV1"
+    },
+    "kun1": {
+        "pinyin": "kūn",
+        "character_simplified": "['昆']",
+        "speaker": "MV1"
+    },
+    "zha2": {
+        "pinyin": "zhá",
+        "character_simplified": "['炸']",
+        "speaker": "FV1"
+    },
+    "han4": {
+        "pinyin": "hàn",
+        "character_simplified": "['汉', '汗', '旱']",
+        "speaker": "MV1"
+    },
+    "hao1": {
+        "pinyin": "hāo",
+        "character_simplified": "['蒿']",
+        "speaker": "MV1"
+    },
+    "tao2": {
+        "pinyin": "táo",
+        "character_simplified": "['逃', '陶', '桃']",
+        "speaker": "MV1"
+    },
+    "pi4": {
+        "pinyin": "pì",
+        "character_simplified": "['屁', '辟', '譬']",
+        "speaker": "FV1"
+    },
+    "zhu3": {
+        "pinyin": "zhǔ",
+        "character_simplified": "['主']",
+        "speaker": "MV1"
+    },
+    "guang4": {
+        "pinyin": "guàng",
+        "character_simplified": "['逛']",
+        "speaker": "MV1"
+    },
+    "wai3": {
+        "pinyin": "wǎi",
+        "character_simplified": "['崴']",
+        "speaker": "MV1"
+    },
+    "ji1": {
+        "pinyin": "jī",
+        "character_simplified": "['机', '击', '激']",
+        "speaker": "FV1"
+    },
+    "men2": {
+        "pinyin": "mén",
+        "character_simplified": "['们', '门']",
+        "speaker": "MV1"
+    },
+    "hang4": {
+        "pinyin": "hàng",
+        "character_simplified": "['巷']",
+        "speaker": "FV1"
+    },
+    "luan4": {
+        "pinyin": "luàn",
+        "character_simplified": "['乱']",
+        "speaker": "MV1"
+    },
+    "liao2": {
+        "pinyin": "liáo",
+        "character_simplified": "['聊', '疗']",
+        "speaker": "MV1"
+    },
+    "ku1": {
+        "pinyin": "kū",
+        "character_simplified": "['哭', '枯', '窟']",
+        "speaker": "FV1"
+    },
+    "kei1": {
+        "pinyin": "kēi",
+        "character_simplified": "['尅']",
+        "speaker": "MV1"
+    },
+    "wei2": {
+        "pinyin": "wéi",
+        "character_simplified": "['围', '维', '为']",
+        "speaker": "MV1"
+    },
+    "man3": {
+        "pinyin": "mǎn",
+        "character_simplified": "['满', '螨']",
+        "speaker": "MV1"
+    },
+    "qu4": {
+        "pinyin": "qù",
+        "character_simplified": "['去', '趣']",
+        "speaker": "FV1"
+    },
+    "long4": {
+        "pinyin": "lòng",
+        "character_simplified": "['弄']",
+        "speaker": "FV1"
+    },
+    "lei1": {
+        "pinyin": "lēi",
+        "character_simplified": "['勒']",
+        "speaker": "FV1"
+    },
+    "pei2": {
+        "pinyin": "péi",
+        "character_simplified": "['陪', '培', '赔']",
+        "speaker": "FV1"
+    },
+    "ao2": {
+        "pinyin": "áo",
+        "character_simplified": "['熬', '敖', '鳌']",
+        "speaker": "FV1"
+    },
+    "reng1": {
+        "pinyin": "rēng",
+        "character_simplified": "['扔']",
+        "speaker": "MV1"
+    },
+    "biao3": {
+        "pinyin": "biǎo",
+        "character_simplified": "['表']",
+        "speaker": "MV1"
+    },
+    "pai3": {
+        "pinyin": "pǎi",
+        "character_simplified": "['迫', '排']",
+        "speaker": "FV1"
+    },
+    "tie4": {
+        "pinyin": "tiè",
+        "character_simplified": "['帖']",
+        "speaker": "MV1"
+    },
+    "na2": {
+        "pinyin": "ná",
+        "character_simplified": "['拿']",
+        "speaker": "MV1"
+    },
+    "chi4": {
+        "pinyin": "chì",
+        "character_simplified": "['赤']",
+        "speaker": "MV1"
+    },
+    "nu3": {
+        "pinyin": "nǔ",
+        "character_simplified": "['努', '弩']",
+        "speaker": "FV1"
+    },
+    "shou1": {
+        "pinyin": "shōu",
+        "character_simplified": "['收']",
+        "speaker": "FV1"
+    },
+    "luo4": {
+        "pinyin": "luò",
+        "character_simplified": "['落', '洛', '络']",
+        "speaker": "FV1"
+    },
+    "lun1": {
+        "pinyin": "lūn",
+        "character_simplified": "['抡']",
+        "speaker": "FV1"
+    },
+    "ju2": {
+        "pinyin": "jú",
+        "character_simplified": "['局']",
+        "speaker": "FV1"
+    },
+    "bin4": {
+        "pinyin": "bìn",
+        "character_simplified": "['鬓', '殡']",
+        "speaker": "FV1"
+    },
+    "qie3": {
+        "pinyin": "qiě",
+        "character_simplified": "['且']",
+        "speaker": "MV1"
+    },
+    "hou3": {
+        "pinyin": "hǒu",
+        "character_simplified": "['吼']",
+        "speaker": "MV1"
+    },
+    "chuai2": {
+        "pinyin": "chuái",
+        "character_simplified": "['膗']",
+        "speaker": "FV1"
+    },
+    "nao3": {
+        "pinyin": "nǎo",
+        "character_simplified": "['脑', '恼', '瑙']",
+        "speaker": "MV1"
+    },
+    "rang4": {
+        "pinyin": "ràng",
+        "character_simplified": "['让']",
+        "speaker": "FV1"
+    },
+    "pie1": {
+        "pinyin": "piē",
+        "character_simplified": "['瞥']",
+        "speaker": "FV1"
+    },
+    "ren4": {
+        "pinyin": "rèn",
+        "character_simplified": "['任', '认']",
+        "speaker": "MV1"
+    },
+    "meng2": {
+        "pinyin": "méng",
+        "character_simplified": "['蒙', '盟', '萌']",
+        "speaker": "MV1"
+    },
+    "di4": {
+        "pinyin": "dì",
+        "character_simplified": "['地', '第', '弟']",
+        "speaker": "FV1"
+    },
+    "hun4": {
+        "pinyin": "hùn",
+        "character_simplified": "['混']",
+        "speaker": "MV1"
+    },
+    "huo1": {
+        "pinyin": "huō",
+        "character_simplified": "['攉']",
+        "speaker": "MV1"
+    },
+    "tuo2": {
+        "pinyin": "tuó",
+        "character_simplified": "['驼']",
+        "speaker": "MV1"
+    },
+    "mei3": {
+        "pinyin": "měi",
+        "character_simplified": "['美', '每', '镁']",
+        "speaker": "MV1"
+    },
+    "e1": {
+        "pinyin": "ē",
+        "character_simplified": "['婀', '阿', '屙']",
+        "speaker": "FV1"
+    },
+    "kao4": {
+        "pinyin": "kào",
+        "character_simplified": "['靠', '铐', '犒']",
+        "speaker": "MV1"
+    },
+    "wan2": {
+        "pinyin": "wán",
+        "character_simplified": "['完', '玩', '顽']",
+        "speaker": "MV1"
+    },
+    "kan1": {
+        "pinyin": "kān",
+        "character_simplified": "['看', '刊', '堪']",
+        "speaker": "MV1"
+    },
+    "mai2": {
+        "pinyin": "mái",
+        "character_simplified": "['埋', '霾']",
+        "speaker": "MV1"
+    },
+    "ge1": {
+        "pinyin": "gē",
+        "character_simplified": "['哥', '歌', '鸽']",
+        "speaker": "FV1"
+    },
+    "wen3": {
+        "pinyin": "wěn",
+        "character_simplified": "['稳', '吻', '紊']",
+        "speaker": "MV1"
+    },
+    "rui4": {
+        "pinyin": "ruì",
+        "character_simplified": "['瑞', '锐']",
+        "speaker": "MV1"
+    },
+    "lao4": {
+        "pinyin": "lào",
+        "character_simplified": "['唠', '烙', '酪']",
+        "speaker": "FV1"
+    },
+    "pan2": {
+        "pinyin": "pán",
+        "character_simplified": "['盘', '磐']",
+        "speaker": "FV1"
+    },
+    "zu3": {
+        "pinyin": "zǔ",
+        "character_simplified": "['组', '祖', '阻']",
+        "speaker": "FV1"
+    },
+    "heng1": {
+        "pinyin": "hēng",
+        "character_simplified": "['亨', '哼']",
+        "speaker": "MV1"
+    },
+    "za2": {
+        "pinyin": "zá",
+        "character_simplified": "['杂']",
+        "speaker": "MV1"
+    },
+    "rou2": {
+        "pinyin": "róu",
+        "character_simplified": "['柔']",
+        "speaker": "MV1"
+    },
+    "xiao3": {
+        "pinyin": "xiǎo",
+        "character_simplified": "['小', '晓']",
+        "speaker": "MV1"
+    },
+    "zhuan3": {
+        "pinyin": "zhuǎn",
+        "character_simplified": "['转']",
+        "speaker": "MV1"
+    },
+    "yue4": {
+        "pinyin": "yuè",
+        "character_simplified": "['月', '越', '乐']",
+        "speaker": "MV1"
+    },
+    "jing4": {
+        "pinyin": "jìng",
+        "character_simplified": "['竟', '静', '境']",
+        "speaker": "FV1"
+    },
+    "zhong3": {
+        "pinyin": "zhǒng",
+        "character_simplified": "['种']",
+        "speaker": "FV1"
+    },
+    "jiang1": {
+        "pinyin": "jiāng",
+        "character_simplified": "['将', '江']",
+        "speaker": "MV3"
+    },
+    "qie2": {
+        "pinyin": "qié",
+        "character_simplified": "['茄']",
+        "speaker": "FV3"
+    },
+    "mie1": {
+        "pinyin": "miē",
+        "character_simplified": "['咩']",
+        "speaker": "FV3"
+    },
+    "eng1": {
+        "pinyin": "ēng",
+        "character_simplified": "['鞥\\xa0']",
+        "speaker": "MV2"
+    },
+    "ju3": {
+        "pinyin": "jǔ",
+        "character_simplified": "['举']",
+        "speaker": "MV3"
+    },
+    "su4": {
+        "pinyin": "sù",
+        "character_simplified": "['诉', '速', '素']",
+        "speaker": "MV2"
+    },
+    "zhi1": {
+        "pinyin": "zhī",
+        "character_simplified": "['只', '之', '知']",
+        "speaker": "FV3"
+    },
+    "can2": {
+        "pinyin": "cán",
+        "character_simplified": "['残']",
+        "speaker": "FV2"
+    },
+    "tou1": {
+        "pinyin": "tōu",
+        "character_simplified": "['偷']",
+        "speaker": "FV3"
+    },
+    "hou2": {
+        "pinyin": "hóu",
+        "character_simplified": "['侯', '喉', '猴']",
+        "speaker": "FV3"
+    },
+    "nin2": {
+        "pinyin": "nín",
+        "character_simplified": "['您']",
+        "speaker": "FV2"
+    },
+    "ya2": {
+        "pinyin": "yá",
+        "character_simplified": "['牙']",
+        "speaker": "MV2"
+    },
+    "nu2": {
+        "pinyin": "nú",
+        "character_simplified": "['奴']",
+        "speaker": "MV3"
+    },
+    "liu4": {
+        "pinyin": "liù",
+        "character_simplified": "['六', '遛']",
+        "speaker": "FV2"
+    },
+    "chou2": {
+        "pinyin": "chóu",
+        "character_simplified": "['仇', '愁']",
+        "speaker": "FV2"
+    },
+    "jiao1": {
+        "pinyin": "jiāo",
+        "character_simplified": "['教', '交', '焦']",
+        "speaker": "FV3"
+    },
+    "shuai3": {
+        "pinyin": "shuǎi",
+        "character_simplified": "['甩']",
+        "speaker": "MV3"
+    },
+    "jian4": {
+        "pinyin": "jiàn",
+        "character_simplified": "['件', '剑', '建']",
+        "speaker": "FV3"
+    },
+    "ri4": {
+        "pinyin": "rì",
+        "character_simplified": "['日']",
+        "speaker": "MV2"
+    },
+    "qian4": {
+        "pinyin": "qiàn",
+        "character_simplified": "['歉', '欠']",
+        "speaker": "MV2"
+    },
+    "qiao1": {
+        "pinyin": "qiāo",
+        "character_simplified": "['悄', '敲']",
+        "speaker": "MV2"
+    },
+    "sao3": {
+        "pinyin": "sǎo",
+        "character_simplified": "['扫', '嫂']",
+        "speaker": "MV3"
+    },
+    "na3": {
+        "pinyin": "nǎ",
+        "character_simplified": "['哪']",
+        "speaker": "FV3"
+    },
+    "wa4": {
+        "pinyin": "wà",
+        "character_simplified": "['袜']",
+        "speaker": "FV2"
+    },
+    "jue4": {
+        "pinyin": "juè",
+        "character_simplified": "['倔']",
+        "speaker": "MV2"
+    },
+    "yu3": {
+        "pinyin": "yǔ",
+        "character_simplified": "['与', '雨', '宇']",
+        "speaker": "FV2"
+    },
+    "zai4": {
+        "pinyin": "zài",
+        "character_simplified": "['在', '再', '载']",
+        "speaker": "MV2"
+    },
+    "pai2": {
+        "pinyin": "pái",
+        "character_simplified": "['排', '牌', '徘']",
+        "speaker": "MV3"
+    },
+    "yun3": {
+        "pinyin": "yǔn",
+        "character_simplified": "['允']",
+        "speaker": "FV2"
+    },
+    "fang4": {
+        "pinyin": "fàng",
+        "character_simplified": "['放']",
+        "speaker": "MV3"
+    },
+    "gou3": {
+        "pinyin": "gǒu",
+        "character_simplified": "['狗', '苟', '枸']",
+        "speaker": "FV2"
+    },
+    "zao3": {
+        "pinyin": "zǎo",
+        "character_simplified": "['早', '澡']",
+        "speaker": "FV2"
+    },
+    "ma1": {
+        "pinyin": "mā",
+        "character_simplified": "['妈']",
+        "speaker": "FV2"
+    },
+    "shua4": {
+        "pinyin": "shuà",
+        "character_simplified": "['刷']",
+        "speaker": "FV3"
+    },
+    "yong4": {
+        "pinyin": "yòng",
+        "character_simplified": "['用']",
+        "speaker": "FV2"
+    },
+    "ao3": {
+        "pinyin": "ǎo",
+        "character_simplified": "['袄', '媪', '襖']",
+        "speaker": "MV3"
+    },
+    "peng2": {
+        "pinyin": "péng",
+        "character_simplified": "['朋', '彭', '鹏']",
+        "speaker": "FV2"
+    },
+    "jia4": {
+        "pinyin": "jià",
+        "character_simplified": "['假', '架', '价']",
+        "speaker": "FV2"
+    },
+    "kong4": {
+        "pinyin": "kòng",
+        "character_simplified": "['空', '控']",
+        "speaker": "MV2"
+    },
+    "ke4": {
+        "pinyin": "kè",
+        "character_simplified": "['克', '刻', '客']",
+        "speaker": "MV2"
+    },
+    "cun1": {
+        "pinyin": "cūn",
+        "character_simplified": "['村']",
+        "speaker": "MV2"
+    },
+    "cuo4": {
+        "pinyin": "cuò",
+        "character_simplified": "['错', '措']",
+        "speaker": "MV2"
+    },
+    "beng2": {
+        "pinyin": "béng",
+        "character_simplified": "['甭']",
+        "speaker": "MV2"
+    },
+    "pei3": {
+        "pinyin": "pěi",
+        "character_simplified": "['俖']",
+        "speaker": "MV3"
+    },
+    "re3": {
+        "pinyin": "rě",
+        "character_simplified": "['惹']",
+        "speaker": "MV3"
+    },
+    "chang2": {
+        "pinyin": "cháng",
+        "character_simplified": "['长', '常', '尝']",
+        "speaker": "FV2"
+    },
+    "xie2": {
+        "pinyin": "xié",
+        "character_simplified": "['鞋', '协', '邪']",
+        "speaker": "MV2"
+    },
+    "die1": {
+        "pinyin": "diē",
+        "character_simplified": "['爹', '跌']",
+        "speaker": "MV2"
+    },
+    "cui3": {
+        "pinyin": "cuǐ",
+        "character_simplified": "['璀']",
+        "speaker": "FV2"
+    },
+    "shi1": {
+        "pinyin": "shī",
+        "character_simplified": "['师', '失', '诗']",
+        "speaker": "MV2"
+    },
+    "bo1": {
+        "pinyin": "bō",
+        "character_simplified": "['波', '玻', '播']",
+        "speaker": "MV2"
+    },
+    "fen4": {
+        "pinyin": "fèn",
+        "character_simplified": "['份', '奋', '愤']",
+        "speaker": "FV2"
+    },
+    "yuan4": {
+        "pinyin": "yuàn",
+        "character_simplified": "['愿', '院', '怨']",
+        "speaker": "MV2"
+    },
+    "xi3": {
+        "pinyin": "xǐ",
+        "character_simplified": "['喜', '洗']",
+        "speaker": "FV2"
+    },
+    "dun1": {
+        "pinyin": "dūn",
+        "character_simplified": "['蹲']",
+        "speaker": "FV2"
+    },
+    "nuo2": {
+        "pinyin": "nuó",
+        "character_simplified": "['挪']",
+        "speaker": "FV3"
+    },
+    "xun2": {
+        "pinyin": "xún",
+        "character_simplified": "['寻', '巡']",
+        "speaker": "FV2"
+    },
+    "run4": {
+        "pinyin": "rùn",
+        "character_simplified": "['润']",
+        "speaker": "FV3"
+    },
+    "duo4": {
+        "pinyin": "duò",
+        "character_simplified": "['堕']",
+        "speaker": "FV2"
+    },
+    "jiong1": {
+        "pinyin": "jiōng",
+        "character_simplified": "['扃']",
+        "speaker": "MV2"
+    },
+    "wo1": {
+        "pinyin": "wō",
+        "character_simplified": "['窝', '喔']",
+        "speaker": "FV2"
+    },
+    "wei3": {
+        "pinyin": "wěi",
+        "character_simplified": "['委', '尾', '伟']",
+        "speaker": "FV3"
+    },
+    "geng1": {
+        "pinyin": "gēng",
+        "character_simplified": "['更', '耕', '庚']",
+        "speaker": "MV2"
+    },
+    "ti4": {
+        "pinyin": "tì",
+        "character_simplified": "['替', '屉', '惕']",
+        "speaker": "MV3"
+    },
+    "niu3": {
+        "pinyin": "niǔ",
+        "character_simplified": "['扭', '纽', '钮']",
+        "speaker": "MV2"
+    },
+    "liao3": {
+        "pinyin": "liǎo",
+        "character_simplified": "['了']",
+        "speaker": "FV3"
+    },
+    "mi3": {
+        "pinyin": "mǐ",
+        "character_simplified": "['米', '靡', '弭']",
+        "speaker": "MV2"
+    },
+    "nian4": {
+        "pinyin": "niàn",
+        "character_simplified": "['念']",
+        "speaker": "FV2"
+    },
+    "leng3": {
+        "pinyin": "lěng",
+        "character_simplified": "['冷']",
+        "speaker": "MV2"
+    },
+    "mo4": {
+        "pinyin": "mò",
+        "character_simplified": "['默', '莫', '末']",
+        "speaker": "FV2"
+    },
+    "zhang1": {
+        "pinyin": "zhāng",
+        "character_simplified": "['张', '章']",
+        "speaker": "FV2"
+    },
+    "ni1": {
+        "pinyin": "nī",
+        "character_simplified": "['妮']",
+        "speaker": "MV3"
+    },
+    "zou1": {
+        "pinyin": "zōu",
+        "character_simplified": "['邹']",
+        "speaker": "FV2"
+    },
+    "man2": {
+        "pinyin": "mán",
+        "character_simplified": "['蛮', '瞒', '馒']",
+        "speaker": "FV3"
+    },
+    "gao1": {
+        "pinyin": "gāo",
+        "character_simplified": "['高', '糕', '膏']",
+        "speaker": "FV2"
+    },
+    "hu2": {
+        "pinyin": "hú",
+        "character_simplified": "['胡', '湖', '糊']",
+        "speaker": "MV2"
+    },
+    "zhuo1": {
+        "pinyin": "zhuō",
+        "character_simplified": "['桌', '捉']",
+        "speaker": "FV2"
+    },
+    "gan4": {
+        "pinyin": "gàn",
+        "character_simplified": "['干']",
+        "speaker": "FV2"
+    },
+    "weng3": {
+        "pinyin": "wěng",
+        "character_simplified": "['聬']",
+        "speaker": "FV3"
+    },
+    "kai1": {
+        "pinyin": "kāi",
+        "character_simplified": "['开', '揩']",
+        "speaker": "FV3"
+    },
+    "jin4": {
+        "pinyin": "jìn",
+        "character_simplified": "['进', '近', '尽']",
+        "speaker": "FV2"
+    },
+    "ou1": {
+        "pinyin": "ōu",
+        "character_simplified": "['区', '欧', '鸥']",
+        "speaker": "MV3"
+    },
+    "zhu2": {
+        "pinyin": "zhú",
+        "character_simplified": "['逐', '竹']",
+        "speaker": "FV3"
+    },
+    "sha3": {
+        "pinyin": "shǎ",
+        "character_simplified": "['傻']",
+        "speaker": "FV2"
+    },
+    "huang4": {
+        "pinyin": "huàng",
+        "character_simplified": "['晃']",
+        "speaker": "MV3"
+    },
+    "ba4": {
+        "pinyin": "bà",
+        "character_simplified": "['爸', '罢', '霸']",
+        "speaker": "MV2"
+    },
+    "shang1": {
+        "pinyin": "shāng",
+        "character_simplified": "['伤', '商']",
+        "speaker": "MV2"
+    },
+    "lu3": {
+        "pinyin": "lǔ",
+        "character_simplified": "['鲁', '虏', '卤']",
+        "speaker": "MV2"
+    },
+    "hui4": {
+        "pinyin": "huì",
+        "character_simplified": "['会', '惠', '慧']",
+        "speaker": "FV3"
+    },
+    "shu2": {
+        "pinyin": "shú",
+        "character_simplified": "['熟']",
+        "speaker": "MV2"
+    },
+    "teng2": {
+        "pinyin": "téng",
+        "character_simplified": "['疼', '腾', '藤']",
+        "speaker": "FV3"
+    },
+    "zha3": {
+        "pinyin": "zhǎ",
+        "character_simplified": "['眨']",
+        "speaker": "MV3"
+    },
+    "tong4": {
+        "pinyin": "tòng",
+        "character_simplified": "['痛']",
+        "speaker": "FV2"
+    },
+    "bai1": {
+        "pinyin": "bāi",
+        "character_simplified": "['掰']",
+        "speaker": "MV2"
+    },
+    "zhei4": {
+        "pinyin": "zhèi",
+        "character_simplified": "['这']",
+        "speaker": "FV2"
+    },
+    "ban3": {
+        "pinyin": "bǎn",
+        "character_simplified": "['板', '版']",
+        "speaker": "FV2"
+    },
+    "tao3": {
+        "pinyin": "tǎo",
+        "character_simplified": "['讨']",
+        "speaker": "FV3"
+    },
+    "la2": {
+        "pinyin": "lá",
+        "character_simplified": "['剌']",
+        "speaker": "FV2"
+    },
+    "chen4": {
+        "pinyin": "chèn",
+        "character_simplified": "['称', '趁', '衬']",
+        "speaker": "FV2"
+    },
+    "tuan4": {
+        "pinyin": "tuàn",
+        "character_simplified": "['彖']",
+        "speaker": "MV2"
+    },
+    "tiao2": {
+        "pinyin": "tiáo",
+        "character_simplified": "['条', '调']",
+        "speaker": "MV2"
+    },
+    "pang4": {
+        "pinyin": "pàng",
+        "character_simplified": "['胖']",
+        "speaker": "FV2"
+    },
+    "ka1": {
+        "pinyin": "kā",
+        "character_simplified": "['咖', '喀']",
+        "speaker": "FV3"
+    },
+    "bang4": {
+        "pinyin": "bàng",
+        "character_simplified": "['棒', '傍', '镑']",
+        "speaker": "MV2"
+    },
+    "jie1": {
+        "pinyin": "jiē",
+        "character_simplified": "['接', '街', '阶']",
+        "speaker": "MV3"
+    },
+    "chong2": {
+        "pinyin": "chóng",
+        "character_simplified": "['重', '崇', '虫']",
+        "speaker": "FV3"
+    },
+    "shao2": {
+        "pinyin": "sháo",
+        "character_simplified": "['勺']",
+        "speaker": "MV3"
+    },
+    "cheng4": {
+        "pinyin": "chèng",
+        "character_simplified": "['秤']",
+        "speaker": "FV2"
+    },
+    "kang4": {
+        "pinyin": "kàng",
+        "character_simplified": "['抗', '炕']",
+        "speaker": "MV3"
+    },
+    "zhao2": {
+        "pinyin": "zháo",
+        "character_simplified": "['着']",
+        "speaker": "MV2"
+    },
+    "guo2": {
+        "pinyin": "guó",
+        "character_simplified": "['国']",
+        "speaker": "MV2"
+    },
+    "sou1": {
+        "pinyin": "sōu",
+        "character_simplified": "['搜', '艘', '嗖']",
+        "speaker": "MV3"
+    },
+    "hen4": {
+        "pinyin": "hèn",
+        "character_simplified": "['恨']",
+        "speaker": "FV3"
+    },
+    "ha3": {
+        "pinyin": "hǎ",
+        "character_simplified": "['哈']",
+        "speaker": "FV2"
+    },
+    "er4": {
+        "pinyin": "èr",
+        "character_simplified": "['二']",
+        "speaker": "MV3"
+    },
+    "chuan2": {
+        "pinyin": "chuán",
+        "character_simplified": "['传', '船']",
+        "speaker": "MV3"
+    },
+    "fu4": {
+        "pinyin": "fù",
+        "character_simplified": "['父', '复', '妇']",
+        "speaker": "FV2"
+    },
+    "kua3": {
+        "pinyin": "kuǎ",
+        "character_simplified": "['垮']",
+        "speaker": "MV3"
+    },
+    "gang4": {
+        "pinyin": "gàng",
+        "character_simplified": "['杠']",
+        "speaker": "FV2"
+    },
+    "li3": {
+        "pinyin": "lǐ",
+        "character_simplified": "['里', '理', '李']",
+        "speaker": "FV2"
+    },
+    "cai3": {
+        "pinyin": "cǎi",
+        "character_simplified": "['采', '彩']",
+        "speaker": "FV2"
+    },
+    "che1": {
+        "pinyin": "chē",
+        "character_simplified": "['车']",
+        "speaker": "MV2"
+    },
+    "can1": {
+        "pinyin": "cān",
+        "character_simplified": "['参', '餐']",
+        "speaker": "MV2"
+    },
+    "cao4": {
+        "pinyin": "cào",
+        "character_simplified": "['肏']",
+        "speaker": "MV2"
+    },
+    "zheng4": {
+        "pinyin": "zhèng",
+        "character_simplified": "['正', '政', '证']",
+        "speaker": "MV2"
+    },
+    "zhuang4": {
+        "pinyin": "zhuàng",
+        "character_simplified": "['壮', '壮', '撞']",
+        "speaker": "MV3"
+    },
+    "ceng2": {
+        "pinyin": "céng",
+        "character_simplified": "['曾', '层']",
+        "speaker": "FV3"
+    },
+    "gua4": {
+        "pinyin": "guà",
+        "character_simplified": "['挂']",
+        "speaker": "FV2"
+    },
+    "zhou3": {
+        "pinyin": "zhǒu",
+        "character_simplified": "['肘']",
+        "speaker": "FV2"
+    },
+    "zuo3": {
+        "pinyin": "zuǒ",
+        "character_simplified": "['左', '佐']",
+        "speaker": "FV2"
+    },
+    "xin4": {
+        "pinyin": "xìn",
+        "character_simplified": "['信']",
+        "speaker": "MV3"
+    },
+    "ya1": {
+        "pinyin": "yā",
+        "character_simplified": "['呀', '压', '鸭']",
+        "speaker": "FV2"
+    },
+    "qiao2": {
+        "pinyin": "qiáo",
+        "character_simplified": "['瞧', '桥', '乔']",
+        "speaker": "FV2"
+    },
+    "mu3": {
+        "pinyin": "mǔ",
+        "character_simplified": "['母', '姆', '亩']",
+        "speaker": "FV2"
+    },
+    "quan4": {
+        "pinyin": "quàn",
+        "character_simplified": "['劝']",
+        "speaker": "FV2"
+    },
+    "zui4": {
+        "pinyin": "zuì",
+        "character_simplified": "['最', '罪', '醉']",
+        "speaker": "MV2"
+    },
+    "xiao2": {
+        "pinyin": "xiáo",
+        "character_simplified": "['淆']",
+        "speaker": "FV3"
+    },
+    "yan3": {
+        "pinyin": "yǎn",
+        "character_simplified": "['眼', '演', '掩']",
+        "speaker": "FV2"
+    },
+    "xuan4": {
+        "pinyin": "xuàn",
+        "character_simplified": "['旋']",
+        "speaker": "FV3"
+    },
+    "cuan4": {
+        "pinyin": "cuàn",
+        "character_simplified": "['窜']",
+        "speaker": "MV2"
+    },
+    "za3": {
+        "pinyin": "zǎ",
+        "character_simplified": "['咋 ']",
+        "speaker": "FV3"
+    },
+    "sheng4": {
+        "pinyin": "shèng",
+        "character_simplified": "['胜', '圣', '盛']",
+        "speaker": "FV2"
+    },
+    "chou1": {
+        "pinyin": "chōu",
+        "character_simplified": "['抽']",
+        "speaker": "MV2"
+    },
+    "huai4": {
+        "pinyin": "huài",
+        "character_simplified": "['坏']",
+        "speaker": "FV2"
+    },
+    "bie3": {
+        "pinyin": "biě",
+        "character_simplified": "['瘪']",
+        "speaker": "MV2"
+    },
+    "suo3": {
+        "pinyin": "suǒ",
+        "character_simplified": "['所', '索', '锁']",
+        "speaker": "MV3"
+    },
+    "qin4": {
+        "pinyin": "qìn",
+        "character_simplified": "['沁']",
+        "speaker": "FV2"
+    },
+    "zu2": {
+        "pinyin": "zú",
+        "character_simplified": "['足', '族']",
+        "speaker": "MV3"
+    },
+    "pan3": {
+        "pinyin": "pǎn",
+        "character_simplified": "['坢']",
+        "speaker": "MV3"
+    },
+    "ma2": {
+        "pinyin": "má",
+        "character_simplified": "['麻']",
+        "speaker": "MV2"
+    },
+    "cun2": {
+        "pinyin": "cún",
+        "character_simplified": "['存']",
+        "speaker": "FV2"
+    },
+    "keng1": {
+        "pinyin": "kēng",
+        "character_simplified": "['坑', '吭']",
+        "speaker": "FV3"
+    },
+    "chang1": {
+        "pinyin": "chāng",
+        "character_simplified": "['昌']",
+        "speaker": "MV2"
+    },
+    "xie1": {
+        "pinyin": "xiē",
+        "character_simplified": "['些', '歇']",
+        "speaker": "FV2"
+    },
+    "die2": {
+        "pinyin": "dié",
+        "character_simplified": "['蝶']",
+        "speaker": "FV2"
+    },
+    "nie4": {
+        "pinyin": "niè",
+        "character_simplified": "['聂']",
+        "speaker": "FV3"
+    },
+    "beng1": {
+        "pinyin": "bēng",
+        "character_simplified": "['崩', '绷']",
+        "speaker": "FV2"
+    },
+    "peng1": {
+        "pinyin": "pēng",
+        "character_simplified": "['烹', '砰']",
+        "speaker": "MV2"
+    },
+    "lve4": {
+        "pinyin": "lvè",
+        "character_simplified": "['掠']",
+        "speaker": "MV3"
+    },
+    "piao1": {
+        "pinyin": "piāo",
+        "character_simplified": "['飘', '漂']",
+        "speaker": "FV3"
+    },
+    "pian4": {
+        "pinyin": "piàn",
+        "character_simplified": "['片', '骗']",
+        "speaker": "FV3"
+    },
+    "gu4": {
+        "pinyin": "gù",
+        "character_simplified": "['故', '顾', '固']",
+        "speaker": "MV2"
+    },
+    "zen4": {
+        "pinyin": "zèn",
+        "character_simplified": "['谮']",
+        "speaker": "MV2"
+    },
+    "bo2": {
+        "pinyin": "bó",
+        "character_simplified": "['伯', '博', '薄']",
+        "speaker": "FV2"
+    },
+    "pen2": {
+        "pinyin": "pén",
+        "character_simplified": "['盆']",
+        "speaker": "MV3"
+    },
+    "shi2": {
+        "pinyin": "shí",
+        "character_simplified": "['时', '十', '实']",
+        "speaker": "FV2"
+    },
+    "de2": {
+        "pinyin": "dé",
+        "character_simplified": "['得', '德']",
+        "speaker": "MV2"
+    },
+    "qia4": {
+        "pinyin": "qià",
+        "character_simplified": "['恰']",
+        "speaker": "FV2"
+    },
+    "neng2": {
+        "pinyin": "néng",
+        "character_simplified": "['能']",
+        "speaker": "FV3"
+    },
+    "ru4": {
+        "pinyin": "rù",
+        "character_simplified": "['入']",
+        "speaker": "FV2"
+    },
+    "nong4": {
+        "pinyin": "nòng",
+        "character_simplified": "['弄']",
+        "speaker": "FV2"
+    },
+    "xun1": {
+        "pinyin": "xūn",
+        "character_simplified": "['勋']",
+        "speaker": "MV2"
+    },
+    "ang4": {
+        "pinyin": "àng",
+        "character_simplified": "['盎']",
+        "speaker": "FV2"
+    },
+    "mai3": {
+        "pinyin": "mǎi",
+        "character_simplified": "['买']",
+        "speaker": "FV3"
+    },
+    "wen2": {
+        "pinyin": "wén",
+        "character_simplified": "['文', '闻', '纹']",
+        "speaker": "FV3"
+    },
+    "zhuo2": {
+        "pinyin": "zhuó",
+        "character_simplified": "['着', '卓']",
+        "speaker": "MV2"
+    },
+    "hu1": {
+        "pinyin": "hū",
+        "character_simplified": "['乎', '忽', '呼']",
+        "speaker": "FV2"
+    },
+    "ye4": {
+        "pinyin": "yè",
+        "character_simplified": "['夜', '业', '叶']",
+        "speaker": "MV3"
+    },
+    "mei2": {
+        "pinyin": "méi",
+        "character_simplified": "['没', '梅', '眉']",
+        "speaker": "FV3"
+    },
+    "que4": {
+        "pinyin": "què",
+        "character_simplified": "['却', '确']",
+        "speaker": "MV2"
+    },
+    "tuo3": {
+        "pinyin": "tuǒ",
+        "character_simplified": "['妥']",
+        "speaker": "FV3"
+    },
+    "wan3": {
+        "pinyin": "wǎn",
+        "character_simplified": "['晚', '碗', '挽']",
+        "speaker": "FV3"
+    },
+    "si4": {
+        "pinyin": "sì",
+        "character_simplified": "['四', '似', '寺']",
+        "speaker": "FV2"
+    },
+    "po1": {
+        "pinyin": "pō",
+        "character_simplified": "['颇', '坡', '泼']",
+        "speaker": "MV3"
+    },
+    "feng1": {
+        "pinyin": "fēng",
+        "character_simplified": "['风', '封', '丰']",
+        "speaker": "FV3"
+    },
+    "xu3": {
+        "pinyin": "xǔ",
+        "character_simplified": "['许']",
+        "speaker": "MV2"
+    },
+    "hai4": {
+        "pinyin": "hài",
+        "character_simplified": "['害', '骇', '亥']",
+        "speaker": "FV3"
+    },
+    "bai2": {
+        "pinyin": "bái",
+        "character_simplified": "['白']",
+        "speaker": "FV2"
+    },
+    "lie3": {
+        "pinyin": "liě",
+        "character_simplified": "['咧']",
+        "speaker": "MV3"
+    },
+    "miao3": {
+        "pinyin": "miǎo",
+        "character_simplified": "['秒']",
+        "speaker": "MV2"
+    },
+    "shu1": {
+        "pinyin": "shū",
+        "character_simplified": "['书', '叔', '舒']",
+        "speaker": "FV2"
+    },
+    "tiao1": {
+        "pinyin": "tiāo",
+        "character_simplified": "['挑']",
+        "speaker": "FV2"
+    },
+    "tian4": {
+        "pinyin": "tiàn",
+        "character_simplified": "['掭']",
+        "speaker": "FV2"
+    },
+    "meng3": {
+        "pinyin": "měng",
+        "character_simplified": "['蒙', '猛']",
+        "speaker": "FV3"
+    },
+    "kui1": {
+        "pinyin": "kuī",
+        "character_simplified": "['亏']",
+        "speaker": "FV3"
+    },
+    "la1": {
+        "pinyin": "lā",
+        "character_simplified": "['拉', '啦', '垃']",
+        "speaker": "MV2"
+    },
+    "deng3": {
+        "pinyin": "děng",
+        "character_simplified": "['等']",
+        "speaker": "FV2"
+    },
+    "bei3": {
+        "pinyin": "běi",
+        "character_simplified": "['北']",
+        "speaker": "FV2"
+    },
+    "dai3": {
+        "pinyin": "dǎi",
+        "character_simplified": "['逮', '歹', '傣']",
+        "speaker": "MV2"
+    },
+    "zi1": {
+        "pinyin": "zī",
+        "character_simplified": "['资', '姿', '滋']",
+        "speaker": "MV3"
+    },
+    "qun1": {
+        "pinyin": "qūn",
+        "character_simplified": "['逡']",
+        "speaker": "FV3"
+    },
+    "guo1": {
+        "pinyin": "guō",
+        "character_simplified": "['郭', '锅']",
+        "speaker": "FV2"
+    },
+    "zhan4": {
+        "pinyin": "zhàn",
+        "character_simplified": "['战', '站', '占']",
+        "speaker": "FV2"
+    },
+    "chuai3": {
+        "pinyin": "chuǎi",
+        "character_simplified": "['揣']",
+        "speaker": "MV3"
+    },
+    "zhao1": {
+        "pinyin": "zhāo",
+        "character_simplified": "['招', '朝']",
+        "speaker": "FV2"
+    },
+    "gun4": {
+        "pinyin": "gùn",
+        "character_simplified": "['棍']",
+        "speaker": "FV2"
+    },
+    "chao3": {
+        "pinyin": "chǎo",
+        "character_simplified": "['吵']",
+        "speaker": "MV2"
+    },
+    "yi3": {
+        "pinyin": "yǐ",
+        "character_simplified": "['以', '已', '椅']",
+        "speaker": "MV2"
+    },
+    "ben1": {
+        "pinyin": "bēn",
+        "character_simplified": "['奔']",
+        "speaker": "MV2"
+    },
+    "ding4": {
+        "pinyin": "dìng",
+        "character_simplified": "['定', '订', '钉']",
+        "speaker": "MV3"
+    },
+    "dan1": {
+        "pinyin": "dān",
+        "character_simplified": "['单', '担', '丹']",
+        "speaker": "FV2"
+    },
+    "nao2": {
+        "pinyin": "náo",
+        "character_simplified": "['挠']",
+        "speaker": "FV3"
+    },
+    "you4": {
+        "pinyin": "yòu",
+        "character_simplified": "['又', '右', '幼']",
+        "speaker": "FV2"
+    },
+    "dao4": {
+        "pinyin": "dào",
+        "character_simplified": "['到', '道', '倒']",
+        "speaker": "FV2"
+    },
+    "ming4": {
+        "pinyin": "mìng",
+        "character_simplified": "['命']",
+        "speaker": "MV2"
+    },
+    "yang3": {
+        "pinyin": "yǎng",
+        "character_simplified": "['养', '仰', '痒']",
+        "speaker": "FV3"
+    },
+    "ting2": {
+        "pinyin": "tíng",
+        "character_simplified": "['停', '庭', '亭']",
+        "speaker": "MV2"
+    },
+    "qiu1": {
+        "pinyin": "qiū",
+        "character_simplified": "['秋']",
+        "speaker": "FV2"
+    },
+    "pang3": {
+        "pinyin": "pǎng",
+        "character_simplified": "['耪']",
+        "speaker": "FV2"
+    },
+    "ci2": {
+        "pinyin": "cí",
+        "character_simplified": "['词', '慈', '辞']",
+        "speaker": "FV2"
+    },
+    "bang3": {
+        "pinyin": "bǎng",
+        "character_simplified": "['绑', '榜']",
+        "speaker": "MV2"
+    },
+    "cheng3": {
+        "pinyin": "chěng",
+        "character_simplified": "['逞']",
+        "speaker": "FV2"
+    },
+    "hei1": {
+        "pinyin": "hēi",
+        "character_simplified": "['黑', '嘿', '嗨']",
+        "speaker": "MV3"
+    },
+    "zhai2": {
+        "pinyin": "zhái",
+        "character_simplified": "['宅']",
+        "speaker": "FV2"
+    },
+    "nan3": {
+        "pinyin": "nǎn",
+        "character_simplified": "['赧']",
+        "speaker": "MV3"
+    },
+    "ha4": {
+        "pinyin": "hà",
+        "character_simplified": "['哈']",
+        "speaker": "FV2"
+    },
+    "chan2": {
+        "pinyin": "chán",
+        "character_simplified": "['缠']",
+        "speaker": "FV2"
+    },
+    "fu3": {
+        "pinyin": "fǔ",
+        "character_simplified": "['府', '抚', '甫']",
+        "speaker": "FV2"
+    },
+    "tong3": {
+        "pinyin": "tǒng",
+        "character_simplified": "['统', '筒', '桶']",
+        "speaker": "FV2"
+    },
+    "mian2": {
+        "pinyin": "mián",
+        "character_simplified": "['眠']",
+        "speaker": "FV2"
+    },
+    "tai3": {
+        "pinyin": "tǎi",
+        "character_simplified": "['呔']",
+        "speaker": "MV3"
+    },
+    "zhen1": {
+        "pinyin": "zhēn",
+        "character_simplified": "['真', '珍', '针']",
+        "speaker": "MV2"
+    },
+    "den4": {
+        "pinyin": "dèn",
+        "character_simplified": "['扥']",
+        "speaker": "MV2"
+    },
+    "bao1": {
+        "pinyin": "bāo",
+        "character_simplified": "['包', '剥', '胞']",
+        "speaker": "FV2"
+    },
+    "ban4": {
+        "pinyin": "bàn",
+        "character_simplified": "['办', '半', '伴']",
+        "speaker": "FV2"
+    },
+    "di1": {
+        "pinyin": "dī",
+        "character_simplified": "['低', '滴', '堤']",
+        "speaker": "FV3"
+    },
+    "te4": {
+        "pinyin": "tè",
+        "character_simplified": "['特']",
+        "speaker": "MV2"
+    },
+    "tuan3": {
+        "pinyin": "tuǎn",
+        "character_simplified": "['疃']",
+        "speaker": "MV2"
+    },
+    "chen3": {
+        "pinyin": "chěn",
+        "character_simplified": "['碜']",
+        "speaker": "FV2"
+    },
+    "bu2": {
+        "pinyin": "bú",
+        "character_simplified": "['醭']",
+        "speaker": "FV2"
+    },
+    "huo4": {
+        "pinyin": "huò",
+        "character_simplified": "['或', '获', '货']",
+        "speaker": "MV3"
+    },
+    "jin3": {
+        "pinyin": "jǐn",
+        "character_simplified": "['紧', '尽', '仅']",
+        "speaker": "FV2"
+    },
+    "tun2": {
+        "pinyin": "tún",
+        "character_simplified": "['屯']",
+        "speaker": "MV3"
+    },
+    "hun1": {
+        "pinyin": "hūn",
+        "character_simplified": "['婚', '昏']",
+        "speaker": "MV3"
+    },
+    "e4": {
+        "pinyin": "è",
+        "character_simplified": "['恶', '饿', '愕']",
+        "speaker": "FV3"
+    },
+    "sha4": {
+        "pinyin": "shà",
+        "character_simplified": "['煞']",
+        "speaker": "FV2"
+    },
+    "ling3": {
+        "pinyin": "lǐng",
+        "character_simplified": "['领', '岭']",
+        "speaker": "FV3"
+    },
+    "ba3": {
+        "pinyin": "bǎ",
+        "character_simplified": "['把', '靶']",
+        "speaker": "MV2"
+    },
+    "ze2": {
+        "pinyin": "zé",
+        "character_simplified": "['则', '责', '泽']",
+        "speaker": "FV2"
+    },
+    "lu4": {
+        "pinyin": "lù",
+        "character_simplified": "['路', '陆', '录']",
+        "speaker": "MV2"
+    },
+    "gen2": {
+        "pinyin": "gén",
+        "character_simplified": "['哏']",
+        "speaker": "FV2"
+    },
+    "kan4": {
+        "pinyin": "kàn",
+        "character_simplified": "['看']",
+        "speaker": "MV3"
+    },
+    "kao1": {
+        "pinyin": "kāo",
+        "character_simplified": "['尻']",
+        "speaker": "MV3"
+    },
+    "gai1": {
+        "pinyin": "gāi",
+        "character_simplified": "['该', '赅', '垓']",
+        "speaker": "MV2"
+    },
+    "zhui1": {
+        "pinyin": "zhuī",
+        "character_simplified": "['追']",
+        "speaker": "MV2"
+    },
+    "chuang1": {
+        "pinyin": "chuāng",
+        "character_simplified": "['窗', '创']",
+        "speaker": "FV2"
+    },
+    "duo3": {
+        "pinyin": "duǒ",
+        "character_simplified": "['朵', '躲']",
+        "speaker": "FV2"
+    },
+    "pin1": {
+        "pinyin": "pīn",
+        "character_simplified": "['拼']",
+        "speaker": "MV2"
+    },
+    "lin2": {
+        "pinyin": "lín",
+        "character_simplified": "['林', '临', '邻']",
+        "speaker": "MV2"
+    },
+    "niu4": {
+        "pinyin": "niù",
+        "character_simplified": "['拗']",
+        "speaker": "MV2"
+    },
+    "mi4": {
+        "pinyin": "mì",
+        "character_simplified": "['密', '秘', '蜜']",
+        "speaker": "MV2"
+    },
+    "chun1": {
+        "pinyin": "chūn",
+        "character_simplified": "['春']",
+        "speaker": "MV2"
+    },
+    "chuo4": {
+        "pinyin": "chuò",
+        "character_simplified": "['绰']",
+        "speaker": "MV2"
+    },
+    "mo3": {
+        "pinyin": "mǒ",
+        "character_simplified": "['抹']",
+        "speaker": "FV2"
+    },
+    "fa2": {
+        "pinyin": "fá",
+        "character_simplified": "['乏', '罚', '伐']",
+        "speaker": "MV2"
+    },
+    "nian3": {
+        "pinyin": "niǎn",
+        "character_simplified": "['捻']",
+        "speaker": "FV2"
+    },
+    "leng4": {
+        "pinyin": "lèng",
+        "character_simplified": "['愣']",
+        "speaker": "MV2"
+    },
+    "gan3": {
+        "pinyin": "gǎn",
+        "character_simplified": "['感', '敢', '赶']",
+        "speaker": "FV2"
+    },
+    "lou3": {
+        "pinyin": "lǒu",
+        "character_simplified": "['搂', '篓']",
+        "speaker": "FV3"
+    },
+    "zhun3": {
+        "pinyin": "zhǔn",
+        "character_simplified": "['准']",
+        "speaker": "FV2"
+    },
+    "ge4": {
+        "pinyin": "gè",
+        "character_simplified": "['个', '各']",
+        "speaker": "FV3"
+    },
+    "shun3": {
+        "pinyin": "shǔn",
+        "character_simplified": "['吮']",
+        "speaker": "FV3"
+    },
+    "dui4": {
+        "pinyin": "duì",
+        "character_simplified": "['对', '队']",
+        "speaker": "MV2"
+    },
+    "jia3": {
+        "pinyin": "jiǎ",
+        "character_simplified": "['假', '甲']",
+        "speaker": "FV2"
+    },
+    "yong3": {
+        "pinyin": "yǒng",
+        "character_simplified": "['永', '勇', '涌']",
+        "speaker": "FV2"
+    },
+    "bi1": {
+        "pinyin": "bī",
+        "character_simplified": "['逼']",
+        "speaker": "FV2"
+    },
+    "fei1": {
+        "pinyin": "fēi",
+        "character_simplified": "['飞', '非', '菲']",
+        "speaker": "MV2"
+    },
+    "zei2": {
+        "pinyin": "zéi",
+        "character_simplified": "['贼']",
+        "speaker": "MV2"
+    },
+    "du2": {
+        "pinyin": "dú",
+        "character_simplified": "['读', '独', '毒']",
+        "speaker": "FV3"
+    },
+    "kong3": {
+        "pinyin": "kǒng",
+        "character_simplified": "['恐', '孔']",
+        "speaker": "MV2"
+    },
+    "cuo3": {
+        "pinyin": "cuǒ",
+        "character_simplified": "['脞']",
+        "speaker": "MV2"
+    },
+    "ke3": {
+        "pinyin": "kě",
+        "character_simplified": "['可', '渴']",
+        "speaker": "MV2"
+    },
+    "kuan3": {
+        "pinyin": "kuǎn",
+        "character_simplified": "['款']",
+        "speaker": "FV2"
+    },
+    "kou3": {
+        "pinyin": "kǒu",
+        "character_simplified": "['口']",
+        "speaker": "MV3"
+    },
+    "fen3": {
+        "pinyin": "fěn",
+        "character_simplified": "['粉']",
+        "speaker": "FV2"
+    },
+    "cui4": {
+        "pinyin": "cuì",
+        "character_simplified": "['脆', '翠']",
+        "speaker": "FV2"
+    },
+    "yuan3": {
+        "pinyin": "yuǎn",
+        "character_simplified": "['远']",
+        "speaker": "MV2"
+    },
+    "xi4": {
+        "pinyin": "xì",
+        "character_simplified": "['系', '细', '戏']",
+        "speaker": "FV2"
+    },
+    "ai3": {
+        "pinyin": "ǎi",
+        "character_simplified": "['矮', '蔼', '霭']",
+        "speaker": "FV3"
+    },
+    "wa3": {
+        "pinyin": "wǎ",
+        "character_simplified": "['瓦']",
+        "speaker": "FV2"
+    },
+    "tang3": {
+        "pinyin": "tǎng",
+        "character_simplified": "['躺', '淌']",
+        "speaker": "FV3"
+    },
+    "ying2": {
+        "pinyin": "yíng",
+        "character_simplified": "['营', '迎', '赢']",
+        "speaker": "MV2"
+    },
+    "min3": {
+        "pinyin": "mǐn",
+        "character_simplified": "['敏']",
+        "speaker": "MV2"
+    },
+    "yun4": {
+        "pinyin": "yùn",
+        "character_simplified": "['运']",
+        "speaker": "FV2"
+    },
+    "chua1": {
+        "pinyin": "chuā",
+        "character_simplified": "['欻']",
+        "speaker": "MV2"
+    },
+    "zhe1": {
+        "pinyin": "zhē",
+        "character_simplified": "['遮']",
+        "speaker": "FV2"
+    },
+    "yu4": {
+        "pinyin": "yù",
+        "character_simplified": "['玉', '遇', '预']",
+        "speaker": "FV2"
+    },
+    "zai3": {
+        "pinyin": "zǎi",
+        "character_simplified": "['载', '仔']",
+        "speaker": "MV2"
+    },
+    "dang1": {
+        "pinyin": "dāng",
+        "character_simplified": "['当', '裆']",
+        "speaker": "MV2"
+    },
+    "gou4": {
+        "pinyin": "gòu",
+        "character_simplified": "['够', '构', '购']",
+        "speaker": "FV2"
+    },
+    "zao4": {
+        "pinyin": "zào",
+        "character_simplified": "['造']",
+        "speaker": "FV2"
+    },
+    "lan4": {
+        "pinyin": "làn",
+        "character_simplified": "['烂', '滥']",
+        "speaker": "FV3"
+    },
+    "zan1": {
+        "pinyin": "zān",
+        "character_simplified": "['簪']",
+        "speaker": "FV2"
+    },
+    "lao1": {
+        "pinyin": "lāo",
+        "character_simplified": "['捞']",
+        "speaker": "FV3"
+    },
+    "fan2": {
+        "pinyin": "fán",
+        "character_simplified": "['凡', '烦', '繁']",
+        "speaker": "FV2"
+    },
+    "pao2": {
+        "pinyin": "páo",
+        "character_simplified": "['袍', '刨', '咆']",
+        "speaker": "FV3"
+    },
+    "zhua3": {
+        "pinyin": "zhuǎ",
+        "character_simplified": "['爪']",
+        "speaker": "FV2"
+    },
+    "cu1": {
+        "pinyin": "cū",
+        "character_simplified": "['粗']",
+        "speaker": "FV2"
+    },
+    "a1": {
+        "pinyin": "ā",
+        "character_simplified": "['阿', '啊']",
+        "speaker": "MV2"
+    },
+    "lv3": {
+        "pinyin": "lǚ",
+        "character_simplified": "['旅', '吕']",
+        "speaker": "MV3"
+    },
+    "liu3": {
+        "pinyin": "liǔ",
+        "character_simplified": "['柳']",
+        "speaker": "FV2"
+    },
+    "huan2": {
+        "pinyin": "huán",
+        "character_simplified": "['环', '还']",
+        "speaker": "FV2"
+    },
+    "wu2": {
+        "pinyin": "wú",
+        "character_simplified": "['无', '吴', '吾']",
+        "speaker": "MV2"
+    },
+    "heng4": {
+        "pinyin": "hèng",
+        "character_simplified": "['横']",
+        "speaker": "MV3"
+    },
+    "qiong1": {
+        "pinyin": "qiōng",
+        "character_simplified": "['銎']",
+        "speaker": "FV2"
+    },
+    "hong2": {
+        "pinyin": "hóng",
+        "character_simplified": "['红', '洪', '宏']",
+        "speaker": "MV2"
+    },
+    "yao2": {
+        "pinyin": "yáo",
+        "character_simplified": "['摇', '遥']",
+        "speaker": "MV2"
+    },
+    "nou4": {
+        "pinyin": "nòu",
+        "character_simplified": "['耨']",
+        "speaker": "MV3"
+    },
+    "xian3": {
+        "pinyin": "xiǎn",
+        "character_simplified": "['显', '险', '鲜']",
+        "speaker": "MV3"
+    },
+    "qian3": {
+        "pinyin": "qiǎn",
+        "character_simplified": "['浅']",
+        "speaker": "MV2"
+    },
+    "da3": {
+        "pinyin": "dǎ",
+        "character_simplified": "['打']",
+        "speaker": "MV3"
+    },
+    "qing1": {
+        "pinyin": "qīng",
+        "character_simplified": "['清', '轻', '青']",
+        "speaker": "MV2"
+    },
+    "yue1": {
+        "pinyin": "yuē",
+        "character_simplified": "['约', '曰']",
+        "speaker": "MV3"
+    },
+    "jing1": {
+        "pinyin": "jīng",
+        "character_simplified": "['经', '惊', '精']",
+        "speaker": "FV3"
+    },
+    "lang2": {
+        "pinyin": "láng",
+        "character_simplified": "['郎', '狼', '廊']",
+        "speaker": "MV2"
+    },
+    "ga1": {
+        "pinyin": "gā",
+        "character_simplified": "['嘎']",
+        "speaker": "MV2"
+    },
+    "xiong1": {
+        "pinyin": "xiōng",
+        "character_simplified": "['兄', '凶', '胸']",
+        "speaker": "MV2"
+    },
+    "wang2": {
+        "pinyin": "wáng",
+        "character_simplified": "['王', '亡']",
+        "speaker": "FV3"
+    },
+    "gun3": {
+        "pinyin": "gǔn",
+        "character_simplified": "['滚']",
+        "speaker": "FV2"
+    },
+    "yin2": {
+        "pinyin": "yín",
+        "character_simplified": "['银', '吟', '淫']",
+        "speaker": "MV3"
+    },
+    "zhan3": {
+        "pinyin": "zhǎn",
+        "character_simplified": "['展']",
+        "speaker": "FV2"
+    },
+    "ci1": {
+        "pinyin": "cī",
+        "character_simplified": "['差']",
+        "speaker": "MV2"
+    },
+    "se4": {
+        "pinyin": "sè",
+        "character_simplified": "['色', '塞', '涩']",
+        "speaker": "FV3"
+    },
+    "shan3": {
+        "pinyin": "shǎn",
+        "character_simplified": "['闪']",
+        "speaker": "FV3"
+    },
+    "bei4": {
+        "pinyin": "bèi",
+        "character_simplified": "['被', '备', '贝']",
+        "speaker": "FV2"
+    },
+    "dai4": {
+        "pinyin": "dài",
+        "character_simplified": "['带', '代', '袋']",
+        "speaker": "MV2"
+    },
+    "chu2": {
+        "pinyin": "chú",
+        "character_simplified": "['除', '厨']",
+        "speaker": "MV3"
+    },
+    "ting1": {
+        "pinyin": "tīng",
+        "character_simplified": "['听', '厅']",
+        "speaker": "FV2"
+    },
+    "qiu2": {
+        "pinyin": "qiú",
+        "character_simplified": "['求', '球']",
+        "speaker": "MV2"
+    },
+    "yi4": {
+        "pinyin": "yì",
+        "character_simplified": "['意', '义', '议']",
+        "speaker": "MV2"
+    },
+    "chan1": {
+        "pinyin": "chān",
+        "character_simplified": "['搀']",
+        "speaker": "MV2"
+    },
+    "gui1": {
+        "pinyin": "guī",
+        "character_simplified": "['规', '归', '龟']",
+        "speaker": "MV2"
+    },
+    "zhai1": {
+        "pinyin": "zhāi",
+        "character_simplified": "['摘']",
+        "speaker": "MV2"
+    },
+    "ming3": {
+        "pinyin": "mǐng",
+        "character_simplified": "['酩']",
+        "speaker": "MV2"
+    },
+    "you3": {
+        "pinyin": "yǒu",
+        "character_simplified": "['有', '友']",
+        "speaker": "FV2"
+    },
+    "dao3": {
+        "pinyin": "dǎo",
+        "character_simplified": "['倒', '导', '岛']",
+        "speaker": "FV2"
+    },
+    "shen2": {
+        "pinyin": "shén",
+        "character_simplified": "['神']",
+        "speaker": "FV3"
+    },
+    "ne2": {
+        "pinyin": "né",
+        "character_simplified": "['哪']",
+        "speaker": "FV2"
+    },
+    "miao4": {
+        "pinyin": "miào",
+        "character_simplified": "['妙', '庙']",
+        "speaker": "MV2"
+    },
+    "xue3": {
+        "pinyin": "xuě",
+        "character_simplified": "['雪']",
+        "speaker": "FV3"
+    },
+    "nei3": {
+        "pinyin": "něi",
+        "character_simplified": "['哪', '馁']",
+        "speaker": "MV3"
+    },
+    "xu4": {
+        "pinyin": "xù",
+        "character_simplified": "['续', '绪', '序']",
+        "speaker": "MV2"
+    },
+    "diao4": {
+        "pinyin": "diào",
+        "character_simplified": "['调', '掉', '吊']",
+        "speaker": "MV3"
+    },
+    "kun4": {
+        "pinyin": "kùn",
+        "character_simplified": "['困']",
+        "speaker": "MV3"
+    },
+    "kuang3": {
+        "pinyin": "kuǎng",
+        "character_simplified": "['夼']",
+        "speaker": "MV3"
+    },
+    "dian1": {
+        "pinyin": "diān",
+        "character_simplified": "['颠']",
+        "speaker": "MV3"
+    },
+    "tian3": {
+        "pinyin": "tiǎn",
+        "character_simplified": "['舔']",
+        "speaker": "FV2"
+    },
+    "hao4": {
+        "pinyin": "hào",
+        "character_simplified": "['好', '号', '浩']",
+        "speaker": "MV3"
+    },
+    "bao2": {
+        "pinyin": "báo",
+        "character_simplified": "['薄', '雹']",
+        "speaker": "MV2"
+    },
+    "tan2": {
+        "pinyin": "tán",
+        "character_simplified": "['谈', '弹', '坛']",
+        "speaker": "MV3"
+    },
+    "han1": {
+        "pinyin": "hān",
+        "character_simplified": "['酣']",
+        "speaker": "MV3"
+    },
+    "deng4": {
+        "pinyin": "dèng",
+        "character_simplified": "['瞪', '邓', '凳']",
+        "speaker": "FV2"
+    },
+    "pi1": {
+        "pinyin": "pī",
+        "character_simplified": "['批', '披', '匹']",
+        "speaker": "FV3"
+    },
+    "guang1": {
+        "pinyin": "guāng",
+        "character_simplified": "['光']",
+        "speaker": "MV3"
+    },
+    "ning2": {
+        "pinyin": "níng",
+        "character_simplified": "['宁', '凝', '拧']",
+        "speaker": "MV2"
+    },
+    "gei3": {
+        "pinyin": "gěi",
+        "character_simplified": "['给']",
+        "speaker": "FV2"
+    },
+    "ji4": {
+        "pinyin": "jì",
+        "character_simplified": "['记', '计', '既']",
+        "speaker": "FV3"
+    },
+    "tui3": {
+        "pinyin": "tuǐ",
+        "character_simplified": "['腿']",
+        "speaker": "MV3"
+    },
+    "sang1": {
+        "pinyin": "sāng",
+        "character_simplified": "['桑', '丧']",
+        "speaker": "MV2"
+    },
+    "si3": {
+        "pinyin": "sǐ",
+        "character_simplified": "['死']",
+        "speaker": "FV2"
+    },
+    "gen1": {
+        "pinyin": "gēn",
+        "character_simplified": "['跟', '根']",
+        "speaker": "MV2"
+    },
+    "shuang3": {
+        "pinyin": "shuǎng",
+        "character_simplified": "['爽']",
+        "speaker": "FV2"
+    },
+    "qiang2": {
+        "pinyin": "qiáng",
+        "character_simplified": "['强', '墙']",
+        "speaker": "MV3"
+    },
+    "hang1": {
+        "pinyin": "hāng",
+        "character_simplified": "['夯']",
+        "speaker": "FV3"
+    },
+    "qia3": {
+        "pinyin": "qiǎ",
+        "character_simplified": "['卡']",
+        "speaker": "FV2"
+    },
+    "chun2": {
+        "pinyin": "chún",
+        "character_simplified": "['纯', '唇']",
+        "speaker": "FV2"
+    },
+    "lian2": {
+        "pinyin": "lián",
+        "character_simplified": "['连', '联', '怜']",
+        "speaker": "MV3"
+    },
+    "ru3": {
+        "pinyin": "rǔ",
+        "character_simplified": "['辱']",
+        "speaker": "FV2"
+    },
+    "diu1": {
+        "pinyin": "diū",
+        "character_simplified": "['丢']",
+        "speaker": "FV3"
+    },
+    "ku4": {
+        "pinyin": "kù",
+        "character_simplified": "['库', '裤', '酷']",
+        "speaker": "FV3"
+    },
+    "cha3": {
+        "pinyin": "chǎ",
+        "character_simplified": "['杈']",
+        "speaker": "FV3"
+    },
+    "gong3": {
+        "pinyin": "gǒng",
+        "character_simplified": "['拱']",
+        "speaker": "FV3"
+    },
+    "pin2": {
+        "pinyin": "pín",
+        "character_simplified": "['贫', '频', '嫔']",
+        "speaker": "FV2"
+    },
+    "lin1": {
+        "pinyin": "līn",
+        "character_simplified": "['拎']",
+        "speaker": "FV2"
+    },
+    "chuang2": {
+        "pinyin": "chuáng",
+        "character_simplified": "['床']",
+        "speaker": "MV2"
+    },
+    "shui2": {
+        "pinyin": "shuí",
+        "character_simplified": "['谁']",
+        "speaker": "FV3"
+    },
+    "xiang2": {
+        "pinyin": "xiáng",
+        "character_simplified": "['降', '祥', '详']",
+        "speaker": "FV3"
+    },
+    "mao3": {
+        "pinyin": "mǎo",
+        "character_simplified": "['卯']",
+        "speaker": "MV3"
+    },
+    "qu1": {
+        "pinyin": "qū",
+        "character_simplified": "['区', '曲', '屈']",
+        "speaker": "FV3"
+    },
+    "guan3": {
+        "pinyin": "guǎn",
+        "character_simplified": "['管', '馆']",
+        "speaker": "MV3"
+    },
+    "fa1": {
+        "pinyin": "fā",
+        "character_simplified": "['发']",
+        "speaker": "FV2"
+    },
+    "nuan3": {
+        "pinyin": "nuǎn",
+        "character_simplified": "['暖']",
+        "speaker": "MV2"
+    },
+    "lei4": {
+        "pinyin": "lèi",
+        "character_simplified": "['类', '泪', '累']",
+        "speaker": "FV3"
+    },
+    "bi2": {
+        "pinyin": "bí",
+        "character_simplified": "['鼻']",
+        "speaker": "MV2"
+    },
+    "fei2": {
+        "pinyin": "féi",
+        "character_simplified": "['肥']",
+        "speaker": "FV2"
+    },
+    "hua2": {
+        "pinyin": "huá",
+        "character_simplified": "['华', '划', '滑']",
+        "speaker": "FV3"
+    },
+    "an2": {
+        "pinyin": "án",
+        "character_simplified": "['玵']",
+        "speaker": "FV3"
+    },
+    "sa1": {
+        "pinyin": "sā",
+        "character_simplified": "['撒']",
+        "speaker": "MV2"
+    },
+    "he2": {
+        "pinyin": "hé",
+        "character_simplified": "['和', '河', '何']",
+        "speaker": "FV3"
+    },
+    "gu3": {
+        "pinyin": "gǔ",
+        "character_simplified": "['古', '谷', '骨']",
+        "speaker": "MV2"
+    },
+    "rong2": {
+        "pinyin": "róng",
+        "character_simplified": "['容', '荣']",
+        "speaker": "MV2"
+    },
+    "zen3": {
+        "pinyin": "zěn",
+        "character_simplified": "['怎']",
+        "speaker": "MV2"
+    },
+    "bian3": {
+        "pinyin": "biǎn",
+        "character_simplified": "['扁']",
+        "speaker": "MV3"
+    },
+    "zhe2": {
+        "pinyin": "zhé",
+        "character_simplified": "['折', '哲']",
+        "speaker": "MV2"
+    },
+    "qin3": {
+        "pinyin": "qǐn",
+        "character_simplified": "['寝']",
+        "speaker": "FV2"
+    },
+    "bie4": {
+        "pinyin": "biè",
+        "character_simplified": "['别']",
+        "speaker": "MV2"
+    },
+    "tie1": {
+        "pinyin": "tiē",
+        "character_simplified": "['贴', '帖']",
+        "speaker": "MV3"
+    },
+    "en3": {
+        "pinyin": "ěn",
+        "character_simplified": "['峎']",
+        "speaker": "FV3"
+    },
+    "ying1": {
+        "pinyin": "yīng",
+        "character_simplified": "['应', '英', '鹰']",
+        "speaker": "FV2"
+    },
+    "ping1": {
+        "pinyin": "pīng",
+        "character_simplified": "['乒']",
+        "speaker": "FV3"
+    },
+    "cu2": {
+        "pinyin": "cú",
+        "character_simplified": "['徂']",
+        "speaker": "MV2"
+    },
+    "sui3": {
+        "pinyin": "suǐ",
+        "character_simplified": "['髓']",
+        "speaker": "FV3"
+    },
+    "mang2": {
+        "pinyin": "máng",
+        "character_simplified": "['忙', '盲', '茫']",
+        "speaker": "FV3"
+    },
+    "mou1": {
+        "pinyin": "mōu",
+        "character_simplified": "['哞']",
+        "speaker": "MV3"
+    },
+    "zan2": {
+        "pinyin": "zán",
+        "character_simplified": "['咱']",
+        "speaker": "MV2"
+    },
+    "fan1": {
+        "pinyin": "fān",
+        "character_simplified": "['翻', '番', '帆']",
+        "speaker": "MV2"
+    },
+    "chi1": {
+        "pinyin": "chī",
+        "character_simplified": "['吃']",
+        "speaker": "MV3"
+    },
+    "gua3": {
+        "pinyin": "guǎ",
+        "character_simplified": "['寡']",
+        "speaker": "FV2"
+    },
+    "qi2": {
+        "pinyin": "qí",
+        "character_simplified": "['其', '奇', '齐']",
+        "speaker": "FV3"
+    },
+    "wu1": {
+        "pinyin": "wū",
+        "character_simplified": "['屋', '乌', '巫']",
+        "speaker": "FV2"
+    },
+    "huan1": {
+        "pinyin": "huān",
+        "character_simplified": "['欢']",
+        "speaker": "MV2"
+    },
+    "shou4": {
+        "pinyin": "shòu",
+        "character_simplified": "['受', '授', '瘦']",
+        "speaker": "FV3"
+    },
+    "she2": {
+        "pinyin": "shé",
+        "character_simplified": "['蛇', '舌', '折']",
+        "speaker": "FV3"
+    },
+    "zuan1": {
+        "pinyin": "zuān",
+        "character_simplified": "['钻']",
+        "speaker": "FV2"
+    },
+    "a2": {
+        "pinyin": "á",
+        "character_simplified": "['啊']",
+        "speaker": "FV2"
+    },
+    "lun4": {
+        "pinyin": "lùn",
+        "character_simplified": "['论']",
+        "speaker": "FV3"
+    },
+    "zuo4": {
+        "pinyin": "zuò",
+        "character_simplified": "['作', '做', '坐']",
+        "speaker": "FV2"
+    },
+    "luo1": {
+        "pinyin": "luō",
+        "character_simplified": "['捋']",
+        "speaker": "FV3"
+    },
+    "zun1": {
+        "pinyin": "zūn",
+        "character_simplified": "['尊']",
+        "speaker": "FV2"
+    },
+    "zhou4": {
+        "pinyin": "zhòu",
+        "character_simplified": "['皱', '宙']",
+        "speaker": "FV2"
+    },
+    "tu3": {
+        "pinyin": "tǔ",
+        "character_simplified": "['土', '吐']",
+        "speaker": "FV3"
+    },
+    "yan4": {
+        "pinyin": "yàn",
+        "character_simplified": "['验', '燕', '厌']",
+        "speaker": "FV2"
+    },
+    "dou1": {
+        "pinyin": "dōu",
+        "character_simplified": "['都', '兜']",
+        "speaker": "FV2"
+    },
+    "yao1": {
+        "pinyin": "yāo",
+        "character_simplified": "['要', '腰', '妖']",
+        "speaker": "FV2"
+    },
+    "zong1": {
+        "pinyin": "zōng",
+        "character_simplified": "['宗', '踪']",
+        "speaker": "MV2"
+    },
+    "mu4": {
+        "pinyin": "mù",
+        "character_simplified": "['目', '木', '幕']",
+        "speaker": "FV2"
+    },
+    "quan3": {
+        "pinyin": "quǎn",
+        "character_simplified": "['犬']",
+        "speaker": "FV2"
+    },
+    "zui3": {
+        "pinyin": "zuǐ",
+        "character_simplified": "['嘴']",
+        "speaker": "MV2"
+    },
+    "juan3": {
+        "pinyin": "juǎn",
+        "character_simplified": "['卷']",
+        "speaker": "MV3"
+    },
+    "hong1": {
+        "pinyin": "hōng",
+        "character_simplified": "['轰', '烘']",
+        "speaker": "FV2"
+    },
+    "qiong2": {
+        "pinyin": "qióng",
+        "character_simplified": "['穷']",
+        "speaker": "MV2"
+    },
+    "sheng3": {
+        "pinyin": "shěng",
+        "character_simplified": "['省']",
+        "speaker": "FV2"
+    },
+    "liang4": {
+        "pinyin": "liàng",
+        "character_simplified": "['量', '亮', '辆']",
+        "speaker": "FV3"
+    },
+    "li4": {
+        "pinyin": "lì",
+        "character_simplified": "['力', '利', '立']",
+        "speaker": "FV2"
+    },
+    "gang3": {
+        "pinyin": "gǎng",
+        "character_simplified": "['港', '岗']",
+        "speaker": "FV2"
+    },
+    "jiu1": {
+        "pinyin": "jiū",
+        "character_simplified": "['究']",
+        "speaker": "FV2"
+    },
+    "nang3": {
+        "pinyin": "nǎng",
+        "character_simplified": "['攮']",
+        "speaker": "FV3"
+    },
+    "bin1": {
+        "pinyin": "bīn",
+        "character_simplified": "['宾', '斌', '滨']",
+        "speaker": "FV3"
+    },
+    "xing2": {
+        "pinyin": "xíng",
+        "character_simplified": "['行', '形', '型']",
+        "speaker": "FV3"
+    },
+    "qing2": {
+        "pinyin": "qíng",
+        "character_simplified": "['情', '晴']",
+        "speaker": "FV2"
+    },
+    "cai4": {
+        "pinyin": "cài",
+        "character_simplified": "['菜']",
+        "speaker": "FV2"
+    },
+    "zheng3": {
+        "pinyin": "zhěng",
+        "character_simplified": "['整']",
+        "speaker": "MV2"
+    },
+    "pu2": {
+        "pinyin": "pú",
+        "character_simplified": "['仆', '蒲', '葡']",
+        "speaker": "FV3"
+    },
+    "cao3": {
+        "pinyin": "cǎo",
+        "character_simplified": "['草']",
+        "speaker": "MV2"
+    },
+    "xiong2": {
+        "pinyin": "xióng",
+        "character_simplified": "['雄', '熊']",
+        "speaker": "FV2"
+    },
+    "lang1": {
+        "pinyin": "lāng",
+        "character_simplified": "['啷']",
+        "speaker": "FV2"
+    },
+    "ga2": {
+        "pinyin": "gá",
+        "character_simplified": "['嘎']",
+        "speaker": "FV2"
+    },
+    "er3": {
+        "pinyin": "ěr",
+        "character_simplified": "['尔', '耳']",
+        "speaker": "FV1"
+    },
+    "hen3": {
+        "pinyin": "hěn",
+        "character_simplified": "['很', '狠']",
+        "speaker": "MV1"
+    },
+    "yin1": {
+        "pinyin": "yīn",
+        "character_simplified": "['因', '音', '阴']",
+        "speaker": "MV1"
+    },
+    "dia3": {
+        "pinyin": "diǎ",
+        "character_simplified": "['嗲']",
+        "speaker": "MV1"
+    },
+    "chu1": {
+        "pinyin": "chū",
+        "character_simplified": "['出', '初']",
+        "speaker": "MV1"
+    },
+    "han2": {
+        "pinyin": "hán",
+        "character_simplified": "['寒', '韩', '含']",
+        "speaker": "MV1"
+    },
+    "tan1": {
+        "pinyin": "tān",
+        "character_simplified": "['滩', '贪', '摊']",
+        "speaker": "MV1"
+    },
+    "tao4": {
+        "pinyin": "tào",
+        "character_simplified": "['套']",
+        "speaker": "MV1"
+    },
+    "dong1": {
+        "pinyin": "dōng",
+        "character_simplified": "['东', '冬']",
+        "speaker": "FV1"
+    },
+    "duan1": {
+        "pinyin": "duān",
+        "character_simplified": "['端']",
+        "speaker": "MV1"
+    },
+    "shen1": {
+        "pinyin": "shēn",
+        "character_simplified": "['身', '深', '参']",
+        "speaker": "FV1"
+    },
+    "zha4": {
+        "pinyin": "zhà",
+        "character_simplified": "['炸']",
+        "speaker": "FV1"
+    },
+    "men4": {
+        "pinyin": "mèn",
+        "character_simplified": "['闷']",
+        "speaker": "MV1"
+    },
+    "hui3": {
+        "pinyin": "huǐ",
+        "character_simplified": "['毁', '悔']",
+        "speaker": "MV1"
+    },
+    "huang3": {
+        "pinyin": "huǎng",
+        "character_simplified": "['谎', '晃']",
+        "speaker": "FV1"
+    },
+    "hang2": {
+        "pinyin": "háng",
+        "character_simplified": "['航', '杭', '行']",
+        "speaker": "FV1"
+    },
+    "qiang1": {
+        "pinyin": "qiāng",
+        "character_simplified": "['枪']",
+        "speaker": "MV1"
+    },
+    "pi2": {
+        "pinyin": "pí",
+        "character_simplified": "['皮', '疲', '脾']",
+        "speaker": "FV1"
+    },
+    "qu2": {
+        "pinyin": "qú",
+        "character_simplified": "['渠']",
+        "speaker": "FV1"
+    },
+    "weng4": {
+        "pinyin": "wèng",
+        "character_simplified": "['翁']",
+        "speaker": "MV1"
+    },
+    "xiang1": {
+        "pinyin": "xiāng",
+        "character_simplified": "['相', '香', '乡']",
+        "speaker": "FV1"
+    },
+    "long2": {
+        "pinyin": "lóng",
+        "character_simplified": "['龙', '隆', '笼']",
+        "speaker": "FV1"
+    },
+    "ti3": {
+        "pinyin": "tǐ",
+        "character_simplified": "['体']",
+        "speaker": "FV1"
+    },
+    "luan2": {
+        "pinyin": "luán",
+        "character_simplified": "['挛']",
+        "speaker": "MV1"
+    },
+    "liao4": {
+        "pinyin": "liào",
+        "character_simplified": "['料']",
+        "speaker": "MV1"
+    },
+    "xiu1": {
+        "pinyin": "xiū",
+        "character_simplified": "['修', '休', '羞']",
+        "speaker": "FV1"
+    },
+    "wei4": {
+        "pinyin": "wèi",
+        "character_simplified": "['为', '位', '未']",
+        "speaker": "MV1"
+    },
+    "he1": {
+        "pinyin": "hē",
+        "character_simplified": "['喝', '呵']",
+        "speaker": "FV1"
+    },
+    "re4": {
+        "pinyin": "rè",
+        "character_simplified": "['热']",
+        "speaker": "FV1"
+    },
+    "pei4": {
+        "pinyin": "pèi",
+        "character_simplified": "['配', '佩', '沛']",
+        "speaker": "FV1"
+    },
+    "an1": {
+        "pinyin": "ān",
+        "character_simplified": "['安', '庵', '鞍']",
+        "speaker": "FV1"
+    },
+    "ao4": {
+        "pinyin": "ào",
+        "character_simplified": "['奥', '傲', '澳']",
+        "speaker": "FV1"
+    },
+    "hua1": {
+        "pinyin": "huā",
+        "character_simplified": "['花']",
+        "speaker": "FV1"
+    },
+    "shua3": {
+        "pinyin": "shuǎ",
+        "character_simplified": "['耍']",
+        "speaker": "MV1"
+    },
+    "chi2": {
+        "pinyin": "chí",
+        "character_simplified": "['持', '迟', '池']",
+        "speaker": "MV1"
+    },
+    "mou2": {
+        "pinyin": "móu",
+        "character_simplified": "['谋', '牟', '眸']",
+        "speaker": "MV1"
+    },
+    "ta1": {
+        "pinyin": "tā",
+        "character_simplified": "['他', '她', '它']",
+        "speaker": "MV1"
+    },
+    "mang1": {
+        "pinyin": "māng",
+        "character_simplified": "['牤']",
+        "speaker": "FV1"
+    },
+    "fang3": {
+        "pinyin": "fǎng",
+        "character_simplified": "['仿', '访']",
+        "speaker": "FV1"
+    },
+    "ping2": {
+        "pinyin": "píng",
+        "character_simplified": "['平', '评', '凭']",
+        "speaker": "FV1"
+    },
+    "na4": {
+        "pinyin": "nà",
+        "character_simplified": "['那', '纳', '捺']",
+        "speaker": "MV1"
+    },
+    "san1": {
+        "pinyin": "sān",
+        "character_simplified": "['三']",
+        "speaker": "FV1"
+    },
+    "sao4": {
+        "pinyin": "sào",
+        "character_simplified": "['臊', '扫']",
+        "speaker": "FV1"
+    },
+    "zeng4": {
+        "pinyin": "zèng",
+        "character_simplified": "['赠']",
+        "speaker": "MV1"
+    },
+    "jian3": {
+        "pinyin": "jiǎn",
+        "character_simplified": "['简', '检', '减']",
+        "speaker": "MV1"
+    },
+    "shuai4": {
+        "pinyin": "shuài",
+        "character_simplified": "['率', '帅']",
+        "speaker": "FV1"
+    },
+    "qi1": {
+        "pinyin": "qī",
+        "character_simplified": "['七', '期', '妻']",
+        "speaker": "FV1"
+    },
+    "she1": {
+        "pinyin": "shē",
+        "character_simplified": "['奢']",
+        "speaker": "FV1"
+    },
+    "luo2": {
+        "pinyin": "luó",
+        "character_simplified": "['罗']",
+        "speaker": "FV1"
+    },
+    "pu1": {
+        "pinyin": "pū",
+        "character_simplified": "['扑', '铺', '噗']",
+        "speaker": "FV1"
+    },
+    "zhuai4": {
+        "pinyin": "zhuài",
+        "character_simplified": "['拽']",
+        "speaker": "MV1"
+    },
+    "ju4": {
+        "pinyin": "jù",
+        "character_simplified": "['句', '据', '具']",
+        "speaker": "FV1"
+    },
+    "xing1": {
+        "pinyin": "xīng",
+        "character_simplified": "['星', '兴']",
+        "speaker": "FV1"
+    },
+    "ran3": {
+        "pinyin": "rǎn",
+        "character_simplified": "['染']",
+        "speaker": "MV1"
+    },
+    "shai1": {
+        "pinyin": "shāi",
+        "character_simplified": "['筛']",
+        "speaker": "FV1"
+    },
+    "ding3": {
+        "pinyin": "dǐng",
+        "character_simplified": "['顶', '鼎']",
+        "speaker": "FV1"
+    },
+    "rang2": {
+        "pinyin": "ráng",
+        "character_simplified": "['瓤']",
+        "speaker": "FV1"
+    },
+    "chuai4": {
+        "pinyin": "chuài",
+        "character_simplified": "['踹']",
+        "speaker": "FV1"
+    },
+    "meng4": {
+        "pinyin": "mèng",
+        "character_simplified": "['梦', '孟']",
+        "speaker": "MV1"
+    },
+    "ren2": {
+        "pinyin": "rén",
+        "character_simplified": "['人', '仁']",
+        "speaker": "MV1"
+    },
+    "nve4": {
+        "pinyin": "nvè",
+        "character_simplified": "['虐']",
+        "speaker": "MV1"
+    },
+    "di2": {
+        "pinyin": "dí",
+        "character_simplified": "['敌', '迪', '狄']",
+        "speaker": "FV1"
+    },
+    "lie4": {
+        "pinyin": "liè",
+        "character_simplified": "['烈', '列', '裂']",
+        "speaker": "FV1"
+    },
+    "hai3": {
+        "pinyin": "hǎi",
+        "character_simplified": "['海']",
+        "speaker": "MV1"
+    },
+    "zang1": {
+        "pinyin": "zāng",
+        "character_simplified": "['脏']",
+        "speaker": "FV1"
+    },
+    "wan4": {
+        "pinyin": "wàn",
+        "character_simplified": "['万', '腕']",
+        "speaker": "MV1"
+    },
+    "hun2": {
+        "pinyin": "hún",
+        "character_simplified": "['魂', '混', '浑']",
+        "speaker": "MV1"
+    },
+    "tun1": {
+        "pinyin": "tūn",
+        "character_simplified": "['吞']",
+        "speaker": "MV1"
+    },
+    "tuo4": {
+        "pinyin": "tuò",
+        "character_simplified": "['唾']",
+        "speaker": "MV1"
+    },
+    "ye3": {
+        "pinyin": "yě",
+        "character_simplified": "['也', '野']",
+        "speaker": "FV1"
+    },
+    "rui2": {
+        "pinyin": "ruí",
+        "character_simplified": "['蕤']",
+        "speaker": "MV1"
+    },
+    "pou3": {
+        "pinyin": "pǒu",
+        "character_simplified": "['掊']",
+        "speaker": "FV1"
+    },
+    "mai4": {
+        "pinyin": "mài",
+        "character_simplified": "['卖', '麦', '迈']",
+        "speaker": "MV1"
+    },
+    "guai1": {
+        "pinyin": "guāi",
+        "character_simplified": "['乖']",
+        "speaker": "MV1"
+    },
+    "pian3": {
+        "pinyin": "piǎn",
+        "character_simplified": "['谝']",
+        "speaker": "MV1"
+    },
+    "du1": {
+        "pinyin": "dū",
+        "character_simplified": "['都', '督', '嘟']",
+        "speaker": "FV1"
+    },
+    "pao1": {
+        "pinyin": "pāo",
+        "character_simplified": "['抛']",
+        "speaker": "FV1"
+    },
+    "lao2": {
+        "pinyin": "láo",
+        "character_simplified": "['劳', '牢', '唠']",
+        "speaker": "FV1"
+    },
+    "pan4": {
+        "pinyin": "pàn",
+        "character_simplified": "['判', '叛', '盼']",
+        "speaker": "FV1"
+    },
+    "ei1": {
+        "pinyin": "ēi",
+        "character_simplified": "['诶']",
+        "speaker": "FV1"
+    },
+    "bing1": {
+        "pinyin": "bīng",
+        "character_simplified": "['兵', '冰']",
+        "speaker": "FV1"
+    },
+    "sun1": {
+        "pinyin": "sūn",
+        "character_simplified": "['孙']",
+        "speaker": "FV1"
+    },
+    "suo4": {
+        "pinyin": "suò",
+        "character_simplified": "['逤']",
+        "speaker": "FV1"
+    },
+    "song1": {
+        "pinyin": "sōng",
+        "character_simplified": "['松', '嵩']",
+        "speaker": "FV1"
+    },
+    "xuan3": {
+        "pinyin": "xuǎn",
+        "character_simplified": "['选']",
+        "speaker": "MV1"
+    },
+    "rou4": {
+        "pinyin": "ròu",
+        "character_simplified": "['肉']",
+        "speaker": "MV1"
+    },
+    "suan1": {
+        "pinyin": "suān",
+        "character_simplified": "['酸']",
+        "speaker": "MV1"
+    },
+    "zhuang3": {
+        "pinyin": "zhuǎng",
+        "character_simplified": "['奘']",
+        "speaker": "FV1"
+    },
+    "wang1": {
+        "pinyin": "wāng",
+        "character_simplified": "['汪']",
+        "speaker": "FV1"
+    },
+    "kua4": {
+        "pinyin": "kuà",
+        "character_simplified": "['跨']",
+        "speaker": "FV1"
+    },
+    "zhong1": {
+        "pinyin": "zhōng",
+        "character_simplified": "['中', '终', '钟']",
+        "speaker": "MV1"
+    },
+    "da4": {
+        "pinyin": "dà",
+        "character_simplified": "['大']",
+        "speaker": "FV1"
+    },
+    "jun1": {
+        "pinyin": "jūn",
+        "character_simplified": "['菌']",
+        "speaker": "MV1"
+    },
+    "zhuan1": {
+        "pinyin": "zhuān",
+        "character_simplified": "['专', '砖']",
+        "speaker": "FV1"
+    },
+    "xian4": {
+        "pinyin": "xiàn",
+        "character_simplified": "['现', '线', '县']",
+        "speaker": "FV1"
+    },
+    "xiao1": {
+        "pinyin": "xiāo",
+        "character_simplified": "['消', '萧', '销']",
+        "speaker": "FV1"
+    },
+    "shuan1": {
+        "pinyin": "shuān",
+        "character_simplified": "['栓']",
+        "speaker": "MV1"
+    },
+    "ceng1": {
+        "pinyin": "cēng",
+        "character_simplified": "['噌']",
+        "speaker": "FV1"
+    },
+    "lv4": {
+        "pinyin": "lǜ",
+        "character_simplified": "['绿', '律', '虑']",
+        "speaker": "FV1"
+    },
+    "sai4": {
+        "pinyin": "sài",
+        "character_simplified": "['赛', '塞']",
+        "speaker": "MV1"
+    },
+    "zu1": {
+        "pinyin": "zū",
+        "character_simplified": "['租']",
+        "speaker": "MV1"
+    },
+    "lan3": {
+        "pinyin": "lǎn",
+        "character_simplified": "['懒', '览', '揽']",
+        "speaker": "MV1"
+    },
+    "tang4": {
+        "pinyin": "tàng",
+        "character_simplified": "['趟', '烫']",
+        "speaker": "MV1"
+    },
+    "ai4": {
+        "pinyin": "ài",
+        "character_simplified": "['爱', '艾', '唉']",
+        "speaker": "MV1"
+    },
+    "piao2": {
+        "pinyin": "piáo",
+        "character_simplified": "['嫖']",
+        "speaker": "FV1"
+    },
+    "pen1": {
+        "pinyin": "pēn",
+        "character_simplified": "['喷']",
+        "speaker": "MV1"
+    },
+    "niang4": {
+        "pinyin": "niàng",
+        "character_simplified": "['酿']",
+        "speaker": "MV1"
+    },
+    "kou4": {
+        "pinyin": "kòu",
+        "character_simplified": "['扣', '寇', '叩']",
+        "speaker": "FV1"
+    },
+    "wen1": {
+        "pinyin": "wēn",
+        "character_simplified": "['温', '瘟']",
+        "speaker": "FV1"
+    },
+    "ge3": {
+        "pinyin": "gě",
+        "character_simplified": "['葛']",
+        "speaker": "MV1"
+    },
+    "lou4": {
+        "pinyin": "lòu",
+        "character_simplified": "['露', '漏', '陋']",
+        "speaker": "MV1"
+    },
+    "shun4": {
+        "pinyin": "shùn",
+        "character_simplified": "['顺', '瞬']",
+        "speaker": "MV1"
+    },
+    "shuo1": {
+        "pinyin": "shuō",
+        "character_simplified": "['说']",
+        "speaker": "MV1"
+    },
+    "kan3": {
+        "pinyin": "kǎn",
+        "character_simplified": "['砍', '坎', '槛']",
+        "speaker": "FV1"
+    },
+    "po2": {
+        "pinyin": "pó",
+        "character_simplified": "['婆']",
+        "speaker": "MV1"
+    },
+    "ling4": {
+        "pinyin": "lìng",
+        "character_simplified": "['令', '另']",
+        "speaker": "MV1"
+    },
+    "e3": {
+        "pinyin": "ě",
+        "character_simplified": "['恶']",
+        "speaker": "MV1"
+    },
+    "huo3": {
+        "pinyin": "huǒ",
+        "character_simplified": "['火', '伙']",
+        "speaker": "FV1"
+    },
+    "kui2": {
+        "pinyin": "kuí",
+        "character_simplified": "['魁']",
+        "speaker": "FV1"
+    },
+    "tai4": {
+        "pinyin": "tài",
+        "character_simplified": "['太', '态', '泰']",
+        "speaker": "FV1"
+    },
+    "pie3": {
+        "pinyin": "piě",
+        "character_simplified": "['撇']",
+        "speaker": "MV1"
+    },
+    "feng2": {
+        "pinyin": "féng",
+        "character_simplified": "['冯', '缝', '逢']",
+        "speaker": "FV1"
+    },
+    "nan4": {
+        "pinyin": "nàn",
+        "character_simplified": "['难']",
+        "speaker": "FV1"
+    },
+    "nao1": {
+        "pinyin": "nāo",
+        "character_simplified": "['孬']",
+        "speaker": "FV1"
+    },
+    "rao2": {
+        "pinyin": "ráo",
+        "character_simplified": "['饶']",
+        "speaker": "FV1"
+    },
+    "qun2": {
+        "pinyin": "qún",
+        "character_simplified": "['群', '裙']",
+        "speaker": "FV1"
+    },
+    "yang4": {
+        "pinyin": "yàng",
+        "character_simplified": "['样', '漾', '恙']",
+        "speaker": "MV1"
+    },
+    "hou1": {
+        "pinyin": "hōu",
+        "character_simplified": "['齁']",
+        "speaker": "FV1"
+    },
+    "tou2": {
+        "pinyin": "tóu",
+        "character_simplified": "['头', '投']",
+        "speaker": "FV1"
+    },
+    "zhi2": {
+        "pinyin": "zhí",
+        "character_simplified": "['直', '职', '值']",
+        "speaker": "FV1"
+    },
+    "qie1": {
+        "pinyin": "qiē",
+        "character_simplified": "['切']",
+        "speaker": "FV1"
+    },
+    "nang4": {
+        "pinyin": "nàng",
+        "character_simplified": "['齉']",
+        "speaker": "MV1"
+    },
+    "juan4": {
+        "pinyin": "juàn",
+        "character_simplified": "['卷', '圈']",
+        "speaker": "FV1"
+    },
+    "jiao2": {
+        "pinyin": "jiáo",
+        "character_simplified": "['嚼']",
+        "speaker": "FV1"
+    },
+    "liang3": {
+        "pinyin": "liǎng",
+        "character_simplified": "['两']",
+        "speaker": "MV1"
+    },
+    "tu4": {
+        "pinyin": "tù",
+        "character_simplified": "['吐', '兔']",
+        "speaker": "MV1"
+    },
+    "shou3": {
+        "pinyin": "shǒu",
+        "character_simplified": "['手', '首', '守']",
+        "speaker": "MV1"
+    },
+    "sui4": {
+        "pinyin": "suì",
+        "character_simplified": "['岁', '碎']",
+        "speaker": "MV1"
+    },
+    "le4": {
+        "pinyin": "lè",
+        "character_simplified": "['乐', '勒']",
+        "speaker": "MV1"
+    },
+    "en4": {
+        "pinyin": "èn",
+        "character_simplified": "['摁']",
+        "speaker": "MV1"
+    },
+    "lai2": {
+        "pinyin": "lái",
+        "character_simplified": "['来', '莱', '涞']",
+        "speaker": "MV1"
+    },
+    "pai1": {
+        "pinyin": "pāi",
+        "character_simplified": "['拍']",
+        "speaker": "MV1"
+    },
+    "pa4": {
+        "pinyin": "pà",
+        "character_simplified": "['怕', '帕']",
+        "speaker": "FV1"
+    },
+    "bian4": {
+        "pinyin": "biàn",
+        "character_simplified": "['便', '变', '遍']",
+        "speaker": "FV1"
+    },
+    "biao1": {
+        "pinyin": "biāo",
+        "character_simplified": "['标']",
+        "speaker": "FV1"
+    },
+    "lei3": {
+        "pinyin": "lěi",
+        "character_simplified": "['垒', '磊', '蕾']",
+        "speaker": "MV1"
+    },
+    "guan4": {
+        "pinyin": "guàn",
+        "character_simplified": "['观', '惯']",
+        "speaker": "FV1"
+    },
+    "mao4": {
+        "pinyin": "mào",
+        "character_simplified": "['冒', '貌', '帽']",
+        "speaker": "FV1"
+    },
+    "man1": {
+        "pinyin": "mān",
+        "character_simplified": "['颟']",
+        "speaker": "FV1"
+    },
+    "ni2": {
+        "pinyin": "ní",
+        "character_simplified": "['尼', '泥', '倪']",
+        "speaker": "MV1"
+    },
+    "gong4": {
+        "pinyin": "gòng",
+        "character_simplified": "['共', '供', '贡']",
+        "speaker": "MV1"
+    },
+    "cha4": {
+        "pinyin": "chà",
+        "character_simplified": "['差']",
+        "speaker": "MV1"
+    },
+    "ku3": {
+        "pinyin": "kǔ",
+        "character_simplified": "['苦']",
+        "speaker": "MV1"
+    },
+    "tui4": {
+        "pinyin": "tuì",
+        "character_simplified": "['退']",
+        "speaker": "FV1"
+    },
+    "ji3": {
+        "pinyin": "jǐ",
+        "character_simplified": "['几', '己', '挤']",
+        "speaker": "MV1"
+    },
+    "wai1": {
+        "pinyin": "wāi",
+        "character_simplified": "['歪']",
+        "speaker": "FV1"
+    },
+    "zhu1": {
+        "pinyin": "zhū",
+        "character_simplified": "['朱', '珠', '诸']",
+        "speaker": "FV1"
+    },
+    "hao3": {
+        "pinyin": "hǎo",
+        "character_simplified": "['好', '郝']",
+        "speaker": "FV1"
+    },
+    "teng1": {
+        "pinyin": "tēng",
+        "character_simplified": "['膯']",
+        "speaker": "FV1"
+    },
+    "nei4": {
+        "pinyin": "nèi",
+        "character_simplified": "['内', '那']",
+        "speaker": "FV1"
+    },
+    "xue4": {
+        "pinyin": "xuè",
+        "character_simplified": "['血']",
+        "speaker": "MV1"
+    },
+    "kuang4": {
+        "pinyin": "kuàng",
+        "character_simplified": "['况', '矿']",
+        "speaker": "FV1"
+    },
+    "kun3": {
+        "pinyin": "kǔn",
+        "character_simplified": "['捆']",
+        "speaker": "FV1"
+    },
+    "diao3": {
+        "pinyin": "diǎo",
+        "character_simplified": "['屌']",
+        "speaker": "FV1"
+    },
+    "chuan1": {
+        "pinyin": "chuān",
+        "character_simplified": "['穿', '川']",
+        "speaker": "MV1"
+    },
+    "xia4": {
+        "pinyin": "xià",
+        "character_simplified": "['下', '夏', '吓']",
+        "speaker": "FV1"
+    },
+    "shan4": {
+        "pinyin": "shàn",
+        "character_simplified": "['善', '扇']",
+        "speaker": "MV1"
+    },
+    "shao1": {
+        "pinyin": "shāo",
+        "character_simplified": "['烧', '稍']",
+        "speaker": "MV1"
+    },
+    "chong1": {
+        "pinyin": "chōng",
+        "character_simplified": "['充', '冲']",
+        "speaker": "FV1"
+    },
+    "jie2": {
+        "pinyin": "jié",
+        "character_simplified": "['结', '节', '杰']",
+        "speaker": "MV1"
+    }
+}

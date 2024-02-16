@@ -262,7 +262,7 @@ function processIndividualOutput(tensor, idMapping) {
 // pinyin random game
 
 // load data
-const response = await fetch('../js/pinyin_dict.json');
+const response = await fetch('../js/pinyin_dict2.json');
 const pinyinData = await response.json();
 
 function getRandomPinyin() {
