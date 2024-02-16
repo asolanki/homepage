@@ -158,17 +158,17 @@ function processOutputs(toneTensor, soundTensor, id2tone, id2sound) {
 
 
     // Generate HTML content
-    const resultsHTML = `
-    <div class="results-container">
-        <div class="tone-results">
-            <h4>Tone Results:</h4>
-            <ul>${toneResults}</ul>
+    let resultsHTML = `
+        <div class="results-container">
+            <div class="tone-results">
+                <h4>Tone Results:</h4>
+                <ul>${toneResults}</ul>
+            </div>
+            <div class="sound-results">
+                <h4>Sound Results:</h4>
+                <ul>${soundResults}</ul>
+            </div>
         </div>
-        <div class="sound-results">
-            <h4>Sound Results:</h4>
-            <ul>${soundResults}</ul>
-        </div>
-    </div>
     `;
 
     // Check for missing predictions
