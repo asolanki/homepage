@@ -223,3 +223,44 @@ function processOutput(tensor, labelType, idMapping) {
 
     return resultsText;
 }
+
+
+// pinyin random game
+
+async function startGame() {
+
+    // load data
+    const response = await fetch('./pinyin_dict.json');
+    const pinyinData = await response.json();
+    
+    function getRandomPinyin() {
+        const keys = Object.keys(pinyinData);
+        const randomKey = keys[Math.floor(Math.random() * keys.length)];
+    
+        const sound = randomKey.slice(0, -1); 
+        const tone = randomKey.slice(-1);
+    
+        const characters = pinyinData[randomKey].character_simplified
+            .replace("[", "")
+            .replace("]", "")
+            .replace(/'/g, "");
+    
+        return {
+            sound: sound,
+            tone: tone,
+            characters: characters,
+            // Include any other information you need
+            pinyin: pinyinData[randomKey].pinyin,
+            speaker: pinyinData[randomKey].speaker
+        };
+    }
+
+    console.log(getRandomPinyin());
+    console.log(getRandomPinyin());
+    console.log(getRandomPinyin());
+    
+    
+
+
+}
+
