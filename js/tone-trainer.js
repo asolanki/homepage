@@ -187,7 +187,8 @@ function processIndividualOutput(tensor, idMapping) {
 
     const resultsListItems = top3Results.map(([index, probability], rank) => {
         const label = idMapping[index];
-        const isMatch = (label === currentTone || label === currentSound);
+        const isMatch = (label === parseInt(currentTone) || label === currentSound);
+        console.log("is match?  Checking if label " + label + " matches with tone or sound " + currentTone + " " +currentSound)
         const highlight = isMatch ? 'style="background-color: lightblue;"' : '';
         return `<li ${highlight}>${(probability * 100).toFixed(2)}%: ${label}</li>`;
       }).join('');
