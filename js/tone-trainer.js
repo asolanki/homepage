@@ -30,8 +30,8 @@ const sound2id = { 'sa': 0, 'cao': 1, 'shao': 2, 'ke': 3, 'ken': 4, 'chu': 5, 'n
 const response = await fetch('../js/pinyin_dict2.json');
 const pinyinData = await response.json();
 
-let currentTone = '';
-let currentSound = '';
+let currentTone = null;
+let currentSound = null;
 
 async function loadModel() {
     const loaderContainer = document.getElementById('loader-container');
@@ -153,19 +153,28 @@ function processOutputs(toneTensor, soundTensor, id2tone, id2sound) {
     const toneResults = processIndividualOutput(toneTensor, id2tone);
     const soundResults = processIndividualOutput(soundTensor, id2sound);
 
+    currentTone = toneResults[0].split(": ")[1];
+    currentSound = soundResults[0].split(": ")[1];
+
+
     // Generate HTML content
     const resultsHTML = `
-        <div class="results-container">
-            <div class="tone-results">
-                <h4>Tone Results:</h4>
-                <ul>${toneResults}</ul>
-            </div>
-            <div class="sound-results">
-                <h4>Sound Results:</h4>
-                <ul>${soundResults}</ul>
-            </div>
+    <div class="results-container">
+        <div class="tone-results">
+            <h4>Tone Results:</h4>
+            <ul>${toneResults}</ul>
         </div>
+        <div class="sound-results">
+            <h4>Sound Results:</h4>
+            <ul>${soundResults}</ul>
+        </div>
+    </div>
     `;
+
+    // Check for missing predictions
+    if (!toneResults.includes(currentTone) && !soundResults.includes(currentSound)) {
+        resultsHTML += '<div class="feedback">Neither the tone nor the sound you spoke seems to be present in the results.</div>';
+    }
 
     return resultsHTML;
 }
@@ -179,9 +188,12 @@ function processIndividualOutput(tensor, idMapping) {
 
     const resultsListItems = top3Results.map(([index, probability], rank) => {
         const label = idMapping[index];
-        return `<li>${(probability * 100).toFixed(2)}%: ${label}</li>`;
-    }).join('');
-
+        const isMatch = (label === currentTone || label === currentSound);
+        const highlight = isMatch ? 'style="background-color: lightblue;"' : '';
+        return `<li ${highlight}>${(probability * 100).toFixed(2)}%: ${label}</li>`;
+      }).join('');
+    
+    
     return resultsListItems;
 }
 
