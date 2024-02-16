@@ -12,7 +12,7 @@ let session;
 async function loadModel() {
     const loaderContainer = document.getElementById('loader-container');
     loaderContainer.style.display = 'block'; // Show loader
-
+    loadModelButton.style.display = 'none'; // Hide the load model button
     try {
         session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
         labelsContainer.textContent = "Model loaded successfully! Hold SPACE or tap record to begin.";

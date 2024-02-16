@@ -7,24 +7,24 @@ Description: Playing with transformers in the browser
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- POST TITLE -->
-  <title>
-    Mandarin Tone Trainer
-  </title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- POST TITLE -->
+    <title>
+      Mandarin Tone Trainer
+    </title>
 
-  <!-- POST META -->
-  <meta name="title" content="">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:title" content="">
-  <link rel="stylesheet" href="../css/pico.min.css">
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../img/favicon.png">
+    <!-- POST META -->
+    <meta name="title" content>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content>
+    <meta name="twitter:title" content>
+    <link rel="stylesheet" href="../css/pico.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
 
-  <style>
+    <style>
     .custom-file-upload {
     display: flex;
     align-items: center;
@@ -34,99 +34,114 @@ Description: Playing with transformers in the browser
     padding: 8px 16px;
     cursor: pointer;
     border-radius: 6px;
-}
+  }
 
-#file-upload {
-    display: none;
-}
+  #file-upload {
+      display: none;
+  }
 
-.upload-icon {
-    width: 30px;
-}
+  .upload-icon {
+      width: 30px;
+  }
 
-#image-container {
-    width: 100%;
-    margin-top: 20px;
-    position: relative;
-}
+  #image-container {
+      width: 100%;
+      margin-top: 20px;
+      position: relative;
+  }
 
-#image-container>img {
-    width: 100%;
-}
+  #image-container>img {
+      width: 100%;
+  }
 
-.bounding-box {
-  position: absolute;
-  box-sizing: border-box;
-}
+  .bounding-box {
+    position: absolute;
+    box-sizing: border-box;
+  }
 
-.bounding-box-label {
-  position: absolute;
-  color: white;
-  font-size: 12px;
-}
+  .bounding-box-label {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+  }
 
-canvas {
-  height: 200px;
-  width: 500px;
-}
+  canvas {
+    height: 200px;
+    width: 500px;
+  }
 
-.record {
-  border-radius: 50%;
-  font-size: 0;
-  height: 48px;
-  width: 48px;
-  background: none;
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-}
-
-.record:after {
-  content: '';
-  position: absolute;
-  background: hsl(10, 80%, 50%);
-  height: 100%;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  cursor: pointer;
-  transform: translate(-50%, -50%) scale(calc(1 - (var(--active, 0) * 0.5)));
-  border-radius: 15%;
-  transition: transform 0.1s;
-}
-
-.loader {
-    border: 5px solid #f3f3f3; /* Light grey */
-    border-top: 5px solid #3498db; /* Blue */
+  .record {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 1s linear infinite;
-    padding: 1em;
+    font-size: 0;
+    height: 48px;
+    width: 48px;
+    background: none;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .record:after {
+    content: '';
+    position: absolute;
+    background: hsl(10, 80%, 50%);
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(calc(1 - (var(--active, 0) * 0.5)));
+    border-radius: 15%;
+    transition: transform 0.1s;
+  }
+
+  .loader {
+      border: 5px solid #f3f3f3; /* Light grey */
+      border-top: 5px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      padding: 1em;
+      margin: 2em auto;
+  }
+
+  #game-container {
+      display: grid;
+      justify-content: center;
+      text-align: center;
+      padding: 2em;
+      background-color: var(--muted-border-color);
+      border: 1px solid var(--h1-color);
+      margin: 2em auto;    
+  }
+
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
+
+  #labels-container {
+    text-align: center;
+  }
+
+  #loader-container {
+    text-align: center;
     margin: 2em auto;
-}
+  }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-#labels-container {
-  text-align: center;
-}
-
-#loader-container {
-  text-align: center;
-  margin: 2em auto;
-}
+  #pinyinDisplay {
+    margin:0;
+  }
 
 
   </style>
-</head>
+  </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-05TH4CS0RN"></script>
-<script>
+  <!-- Google tag (gtag.js) -->
+  <script async
+    src="https://www.googletagmanager.com/gtag/js?id=G-05TH4CS0RN"></script>
+  <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -134,83 +149,89 @@ canvas {
   gtag('config', 'G-05TH4CS0RN');
 </script>
 
-<body>
-  <main class="container">
+  <body>
+    <main class="container">
 
-    <nav>
-      <ul>
-        <li><a href="../index.html" class="secondary"><small>Adarsh Solanki</small></a></li>
-      </ul>
-
-      <ul>
-        <li><a href="../posts.html" class="secondary"><small>Blog</small></a></li>
-        <li><a href="../about.html" class="secondary"><small>About Me</small></a></li>
-        <li><a href="#" id="toggle-dark" data-tooltip="Toggle Dark"><svg width="18" height="18" viewBox="0 4 24 18"
-              preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
-                fill="currentColor" />
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M11 0H13V4.06189C12.6724 4.02104 12.3387 4 12 4C11.6613 4 11.3276 4.02104 11 4.06189V0ZM7.0943 5.68018L4.22173 2.80761L2.80752 4.22183L5.6801 7.09441C6.09071 6.56618 6.56608 6.0908 7.0943 5.68018ZM4.06189 11H0V13H4.06189C4.02104 12.6724 4 12.3387 4 12C4 11.6613 4.02104 11.3276 4.06189 11ZM5.6801 16.9056L2.80751 19.7782L4.22173 21.1924L7.0943 18.3198C6.56608 17.9092 6.09071 17.4338 5.6801 16.9056ZM11 19.9381V24H13V19.9381C12.6724 19.979 12.3387 20 12 20C11.6613 20 11.3276 19.979 11 19.9381ZM16.9056 18.3199L19.7781 21.1924L21.1923 19.7782L18.3198 16.9057C17.9092 17.4339 17.4338 17.9093 16.9056 18.3199ZM19.9381 13H24V11H19.9381C19.979 11.3276 20 11.6613 20 12C20 12.3387 19.979 12.6724 19.9381 13ZM18.3198 7.0943L21.1923 4.22183L19.7781 2.80762L16.9056 5.6801C17.4338 6.09071 17.9092 6.56608 18.3198 7.0943Z"
-                fill="currentColor" />
-            </svg></a></li>
-      </ul>
-    </nav>
-
-    <nav aria-label="breadcrumb">
-      <small>
+      <nav>
         <ul>
-          <li> <a href="../posts.html">All Posts</a> </li>
-          <li> Mandarin Tone Trainer </li>
+          <li><a href="../index.html" class="secondary"><small>Adarsh
+                Solanki</small></a></li>
         </ul>
-      </small>
 
-    </nav>
-    <div id="post-content">
-      <h3>Mandarin Tone Trainer</h3>
-      <!-- <p>Hold SPACE or tap record</p> -->
+        <ul>
+          <li><a href="../posts.html"
+              class="secondary"><small>Blog</small></a></li>
+          <li><a href="../about.html" class="secondary"><small>About
+                Me</small></a></li>
+          <li><a href="#" id="toggle-dark" data-tooltip="Toggle Dark"><svg
+                width="18" height="18" viewBox="0 4 24 18"
+                preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z"
+                  fill="currentColor" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M11 0H13V4.06189C12.6724 4.02104 12.3387 4 12 4C11.6613 4 11.3276 4.02104 11 4.06189V0ZM7.0943 5.68018L4.22173 2.80761L2.80752 4.22183L5.6801 7.09441C6.09071 6.56618 6.56608 6.0908 7.0943 5.68018ZM4.06189 11H0V13H4.06189C4.02104 12.6724 4 12.3387 4 12C4 11.6613 4.02104 11.3276 4.06189 11ZM5.6801 16.9056L2.80751 19.7782L4.22173 21.1924L7.0943 18.3198C6.56608 17.9092 6.09071 17.4338 5.6801 16.9056ZM11 19.9381V24H13V19.9381C12.6724 19.979 12.3387 20 12 20C11.6613 20 11.3276 19.979 11 19.9381ZM16.9056 18.3199L19.7781 21.1924L21.1923 19.7782L18.3198 16.9057C17.9092 17.4339 17.4338 17.9093 16.9056 18.3199ZM19.9381 13H24V11H19.9381C19.979 11.3276 20 11.6613 20 12C20 12.3387 19.979 12.6724 19.9381 13ZM18.3198 7.0943L21.1923 4.22183L19.7781 2.80762L16.9056 5.6801C17.4338 6.09071 17.9092 6.56608 18.3198 7.0943Z"
+                  fill="currentColor" />
+              </svg></a></li>
+        </ul>
+      </nav>
 
-    <div id="loader-container" style="display:none;">
-        <div class="loader"></div>
-        Loading model, please wait...
-    </div>
+      <nav aria-label="breadcrumb">
+        <small>
+          <ul>
+            <li> <a href="../posts.html">All Posts</a> </li>
+            <li> Mandarin Tone Trainer </li>
+          </ul>
+        </small>
 
-    <div id="labels-container"></div>
- 
+      </nav>
+      <div id="post-content">
+        <h3>Mandarin Tone Trainer</h3>
+        <!-- <p>Hold SPACE or tap record</p> -->
 
-      <button id="loadModelButton">Load Model (379 MB)</button>
-      <div id="visualizer-container" style="display: none;">
+        <div id="loader-container" style="display:none;">
+          <div class="loader"></div>
+          Loading model, please wait...
+        </div>
+
+
+        <div id="game-container" style="display:none;">
+          <div id="pinyinPrompt">
+            <p id="pinyinDisplay"><span id="pinyinText"></span></p>
+            <p id="charactersDisplay"><span id="charactersText"></span></p>
+          </div>
+          <div id="toggleControls">
+            <input type="checkbox" id="showPinyinToggle" checked>
+            <label for="showPinyinToggle">Show Pinyin:</label>
+          </div>
+        </div>
+
+        <div id="labels-container" class="grid"></div>
+
+
+        <button id="loadModelButton">Load Model (379 MB)</button>
+        <div id="visualizer-container" style="display: none;">
           <canvas id="audioVisualizer"></canvas>
-          <button class="record" title="Record" id="toggle">Start Recording</button>
+          <button class="record" title="Record" id="toggle">Start
+            Recording</button>
           <audio controls style="display: none;"></audio>
+        </div>
+
       </div>
-      
-    </div>
 
-    <div id="game-container" style="display:none;">
-      <div id="pinyinPrompt">
-        <p id="pinyinDisplay"><span id="pinyinText"></span></p>
-        <p id="charactersDisplay"><span id="charactersText"></span></p>
-      </div>
-      <div id="toggleControls">
-        <label for="showPinyinToggle">Show Pinyin:</label>
-        <input type="checkbox" id="showPinyinToggle" checked>
-      </div>
-    </div>
+      <footer>
+        <div class="container"> <small> <p>© 2023 Adarsh Solanki</p> </small>
+        </div>
+      </footer>
 
+    </body>
 
-  <footer>
-    <div class="container"> <small> <p>© 2023 Adarsh Solanki</p> </small> </div>
-  </footer>
-
-
-</body>
-
-
-<!-- <script src="../js/tjs.js" type="module"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
-<script src="../js/tone-trainer.js" type="module"></script>
-<script>
+    <!-- <script src="../js/tjs.js" type="module"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+    <script src="../js/tone-trainer.js" type="module"></script>
+    <script>
   // toggle dark mode
   document.getElementById('toggle-dark').addEventListener('click', function () {
     var currentTheme = document.documentElement.getAttribute('data-theme');
@@ -221,4 +242,4 @@ canvas {
     }
   });
 </script>
-</html>
+  </html>
