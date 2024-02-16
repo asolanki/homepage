@@ -1,6 +1,7 @@
 // DOM elements
 const loadModelButton = document.getElementById('loadModelButton');
 const toggleButton = document.getElementById('toggle');
+const updateGameButton = document.getElementById('updateGameButton');
 const canvas = document.getElementById('audioVisualizer');
 const ctx = canvas.getContext('2d');
 const visualizerContainer = document.getElementById('visualizer-container');
@@ -299,5 +300,5 @@ document.getElementById('showPinyinToggle').addEventListener('change', function(
 
 // Call this function to update the display with a new syllable
 updatePinyinDisplay();
-    
 
+updateGameButton.addEventListener('click', updatePinyinDisplay);
