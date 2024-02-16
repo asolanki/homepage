@@ -14,7 +14,7 @@ async function loadModel() {
 
     try {
         session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
-        labelsContainer.textContent = "Model loaded successfully! Ready to record. \n Hold SPACE or tap record to begin.";
+        labelsContainer.textContent = "Model loaded successfully! Hold SPACE or tap record to begin.";
         visualizerContainer.style.display = 'block'; // Show the rest of the UI
         loadModelButton.style.display = 'none'; // Hide the load model button
     } catch (error) {
@@ -228,7 +228,7 @@ function processOutput(tensor, labelType, idMapping) {
 // pinyin random game
 
 // load data
-const response = await fetch('./pinyin_dict.json');
+const response = await fetch('../js/pinyin_dict.json');
 const pinyinData = await response.json();
 
 function getRandomPinyin() {
