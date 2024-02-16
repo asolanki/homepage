@@ -14,7 +14,7 @@ async function loadModel() {
 
     try {
         session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
-        labelsContainer.textContent = "Model loaded successfully! Ready to record.";
+        labelsContainer.textContent = "Model loaded successfully! Ready to record. \n Hold SPACE or tap record to begin.";
         visualizerContainer.style.display = 'block'; // Show the rest of the UI
         loadModelButton.style.display = 'none'; // Hide the load model button
     } catch (error) {

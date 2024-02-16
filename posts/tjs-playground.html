@@ -109,6 +109,10 @@ canvas {
     100% { transform: rotate(360deg); }
 }
 
+#labels-container {
+  text-align: center;
+}
+
 
   </style>
 </head>
@@ -157,16 +161,17 @@ canvas {
     </nav>
     <div id="post-content">
       <h3>Mandarin Tone Trainer</h3>
-      <p>Hold SPACE or tap record</p>
-      <div id="labels-container"></div>
+      <!-- <p>Hold SPACE or tap record</p> -->
 
     <div id="loader-container" style="display:none;">
         <div class="loader"></div>
         Loading model, please wait...
     </div>
-    
 
-      <button id="loadModelButton">Download Model (379 MB)</button>
+    <div id="labels-container"></div>
+ 
+
+      <button id="loadModelButton">Load Model (379 MB)</button>
       <div id="visualizer-container" style="display: none;">
           <canvas id="audioVisualizer"></canvas>
           <button class="record" title="Record" id="toggle">Start Recording</button>
