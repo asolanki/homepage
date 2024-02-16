@@ -122,12 +122,19 @@ async function toggleRecord() {
 
             // Define your mappings (assuming id2tone is defined as before)
 
-            // Process both outputs
-            const toneResults = processOutput(output["1425"], "Tone", id2tone);
-            const soundResults = processOutput(output["1427"], "Sound", id2sound);
+            // // Process both outputs
+            // const toneResults = processOutput(output["1425"], "Tone", id2tone);
+            // const soundResults = processOutput(output["1427"], "Sound", id2sound);
 
-            // Concatenate and display the results
-            labelsContainer.textContent = toneResults + '\n\n' + soundResults;
+            // // Concatenate and display the results
+            // labelsContainer.textContent = toneResults + '\n\n' + soundResults;
+
+            // Assuming you have output tensors from your model inference
+            const resultsHTML = processOutputs(output["1425"], output["1427"], id2tone, id2sound);
+
+            // Insert the results into the labels container
+            labelsContainer.innerHTML = resultsHTML;
+
 
 
 
@@ -211,20 +218,44 @@ function softmax(arr) {
     return scores.map((score) => score / sum);
 }
 
-function processOutput(tensor, labelType, idMapping) {
+function processOutputs(toneTensor, soundTensor, id2tone, id2sound) {
+    // Process the tone results
+    const toneResults = processIndividualOutput(toneTensor, id2tone);
+    // Process the sound results
+    const soundResults = processIndividualOutput(soundTensor, id2sound);
+
+    // Generate HTML content
+    const resultsHTML = `
+        <div class="results-container">
+            <div class="tone-results">
+                <h4>Tone Results:</h4>
+                <ul>${toneResults}</ul>
+            </div>
+            <div class="sound-results">
+                <h4>Sound Results:</h4>
+                <ul>${soundResults}</ul>
+            </div>
+        </div>
+    `;
+
+    return resultsHTML;
+}
+
+function processIndividualOutput(tensor, idMapping) {
     const logits = Object.values(tensor.data);
     const probabilities = softmax(logits);
     const indexedProbabilities = probabilities.map((p, index) => [index, p]);
     const sortedProbabilities = indexedProbabilities.sort((a, b) => b[1] - a[1]);
     const top3Results = sortedProbabilities.slice(0, 3);
 
-    const resultsText = top3Results.map(([index, probability], rank) => {
-        const label = idMapping[index]; // Map the index to a label using the provided mapping
-        return `Rank ${rank + 1}: ${labelType} ${label} with Probability ${(probability * 100).toFixed(2)}%\n`;
-    }).join('\n');
+    const resultsListItems = top3Results.map(([index, probability], rank) => {
+        const label = idMapping[index];
+        return `<li>Rank ${rank + 1}: ${label} with Probability ${(probability * 100).toFixed(2)}%</li>`;
+    }).join('');
 
-    return resultsText;
+    return resultsListItems;
 }
+
 
 
 // pinyin random game

@@ -134,6 +134,14 @@ Description: Playing with transformers in the browser
     margin:0;
   }
 
+  .results-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .tone-results, .sound-results {
+      margin: 0
+
 
   </style>
   </head>
@@ -195,7 +203,6 @@ Description: Playing with transformers in the browser
           Loading model, please wait...
         </div>
 
-
         <div id="game-container" style="display:none;">
           <div id="pinyinPrompt">
             <p id="pinyinDisplay"><span id="pinyinText"></span></p>
@@ -208,7 +215,6 @@ Description: Playing with transformers in the browser
         </div>
 
         <div id="labels-container" class="grid"></div>
-
 
         <button id="loadModelButton">Load Model (379 MB)</button>
         <div id="visualizer-container" style="display: none;">
