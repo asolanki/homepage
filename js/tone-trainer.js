@@ -288,7 +288,7 @@ function getRandomPinyin() {
 
 function updatePinyinDisplay() {
     const { sound, tone, pinyin, characters } = getRandomPinyin();
-    document.getElementById('pinyinText').textContent = pinyin + " " + tone;
+    document.getElementById('pinyinText').textContent = pinyin + " (tone " + tone + ")";
     document.getElementById('charactersText').textContent = characters;
 }
 
