@@ -153,9 +153,8 @@ function processOutputs(toneTensor, soundTensor, id2tone, id2sound) {
     const toneResults = processIndividualOutput(toneTensor, id2tone);
     const soundResults = processIndividualOutput(soundTensor, id2sound);
 
-    currentTone = toneResults[0].split(": ")[1];
-    currentSound = soundResults[0].split(": ")[1];
-
+    console.log("Current tone: " + currentTone);
+    console.log("Current sound: " + currentSound);
 
     // Generate HTML content
     let resultsHTML = `
@@ -205,6 +204,9 @@ function getRandomPinyin() {
 
     const sound = randomKey.slice(0, -1); 
     const tone = randomKey.slice(-1);
+
+    currentSound = sound;
+    currentTone = tone;
 
     const characters = pinyinData[randomKey].character_simplified
         .replace("[", "")
