@@ -1,6 +1,6 @@
 [
     {
-        "title": "Breathing Assistant Tool",
+        "title": "Breathing Assistant (tool)",
         "date": "2023-07-27",
         "description": "Web-based tool to help with meditation and breathwork",
         "filename": "breathe.html"
@@ -24,9 +24,9 @@
         "filename": "stats-and-ml.html"
     },
     {
-        "title": "Transformers.js playground",
-        "date": "2023-09-30",
-        "description": "Playing with transformers in the browser",
-        "filename": "tjs-playground.html"
+        "title": "Mandarin Trainer",
+        "date": "2023-12-30",
+        "description": "Practice pronouncing Mandarin tones and sounds",
+        "filename": "tone-trainer.html"
     }
 ]
