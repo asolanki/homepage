@@ -9,12 +9,22 @@ const labelsContainer = document.getElementById('labels-container');
 let session;
 
 async function loadModel() {
-    labelsContainer.textContent = "Loading model, please wait...";
-    session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
-    labelsContainer.textContent = "Model loaded successfully! Ready to record.";
-    visualizerContainer.style.display = 'block'; // Show the rest of the UI
-    loadModelButton.style.display = 'none'; // Hide the load model button
+    const loaderContainer = document.getElementById('loader-container');
+    loaderContainer.style.display = 'block'; // Show loader
+
+    try {
+        session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
+        labelsContainer.textContent = "Model loaded successfully! Ready to record.";
+        visualizerContainer.style.display = 'block'; // Show the rest of the UI
+        loadModelButton.style.display = 'none'; // Hide the load model button
+    } catch (error) {
+        labelsContainer.textContent = "Failed to load model.";
+        console.error(error);
+    } finally {
+        loaderContainer.style.display = 'none'; // Hide loader regardless of success or failure
+    }
 }
+
 
 // Event listener for the Load Model button
 loadModelButton.addEventListener('click', loadModel);
