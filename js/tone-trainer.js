@@ -266,10 +266,6 @@ document.getElementById('showPinyinToggle').addEventListener('change', function(
     document.getElementById('pinyinDisplay').style.display = this.checked ? 'block' : 'none';
 });
 
-document.getElementById('showHanziToggle').addEventListener('change', function() {
-    document.getElementById('charactersDisplay').style.display = this.checked ? 'block' : 'none';
-});
-
 // Call this function to update the display with a new syllable
 updatePinyinDisplay();
     
