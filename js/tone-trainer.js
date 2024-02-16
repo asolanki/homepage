@@ -8,17 +8,6 @@ const labelsContainer = document.getElementById('labels-container');
 
 let session;
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/js/mandarin-worker.js', { scope: '/' })
-            .then(registration => {
-                console.log('ServiceWorker registration successful with scope:', registration.scope);
-            })
-            .catch(error => {
-                console.log('ServiceWorker registration failed:', error);
-            });
-    });
-}
 async function loadModel() {
     labelsContainer.textContent = "Loading model, please wait...";
     session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
