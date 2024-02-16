@@ -117,6 +117,7 @@ canvas {
 
 #loader-container {
   text-align: center;
+  margin: 2em auto;
 }
 
 
@@ -186,10 +187,17 @@ canvas {
       
     </div>
 
-    <div id="pinyinPrompt">
-      <p id="pinyinDisplay"><span id="pinyinText"></span></p>
-      <p id="charactersDisplay"><span id="charactersText"></span></p>
+    <div id="game-container" style="display:none;">
+      <div id="pinyinPrompt">
+        <p id="pinyinDisplay"><span id="pinyinText"></span></p>
+        <p id="charactersDisplay"><span id="charactersText"></span></p>
+      </div>
+      <div id="toggleControls">
+        <label for="showPinyinToggle">Show Pinyin:</label>
+        <input type="checkbox" id="showPinyinToggle" checked>
+      </div>
     </div>
+
 
   <footer>
     <div class="container"> <small> <p>© 2023 Adarsh Solanki</p> </small> </div>

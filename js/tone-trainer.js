@@ -5,6 +5,7 @@ const canvas = document.getElementById('audioVisualizer');
 const ctx = canvas.getContext('2d');
 const visualizerContainer = document.getElementById('visualizer-container');
 const labelsContainer = document.getElementById('labels-container');
+const gameContainer = document.getElementById('game-container');
 
 let session;
 
@@ -22,6 +23,7 @@ async function loadModel() {
         console.error(error);
     } finally {
         loaderContainer.style.display = 'none'; // Hide loader regardless of success or failure
+        gameContainer.style.display = 'block'
     }
 }
 
@@ -258,6 +260,15 @@ function updatePinyinDisplay() {
     document.getElementById('pinyinText').textContent = pinyin;
     document.getElementById('charactersText').textContent = characters;
 }
+
+
+document.getElementById('showPinyinToggle').addEventListener('change', function() {
+    document.getElementById('pinyinDisplay').style.display = this.checked ? 'block' : 'none';
+});
+
+document.getElementById('showHanziToggle').addEventListener('change', function() {
+    document.getElementById('charactersDisplay').style.display = this.checked ? 'block' : 'none';
+});
 
 // Call this function to update the display with a new syllable
 updatePinyinDisplay();
