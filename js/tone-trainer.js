@@ -250,7 +250,7 @@ function processIndividualOutput(tensor, idMapping) {
 
     const resultsListItems = top3Results.map(([index, probability], rank) => {
         const label = idMapping[index];
-        return `<li>Rank ${rank + 1}: ${label} with Probability ${(probability * 100).toFixed(2)}%</li>`;
+        return `<li>${(probability * 100).toFixed(2)}%: ${label}</li>`;
     }).join('');
 
     return resultsListItems;
