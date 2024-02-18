@@ -12,19 +12,13 @@
         "filename": "10years.html"
     },
     {
-        "title": "Journey to LLMs: The Roots of NLP",
+        "title": "The Roots of NLP",
         "date": "2023-09-03",
         "description": "Exploring the history and foundations of natural language processing that paved the way for modern language models.",
         "filename": "roots-of-nlp.html"
     },
     {
-        "title": "Journey to LLMs: The Rise of Statistical Methods and Machine Learning",
-        "date": "2023-09-11",
-        "description": "The background that brought us to the modern era of language models.",
-        "filename": "stats-and-ml.html"
-    },
-    {
-        "title": "Mandarin Trainer",
+        "title": "Mandarin Trainer (tool)",
         "date": "2023-12-30",
         "description": "Practice pronouncing Mandarin tones and sounds",
         "filename": "tone-trainer.html"
