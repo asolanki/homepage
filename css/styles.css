@@ -41,6 +41,12 @@ img{
 
 p {
   /* padding-left: 1em; */
+  --font-size: 16px;
+
+}
+
+ol, ul {
+  --font-size: 16px;
 }
 
 h4, h5 {
