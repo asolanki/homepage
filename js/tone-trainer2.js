@@ -38,7 +38,7 @@ async function loadModel() {
     loaderContainer.style.display = 'block'; // Show loader
     loadModelButton.style.display = 'none'; // Hide the load model button
     try {
-        session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/quantized_pinyin-231121.onnx");
+        session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/4-bit-pinyin.onnx");
         labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
         visualizerContainer.style.display = 'block'; // Show the rest of the UI
         loadModelButton.style.display = 'none'; // Hide the load model button
