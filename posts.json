@@ -28,5 +28,11 @@
         "date": "2024-02-19",
         "description": "The story of how I built my Mandarin pronounciation training tool",
         "filename": "building-tone-trainer.html"
-    } 
+    },
+    {
+        "title": "Google Calendar Scraper",
+        "date": "2024-05-14",
+        "description": "A tool to scrape and organize events from Google Calendar",
+        "filename": "gcal-scraper.html"
+    }
 ]
