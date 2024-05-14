@@ -12,7 +12,7 @@ Description: A tool to scrape and organize events from Google Calendar
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- POST TITLE -->
   <title>
-    Post Template
+    Google Calendar Timesheet Tool
   </title>
 
   <!-- POST META -->
@@ -124,7 +124,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const help = document.getElementById("help");
     const howTo = document.getElementById("howTo")
 
-    scrapeForm.addEventListener("submit", function() {
+    scrapeForm.addEventListener("submit", function(event) {
+        event.preventDefault();
         const icalUrl = icalUrlInput.value;
         const selectedWeek = weekSelect.value.split('-W');
         const startDate = calculateDate(selectedWeek[1], 1); // Assuming Monday is the start of the week
@@ -214,7 +215,26 @@ function displayEvents(events) {
     const eventsList = document.getElementById("eventsList");
     eventsList.innerHTML = ''; // Clear previous events
 
-    // group events by client ??
+    // // group events by client ??
+    // const clientEvents = events.reduce((acc, event) => {
+    //     const client = event.title.split(' ')[0]; // Assuming client name is the first word in the title
+    //     if (!acc[client]) acc[client] = [];
+    //     acc[client].push(event);
+    //     return acc;
+    // }, {});
+
+    // for (const client in clientEvents) {
+    //     const clientHeader = document.createElement("h4");
+    //     clientHeader.textContent = client;
+    //     eventsList.appendChild(clientHeader);
+
+    //     clientEvents[client].forEach(event => {
+    //         const listItem = document.createElement("li");
+    //         listItem.textContent = `${event.title}, Duration: ${calculateEventDuration(event.start, event.end)} hours`;
+    //         eventsList.appendChild(listItem);
+    //     });
+    // }
+
 
     events.forEach(event => {
         const eventDuration = calculateEventDuration(event.start, event.end);

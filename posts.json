@@ -30,7 +30,7 @@
         "filename": "building-tone-trainer.html"
     },
     {
-        "title": "Google Calendar Scraper",
+        "title": "Google Calendar Scraper (tool)",
         "date": "2024-05-14",
         "description": "A tool to scrape and organize events from Google Calendar",
         "filename": "gcal-scraper.html"
