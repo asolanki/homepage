@@ -98,7 +98,7 @@ function calculateDate(weekNumber, dayOfWeek) {
     return formattedDate;
 }
 
-function getEventsForWeekkes (icalUrl, startDate, endDate) {
+function getEventsForWeek(icalUrl, startDate, endDate) {
     console.log('Fetching iCal data for URL:', icalUrl);
     fetch(`https://uncors.vercel.app/?url=${icalUrl}`)
         .then(response => {
@@ -238,14 +238,9 @@ function calculateEventDuration(startTime, endTime) {
     <div id="post-content">
 
       <h3>Google Calendar Scraper</h3>
-      <div id="g_id_onload"
-        data-client_id="814249685176-mun0h4f2210nf7v1k30b32lftrqsp7ol.apps.googleusercontent.com"
-        data-context="signin"
-        data-callback="listUpcomingEvents()"
-        data-itp_support="true">
-      </div>
-      <button id="authorize_button" style="display: none;" onclick="handleAuthClick()">Authorize</button>
-      <button id="signout_button" style="display: none;" onclick="handleSignoutClick()">Sign Out</button>
+      <div id="buttonDiv"></div>
+      <!-- <button id="authorize_button" style="display: none;" onclick="handleAuthClick()">Authorize</button> -->
+      <!-- <button id="signout_button" style="display: none;" onclick="handleSignoutClick()">Sign Out</button> -->
       <form id="scrapeForm">
           <input type="text" id="icalUrlInput" placeholder="(secret) Google Calendar iCal URL" required>
           <br />
@@ -294,5 +289,24 @@ function calculateEventDuration(startTime, endTime) {
     }
   });
 </script>
+
+<script src="https://accounts.google.com/gsi/client" async></script>
+<script>
+  function handleCredentialResponse(response) {
+    console.log("Encoded JWT ID token: " + response.credential);
+  }
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: "814249685176-mun0h4f2210nf7v1k30b32lftrqsp7ol.apps.googleusercontent.com",
+      callback: listUpcomingEvents
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("buttonDiv"),
+      { theme: "outline", size: "large" }  // customization attributes
+    );
+    google.accounts.id.prompt(); // also display the One Tap dialog
+  }
+</script>
+
 
 </html>
