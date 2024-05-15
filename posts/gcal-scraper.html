@@ -37,49 +37,34 @@ Description: A tool to scrape and organize events from Google Calendar
 </script>
 
 <script>
-function listUpcomingEvents() {
-  gapi.client.calendar.events.list({
-    calendarId: 'primary',
-    timeMin: (new Date()).toISOString(),
-    timeMax: (new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000)).toISOString(),
-    showDeleted: false,
-    singleEvents: true,
-    orderBy: 'startTime'
-  }).then(function(response) {
-    var events = response.result.items;
-    if (events.length > 0) {
-      for (var i = 0; i < events.length; i++) {
-        var event = events[i];
-        var start = event.start.dateTime || event.start.date;
-        console.log(event.summary + ' (' + start + ')');
-      }
-    } else {
-      console.log('No upcoming events found.');
-    }
-  });
-}
+
 
 // https://calendar.google.com/calendar/ical/0dffed56f45a0ab957a8a6c00a5a1a2ff40663193ba2f73d388b11622d836e1d%40group.calendar.google.com/private-c397762221d9157dff38fd65bab8bf84/basic.ics
 
 document.addEventListener("DOMContentLoaded", function() {
-    const icalUrlInput = document.getElementById("icalUrlInput");
-    const weekSelect = document.getElementById("weekSelect");
+    const icalFileInput = document.getElementById("icalFileInput");
+    const startDateInput = document.getElementById("startDateInput");
+    const endDateInput = document.getElementById("endDateInput");
     const scrapeForm = document.getElementById("scrapeForm");
     const help = document.getElementById("help");
     const howTo = document.getElementById("howTo")
 
     scrapeForm.addEventListener("submit", function(event) {
         event.preventDefault();
-        const icalUrl = icalUrlInput.value;
-        const selectedWeek = weekSelect.value.split('-W');
-        const startDate = calculateDate(selectedWeek[1], 1); // Assuming Monday is the start of the week
-        const endDate = calculateDate(selectedWeek[1], 5); // Assuming Friday is the end of the week
+        const file = icalFileInput.files[0];
+        const startDate = new Date(startDateInput.value);
+        const endDate = new Date(endDateInput.value);
 
-        if (icalUrl) {
-            console.log(`iCal URL: ${icalUrl}, Week: ${selectedWeek}`);
-            getEventsForWeek(icalUrl, startDate, endDate);
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const data = e.target.result;
+                const events = parseICalData(data, startDate, endDate);
+                displayEvents(events);
+            };
+            reader.readAsText(file);
         } else {
-            alert("Please enter a valid Google Calendar iCal URL.");
+            alert("Please upload a valid .ics file.");
         }
     });
 
@@ -98,35 +83,16 @@ function calculateDate(weekNumber, dayOfWeek) {
     return formattedDate;
 }
 
-function getEventsForWeek(icalUrl, startDate, endDate) {
-    console.log('Fetching iCal data for URL:', icalUrl);
-    fetch(`https://uncors.vercel.app/?url=${icalUrl}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            console.log('Received response from fetch:', response);
-            return response.text();
-        })
-        .then(data => {
-            const events = parseICalData(data, startDate, endDate);
-            displayEvents(events);
-        })
-        .catch(error => console.error('Error fetching iCal data:', error.message)); // Log the error message
-}
-
-
 function parseICalData(data, startDate, endDate) {
     const events = [];
     const lines = data.split('\n');
     let event = null;
-    console.log(JSON.stringify(data));
 
     lines.forEach(line => {
         if (line.startsWith('BEGIN:VEVENT')) {
             event = {};
         } else if (line.startsWith('END:VEVENT')) {
-            if (event && new Date(event.start) >= new Date(startDate) && new Date(event.end) <= new Date(endDate)) {
+            if (event && new Date(event.start) >= startDate && new Date(event.end) <= endDate) {
                 events.push(event);
             }
             event = null;
@@ -238,15 +204,14 @@ function calculateEventDuration(startTime, endTime) {
     <div id="post-content">
 
       <h3>Google Calendar Scraper</h3>
-      <div id="buttonDiv"></div>
-      <!-- <button id="authorize_button" style="display: none;" onclick="handleAuthClick()">Authorize</button> -->
-      <!-- <button id="signout_button" style="display: none;" onclick="handleSignoutClick()">Sign Out</button> -->
       <form id="scrapeForm">
-          <input type="text" id="icalUrlInput" placeholder="(secret) Google Calendar iCal URL" required>
+          <input type="file" id="icalFileInput" accept=".ics" required>
           <br />
-          <input type="week" id="weekSelect" min="2024-W01" value="2024-W37" required>
+          Start Date: <input type="date" id="startDateInput" required>
           <br />
-          <input type="submit" id="scrapeButton"></button>
+          End Date: <input type="date" id="endDateInput" required>
+          <br />
+          <input type="submit" id="scrapeButton">
       </form>
       <ul id="eventsList">
           <a href="#" id="help">Help - how do I use this?</a>
@@ -289,24 +254,4 @@ function calculateEventDuration(startTime, endTime) {
     }
   });
 </script>
-
-<script src="https://accounts.google.com/gsi/client" async></script>
-<script>
-  function handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
-  }
-  window.onload = function () {
-    google.accounts.id.initialize({
-      client_id: "814249685176-mun0h4f2210nf7v1k30b32lftrqsp7ol.apps.googleusercontent.com",
-      callback: listUpcomingEvents
-    });
-    google.accounts.id.renderButton(
-      document.getElementById("buttonDiv"),
-      { theme: "outline", size: "large" }  // customization attributes
-    );
-    google.accounts.id.prompt(); // also display the One Tap dialog
-  }
-</script>
-
-
 </html>
