@@ -33,25 +33,77 @@ const pinyinData = await response.json();
 let currentTone = null;
 let currentSound = null;
 
+let modelLoadPromise = null;
+
+async function openModelDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open('ModelStore', 1);
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => resolve(request.result);
+        request.onupgradeneeded = () => request.result.createObjectStore('models');
+    });
+}
+
+async function storeModel(arrayBuffer) {
+    const db = await openModelDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction('models', 'readwrite');
+        const store = transaction.objectStore('models');
+        const request = store.put(arrayBuffer, 'mandarin-model');
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => resolve();
+    });
+}
+
+async function getStoredModel() {
+    const db = await openModelDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction('models', 'readonly');
+        const store = transaction.objectStore('models');
+        const request = store.get('mandarin-model');
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => resolve(request.result);
+    });
+}
+
 async function loadModel() {
     const loaderContainer = document.getElementById('loader-container');
-    loaderContainer.style.display = 'block'; // Show loader
-    loadModelButton.style.display = 'none'; // Hide the load model button
+    loaderContainer.style.display = 'block';
+    loadModelButton.style.display = 'none';
+
     try {
-        session = await ort.InferenceSession.create("https://r2.adarshsolanki.com/model.onnx");
+        let modelArrayBuffer = await getStoredModel();
+        if (!modelArrayBuffer) {
+            labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
+            const response = await fetch("https://r2.adarshsolanki.com/model.onnx");
+            modelArrayBuffer = await response.arrayBuffer();
+            await storeModel(modelArrayBuffer);
+        }
+
+        session = await ort.InferenceSession.create(modelArrayBuffer);
         labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
-        visualizerContainer.style.display = 'block'; // Show the rest of the UI
-        loadModelButton.style.display = 'none'; // Hide the load model button
+        visualizerContainer.style.display = 'block';
     } catch (error) {
         labelsContainer.textContent = "Failed to load model.";
         console.error(error);
     } finally {
-        loaderContainer.style.display = 'none'; // Hide loader regardless of success or failure
-        gameContainer.style.display = 'block'
+        loaderContainer.style.display = 'none';
+        gameContainer.style.display = 'block';
     }
 }
 
-loadModelButton.addEventListener('click', loadModel);
+function initializeModelLoad() {
+    modelLoadPromise = loadModel();
+}
+
+async function ensureModelLoaded() {
+    if (!modelLoadPromise) {
+        modelLoadPromise = loadModel();
+    }
+    await modelLoadPromise;
+}
+
+loadModelButton.addEventListener('click', initializeModelLoad);
 
 async function toggleRecord() {
     if (!isRecording) {
@@ -140,7 +192,10 @@ async function toggleRecord() {
     }
 }
 
-toggleButton.addEventListener('click', toggleRecord);
+toggleButton.addEventListener('click', async () => {
+    await ensureModelLoaded();
+    toggleRecord();
+});
 
 function softmax(arr) {
     const maxLogit = Math.max(...arr);
@@ -285,3 +340,8 @@ function drawBars() {
 
     draw();
 }
+
+toggleButton.addEventListener('click', async () => {
+    await ensureModelLoaded();
+    toggleRecord();
+});

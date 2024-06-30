@@ -249,7 +249,13 @@ Description: Playing with transformers in the browser
         <div class="container"> <small> <p>© 2023 Adarsh Solanki</p> </small>
         </div>
       </footer>
-
+      <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
     </body>
 
     <!-- <script src="../js/tjs.js" type="module"></script> -->
