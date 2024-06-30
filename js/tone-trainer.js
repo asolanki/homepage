@@ -72,17 +72,29 @@ async function loadModel() {
     loadModelButton.style.display = 'none';
 
     try {
-        let modelArrayBuffer = await getStoredModel();
-        if (!modelArrayBuffer) {
-            labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
-            const response = await fetch("https://r2.adarshsolanki.com/model.onnx");
-            modelArrayBuffer = await response.arrayBuffer();
-            await storeModel(modelArrayBuffer);
-        }
+        if ('caches' in window) {
+            const cache = await caches.open('model-cache');
+            let response = await cache.match('model.onnx');
 
-        session = await ort.InferenceSession.create(modelArrayBuffer);
-        labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
-        visualizerContainer.style.display = 'block';
+            if (!response) {
+                labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
+                response = await fetch("https://r2.adarshsolanki.com/model.onnx");
+                cache.put('model.onnx', response.clone());
+            } else {
+                labelsContainer.textContent = "Loading cached model...";
+            }
+
+            const modelArrayBuffer = await response.arrayBuffer();
+            session = await ort.InferenceSession.create(modelArrayBuffer);
+
+            labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
+            visualizerContainer.style.display = 'block';
+        } else {
+            // Fallback for browsers that don't support Cache API
+            const response = await fetch("https://r2.adarshsolanki.com/model.onnx");
+            const modelArrayBuffer = await response.arrayBuffer();
+            session = await ort.InferenceSession.create(modelArrayBuffer);
+        }
     } catch (error) {
         labelsContainer.textContent = "Failed to load model.";
         console.error(error);
@@ -92,19 +104,7 @@ async function loadModel() {
     }
 }
 
-function initializeModelLoad() {
-    modelLoadPromise = loadModel();
-}
-
-async function ensureModelLoaded() {
-    if (!modelLoadPromise) {
-        modelLoadPromise = loadModel();
-    }
-    await modelLoadPromise;
-}
-
-loadModelButton.addEventListener('click', initializeModelLoad);
-
+loadModelButton.addEventListener('click', loadModel);
 async function toggleRecord() {
     if (!isRecording) {
         // Start recording
