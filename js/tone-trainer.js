@@ -33,8 +33,22 @@ const pinyinData = await response.json();
 let currentTone = null;
 let currentSound = null;
 
-const MODEL_CACHE_NAME = 'mandarin-model-cache-v1';
+const MODEL_DB_NAME = 'mandarin-model-db';
+const MODEL_STORE_NAME = 'model-store';
+const MODEL_KEY = 'model-data';
 const MODEL_URL = 'https://r2.adarshsolanki.com/model.onnx';
+
+async function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(MODEL_DB_NAME, 1);
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => resolve(request.result);
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            db.createObjectStore(MODEL_STORE_NAME);
+        };
+    });
+}
 
 async function loadModel() {
     const loaderContainer = document.getElementById('loader-container');
@@ -43,30 +57,23 @@ async function loadModel() {
 
     try {
         let modelArrayBuffer;
-        if ('caches' in window) {
-            try {
-                const cache = await caches.open(MODEL_CACHE_NAME);
-                let response = await cache.match(MODEL_URL);
+        const db = await openDB();
+        const transaction = db.transaction(MODEL_STORE_NAME, 'readonly');
+        const store = transaction.objectStore(MODEL_STORE_NAME);
+        const cachedModel = await store.get(MODEL_KEY);
 
-                if (!response) {
-                    labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
-                    response = await fetch(MODEL_URL);
-                    modelArrayBuffer = await response.arrayBuffer();
-                    
-                    // Attempt to cache, but don't wait for it
-                    cache.put(MODEL_URL, new Response(modelArrayBuffer.slice(0))).catch(err => {
-                        console.warn("Failed to cache the model:", err);
-                    });
-                } else {
-                    labelsContainer.textContent = "Loading cached model...";
-                    modelArrayBuffer = await response.arrayBuffer();
-                }
-            } catch (cacheError) {
-                console.warn("Cache API failed, falling back to direct download:", cacheError);
-                modelArrayBuffer = await loadModelWithoutCache();
-            }
+        if (cachedModel) {
+            labelsContainer.textContent = "Loading cached model...";
+            modelArrayBuffer = cachedModel;
         } else {
-            modelArrayBuffer = await loadModelWithoutCache();
+            labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
+            const response = await fetch(MODEL_URL);
+            modelArrayBuffer = await response.arrayBuffer();
+            
+            // Store the model in IndexedDB
+            const writeTransaction = db.transaction(MODEL_STORE_NAME, 'readwrite');
+            const writeStore = writeTransaction.objectStore(MODEL_STORE_NAME);
+            await writeStore.put(modelArrayBuffer, MODEL_KEY);
         }
 
         session = await ort.InferenceSession.create(modelArrayBuffer);
@@ -79,12 +86,6 @@ async function loadModel() {
         loaderContainer.style.display = 'none';
         gameContainer.style.display = 'block';
     }
-}
-
-async function loadModelWithoutCache() {
-    labelsContainer.textContent = "Downloading model. This may take a while...";
-    const response = await fetch(MODEL_URL);
-    return await response.arrayBuffer();
 }
 
 loadModelButton.addEventListener('click', loadModel);
