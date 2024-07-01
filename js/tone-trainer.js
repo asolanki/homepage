@@ -33,38 +33,8 @@ const pinyinData = await response.json();
 let currentTone = null;
 let currentSound = null;
 
-let modelLoadPromise = null;
-
-async function openModelDB() {
-    return new Promise((resolve, reject) => {
-        const request = indexedDB.open('ModelStore', 1);
-        request.onerror = () => reject(request.error);
-        request.onsuccess = () => resolve(request.result);
-        request.onupgradeneeded = () => request.result.createObjectStore('models');
-    });
-}
-
-async function storeModel(arrayBuffer) {
-    const db = await openModelDB();
-    return new Promise((resolve, reject) => {
-        const transaction = db.transaction('models', 'readwrite');
-        const store = transaction.objectStore('models');
-        const request = store.put(arrayBuffer, 'mandarin-model');
-        request.onerror = () => reject(request.error);
-        request.onsuccess = () => resolve();
-    });
-}
-
-async function getStoredModel() {
-    const db = await openModelDB();
-    return new Promise((resolve, reject) => {
-        const transaction = db.transaction('models', 'readonly');
-        const store = transaction.objectStore('models');
-        const request = store.get('mandarin-model');
-        request.onerror = () => reject(request.error);
-        request.onsuccess = () => resolve(request.result);
-    });
-}
+const MODEL_CACHE_NAME = 'mandarin-model-cache-v1';
+const MODEL_URL = 'https://r2.adarshsolanki.com/model.onnx';
 
 async function loadModel() {
     const loaderContainer = document.getElementById('loader-container');
@@ -73,13 +43,13 @@ async function loadModel() {
 
     try {
         if ('caches' in window) {
-            const cache = await caches.open('model-cache');
-            let response = await cache.match('model.onnx');
+            const cache = await caches.open(MODEL_CACHE_NAME);
+            let response = await cache.match(MODEL_URL);
 
             if (!response) {
                 labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
-                response = await fetch("https://r2.adarshsolanki.com/model.onnx");
-                cache.put('model.onnx', response.clone());
+                response = await fetch(MODEL_URL);
+                cache.put(MODEL_URL, response.clone());
             } else {
                 labelsContainer.textContent = "Loading cached model...";
             }
@@ -91,7 +61,7 @@ async function loadModel() {
             visualizerContainer.style.display = 'block';
         } else {
             // Fallback for browsers that don't support Cache API
-            const response = await fetch("https://r2.adarshsolanki.com/model.onnx");
+            const response = await fetch(MODEL_URL);
             const modelArrayBuffer = await response.arrayBuffer();
             session = await ort.InferenceSession.create(modelArrayBuffer);
         }
@@ -105,6 +75,7 @@ async function loadModel() {
 }
 
 loadModelButton.addEventListener('click', loadModel);
+
 async function toggleRecord() {
     if (!isRecording) {
         // Start recording
