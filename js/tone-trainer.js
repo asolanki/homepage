@@ -62,11 +62,15 @@ async function loadModel() {
         const store = transaction.objectStore(MODEL_STORE_NAME);
         const cachedModel = await store.get(MODEL_KEY);
 
-        if (cachedModel && cachedModel.byteLength > 0) {
+        console.log("Cached model:", cachedModel);
+
+        if (cachedModel && cachedModel instanceof Uint8Array && cachedModel.byteLength > 0) {
+            console.log("Using cached model. Size:", cachedModel.byteLength);
             labelsContainer.textContent = "Loading cached model...";
-            modelData = new Uint8Array(cachedModel);
+            modelData = cachedModel;
         } else {
-            labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
+            console.log("Downloading new model");
+            labelsContainer.textContent = "Downloading model. This may take a while...";
             const response = await fetch(MODEL_URL);
             const arrayBuffer = await response.arrayBuffer();
             modelData = new Uint8Array(arrayBuffer);
@@ -75,6 +79,7 @@ async function loadModel() {
             const writeTransaction = db.transaction(MODEL_STORE_NAME, 'readwrite');
             const writeStore = writeTransaction.objectStore(MODEL_STORE_NAME);
             await writeStore.put(modelData, MODEL_KEY);
+            console.log("Model stored in IndexedDB. Size:", modelData.byteLength);
         }
 
         // Convert Uint8Array to ArrayBuffer before creating the session
@@ -85,7 +90,7 @@ async function loadModel() {
         visualizerContainer.style.display = 'block';
     } catch (error) {
         labelsContainer.textContent = "Failed to load model.";
-        console.error(error);
+        console.error("Error loading model:", error);
     } finally {
         loaderContainer.style.display = 'none';
         gameContainer.style.display = 'block';
