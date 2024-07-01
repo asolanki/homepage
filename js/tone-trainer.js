@@ -62,9 +62,9 @@ async function loadModel() {
         const store = transaction.objectStore(MODEL_STORE_NAME);
         const cachedModel = await store.get(MODEL_KEY);
 
-        if (cachedModel) {
+        if (cachedModel && cachedModel.byteLength > 0) {
             labelsContainer.textContent = "Loading cached model...";
-            modelData = cachedModel;
+            modelData = new Uint8Array(cachedModel);
         } else {
             labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
             const response = await fetch(MODEL_URL);
