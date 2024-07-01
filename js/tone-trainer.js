@@ -195,8 +195,6 @@ async function toggleRecord() {
     }
 }
 
-toggleButton.addEventListener('click', async () => { toggleRecord(); });
-
 function softmax(arr) {
     const maxLogit = Math.max(...arr);
     const scores = arr.map((logit) => Math.exp(logit - maxLogit));
@@ -341,7 +339,4 @@ function drawBars() {
     draw();
 }
 
-toggleButton.addEventListener('click', async () => {
-    await ensureModelLoaded();
-    toggleRecord();
-});
+toggleButton.addEventListener('click', async () => { toggleRecord(); });
