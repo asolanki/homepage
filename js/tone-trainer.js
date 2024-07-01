@@ -56,7 +56,7 @@ async function loadModel() {
     loadModelButton.style.display = 'none';
 
     try {
-        let modelArrayBuffer;
+        let modelData;
         const db = await openDB();
         const transaction = db.transaction(MODEL_STORE_NAME, 'readonly');
         const store = transaction.objectStore(MODEL_STORE_NAME);
@@ -64,19 +64,23 @@ async function loadModel() {
 
         if (cachedModel) {
             labelsContainer.textContent = "Loading cached model...";
-            modelArrayBuffer = cachedModel;
+            modelData = cachedModel;
         } else {
             labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
             const response = await fetch(MODEL_URL);
-            modelArrayBuffer = await response.arrayBuffer();
+            const arrayBuffer = await response.arrayBuffer();
+            modelData = new Uint8Array(arrayBuffer);
             
             // Store the model in IndexedDB
             const writeTransaction = db.transaction(MODEL_STORE_NAME, 'readwrite');
             const writeStore = writeTransaction.objectStore(MODEL_STORE_NAME);
-            await writeStore.put(modelArrayBuffer, MODEL_KEY);
+            await writeStore.put(modelData, MODEL_KEY);
         }
 
+        // Convert Uint8Array to ArrayBuffer before creating the session
+        const modelArrayBuffer = modelData.buffer.slice(modelData.byteOffset, modelData.byteOffset + modelData.byteLength);
         session = await ort.InferenceSession.create(modelArrayBuffer);
+        
         labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
         visualizerContainer.style.display = 'block';
     } catch (error) {
