@@ -41,7 +41,10 @@ const MODEL_URL = 'https://r2.adarshsolanki.com/model.onnx';
 async function openDB() {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open(MODEL_DB_NAME, 1);
-        request.onerror = () => reject(request.error);
+        request.onerror = () => {
+            console.error("Database error:", request.error);
+            reject(request.error);
+        };
         request.onsuccess = () => resolve(request.result);
         request.onupgradeneeded = (event) => {
             const db = event.target.result;
@@ -60,11 +63,17 @@ async function loadModel() {
         const db = await openDB();
         const transaction = db.transaction(MODEL_STORE_NAME, 'readonly');
         const store = transaction.objectStore(MODEL_STORE_NAME);
-        const cachedModel = await store.get(MODEL_KEY);
+        
+        // Use a promise to wait for the get operation to complete
+        const cachedModel = await new Promise((resolve, reject) => {
+            const request = store.get(MODEL_KEY);
+            request.onsuccess = () => resolve(request.result);
+            request.onerror = () => reject(request.error);
+        });
 
         console.log("Cached model:", cachedModel);
 
-        if (cachedModel && cachedModel instanceof Uint8Array && cachedModel.byteLength > 0) {
+        if (cachedModel instanceof Uint8Array && cachedModel.byteLength > 0) {
             console.log("Using cached model. Size:", cachedModel.byteLength);
             labelsContainer.textContent = "Loading cached model...";
             modelData = cachedModel;
