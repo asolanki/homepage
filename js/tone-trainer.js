@@ -42,6 +42,7 @@ async function loadModel() {
     loadModelButton.style.display = 'none';
 
     try {
+        let modelArrayBuffer;
         if ('caches' in window) {
             try {
                 const cache = await caches.open(MODEL_CACHE_NAME);
@@ -50,26 +51,25 @@ async function loadModel() {
                 if (!response) {
                     labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
                     response = await fetch(MODEL_URL);
-                    try {
-                        await cache.put(MODEL_URL, response.clone());
-                    } catch (cacheError) {
-                        console.warn("Failed to cache the model:", cacheError);
-                        // Continue without caching
-                    }
+                    modelArrayBuffer = await response.arrayBuffer();
+                    
+                    // Attempt to cache, but don't wait for it
+                    cache.put(MODEL_URL, new Response(modelArrayBuffer.slice(0))).catch(err => {
+                        console.warn("Failed to cache the model:", err);
+                    });
                 } else {
                     labelsContainer.textContent = "Loading cached model...";
+                    modelArrayBuffer = await response.arrayBuffer();
                 }
-
-                const modelArrayBuffer = await response.arrayBuffer();
-                session = await ort.InferenceSession.create(modelArrayBuffer);
             } catch (cacheError) {
                 console.warn("Cache API failed, falling back to direct download:", cacheError);
-                await loadModelWithoutCache();
+                modelArrayBuffer = await loadModelWithoutCache();
             }
         } else {
-            await loadModelWithoutCache();
+            modelArrayBuffer = await loadModelWithoutCache();
         }
 
+        session = await ort.InferenceSession.create(modelArrayBuffer);
         labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
         visualizerContainer.style.display = 'block';
     } catch (error) {
@@ -84,8 +84,7 @@ async function loadModel() {
 async function loadModelWithoutCache() {
     labelsContainer.textContent = "Downloading model. This may take a while...";
     const response = await fetch(MODEL_URL);
-    const modelArrayBuffer = await response.arrayBuffer();
-    session = await ort.InferenceSession.create(modelArrayBuffer);
+    return await response.arrayBuffer();
 }
 
 loadModelButton.addEventListener('click', loadModel);
