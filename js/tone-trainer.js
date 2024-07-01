@@ -195,10 +195,7 @@ async function toggleRecord() {
     }
 }
 
-toggleButton.addEventListener('click', async () => {
-    await ensureModelLoaded();
-    toggleRecord();
-});
+toggleButton.addEventListener('click', async () => { toggleRecord(); });
 
 function softmax(arr) {
     const maxLogit = Math.max(...arr);
