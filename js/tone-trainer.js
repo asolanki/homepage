@@ -43,28 +43,35 @@ async function loadModel() {
 
     try {
         if ('caches' in window) {
-            const cache = await caches.open(MODEL_CACHE_NAME);
-            let response = await cache.match(MODEL_URL);
+            try {
+                const cache = await caches.open(MODEL_CACHE_NAME);
+                let response = await cache.match(MODEL_URL);
 
-            if (!response) {
-                labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
-                response = await fetch(MODEL_URL);
-                cache.put(MODEL_URL, response.clone());
-            } else {
-                labelsContainer.textContent = "Loading cached model...";
+                if (!response) {
+                    labelsContainer.textContent = "Downloading model for the first time. This may take a while...";
+                    response = await fetch(MODEL_URL);
+                    try {
+                        await cache.put(MODEL_URL, response.clone());
+                    } catch (cacheError) {
+                        console.warn("Failed to cache the model:", cacheError);
+                        // Continue without caching
+                    }
+                } else {
+                    labelsContainer.textContent = "Loading cached model...";
+                }
+
+                const modelArrayBuffer = await response.arrayBuffer();
+                session = await ort.InferenceSession.create(modelArrayBuffer);
+            } catch (cacheError) {
+                console.warn("Cache API failed, falling back to direct download:", cacheError);
+                await loadModelWithoutCache();
             }
-
-            const modelArrayBuffer = await response.arrayBuffer();
-            session = await ort.InferenceSession.create(modelArrayBuffer);
-
-            labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
-            visualizerContainer.style.display = 'block';
         } else {
-            // Fallback for browsers that don't support Cache API
-            const response = await fetch(MODEL_URL);
-            const modelArrayBuffer = await response.arrayBuffer();
-            session = await ort.InferenceSession.create(modelArrayBuffer);
+            await loadModelWithoutCache();
         }
+
+        labelsContainer.textContent = "Model loaded successfully! Hit SPACE or red button below to record.";
+        visualizerContainer.style.display = 'block';
     } catch (error) {
         labelsContainer.textContent = "Failed to load model.";
         console.error(error);
@@ -72,6 +79,13 @@ async function loadModel() {
         loaderContainer.style.display = 'none';
         gameContainer.style.display = 'block';
     }
+}
+
+async function loadModelWithoutCache() {
+    labelsContainer.textContent = "Downloading model. This may take a while...";
+    const response = await fetch(MODEL_URL);
+    const modelArrayBuffer = await response.arrayBuffer();
+    session = await ort.InferenceSession.create(modelArrayBuffer);
 }
 
 loadModelButton.addEventListener('click', loadModel);
