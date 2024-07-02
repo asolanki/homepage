@@ -366,7 +366,9 @@ function getAudioUrl() {
 async function playAudio() {
 
     const audioUrl = getAudioUrl();
-    const audio = new Audio(audioUrl);
+    const audio = new Audio();
+    audio.crossOrigin = "anonymous";
+    audio.src = audioUrl;
 
     try {
         await audio.play();
