@@ -336,7 +336,7 @@ function drawBars() {
 
         wiggleFactor += 0.01;
     }
-
+    
     draw();
 }
 
