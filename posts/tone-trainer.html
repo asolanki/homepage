@@ -103,6 +103,37 @@ Description: Playing with transformers in the browser
           margin: 0
       }
 
+      #score {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      #updateGameButton {
+        display: inline-flex;
+    justify-content: center;
+    width: 60%;
+      }
+
+      .feedback {
+        font-size: 1rem;
+        padding: .5rem;
+        border-radius: 5px;
+        width: 50%;
+        min-width: 300px;
+        justify-content: center;
+        display: inline-flex;
+    }      
+
+      .feedback.correct {
+          background-color: #dff0d8;
+          color: #3c763d;
+      }
+
+      .feedback.incorrect {
+          background-color: #f2dede;
+          color: #a94442;
+      }
       #toggleControls {
         display: inline-flex;
         flex-direction: row;
@@ -110,6 +141,7 @@ Description: Playing with transformers in the browser
         padding: 0 0 2rem 0;
         justify-content: space-between;
         width: 85%;
+        font-size: 0.85rem;
       }
 
       #showPinyinContainer {
@@ -183,6 +215,8 @@ Description: Playing with transformers in the browser
         </div>
 
         <div id="game-container" style="display:none;">
+          <div id="score"></div>
+          <div id="feedback" class="feedback" style="visibility: hidden;"></div>
           <div id="pinyinPrompt">
             <p id="pinyinDisplay"><span id="pinyinText"></span></p>
             <p id="charactersDisplay"><span id="charactersText"></span></p>
@@ -194,7 +228,7 @@ Description: Playing with transformers in the browser
             </div>
             <a href="#" id="playAudioButton">Hear Native Recording</a>
           </div>
-          <button id="updateGameButton">New word</button>
+          <button id="updateGameButton">Next word</button>
           <div id="labels-container" class="grid"></div>
           <div id="visualizer-container" style="display: none;">
             <canvas id="audioVisualizer"></canvas>

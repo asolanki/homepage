@@ -15,6 +15,10 @@ const visualizerContainer = document.getElementById('visualizer-container');
 const labelsContainer = document.getElementById('labels-container');
 const gameContainer = document.getElementById('game-container');
 const playAudioButton = document.getElementById('playAudioButton');
+const scoreElement = document.getElementById('score');
+const feedbackElement = document.getElementById('feedback');
+
+
 
 // Global variables
 let session;
@@ -28,6 +32,9 @@ let wiggleFactor = 0;
 let speakerIndex = 0;
 let currentTone = null;
 let currentSound = null;
+let spacebarPressed = false;
+let correctAnswers = 0;
+let totalAttempts = 0;
 
 // Canvas setup
 canvas.width = 500;
@@ -111,10 +118,10 @@ async function storeModel(db, modelData) {
 }
 
 // Audio recording and processing
-async function toggleRecord() {
-    if (!isRecording) {
+async function toggleRecord(start) {
+    if (start && !isRecording) {
         await startRecording();
-    } else {
+    } else if (!start && isRecording) {
         stopRecording();
     }
 }
@@ -203,9 +210,28 @@ async function runModelInference(inputTensor) {
 }
 
 function displayResults(output) {
-    const resultsHTML = processOutputs(output["1425"], output["1427"], id2tone, id2sound);
-    labelsContainer.innerHTML = resultsHTML;
+    const results = processOutputs(output["1425"], output["1427"], id2tone, id2sound);
+    labelsContainer.innerHTML = results.html;
     animationState = 'stopped';
+
+    if (results.toneCorrect && results.soundCorrect) {
+        correctAnswers++;
+        feedbackElement.textContent = 'Correct!';
+        feedbackElement.className = 'feedback correct';
+    } else {
+        feedbackElement.textContent = 'Incorrect. Try again!';
+        feedbackElement.className = 'feedback incorrect';
+    }
+    
+    feedbackElement.style.visibility = 'visible';
+    
+    totalAttempts++;
+    updateScore();
+    
+    // Remove the feedback element after 3 seconds
+    setTimeout(() => {
+        feedbackElement.style.visibility = 'hidden';
+    }, 3000);
 }
 
 // Utility functions
@@ -224,20 +250,20 @@ function processOutputs(toneTensor, soundTensor, id2tone, id2sound) {
         <div class="results-container">
             <div class="tone-results">
                 <h4>Tone Results:</h4>
-                <ul>${toneResults}</ul>
+                <ul>${toneResults.html}</ul>
             </div>
             <div class="sound-results">
                 <h4>Sound Results:</h4>
-                <ul>${soundResults}</ul>
+                <ul>${soundResults.html}</ul>
             </div>
         </div>
     `;
 
-    if (!toneResults.includes(currentTone) && !soundResults.includes(currentSound)) {
-        resultsHTML += '<div class="feedback">Neither the tone nor the sound you spoke seems to be present in the results.</div>';
-    }
-
-    return resultsHTML;
+    return {
+        html: resultsHTML,
+        toneCorrect: toneResults.correct,
+        soundCorrect: soundResults.correct
+    };
 }
 
 function processIndividualOutput(tensor, idMapping) {
@@ -247,12 +273,18 @@ function processIndividualOutput(tensor, idMapping) {
     const sortedProbabilities = indexedProbabilities.sort((a, b) => b[1] - a[1]);
     const top3Results = sortedProbabilities.slice(0, 3);
 
-    return top3Results.map(([index, probability]) => {
+    let correct = false;
+    const html = top3Results.map(([index, probability]) => {
         const label = idMapping[index];
         const isMatch = (label === parseInt(currentTone) || label === currentSound);
         const highlight = isMatch ? 'style="background-color: lightblue;"' : '';
+        if (isMatch && probability > 0.5) {
+            correct = true;
+        }
         return `<li ${highlight}>${(probability * 100).toFixed(2)}%: ${label}</li>`;
     }).join('');
+
+    return { html, correct };
 }
 
 function getRandomPinyin() {
@@ -307,6 +339,10 @@ async function playAudio() {
     }
 }
 
+function updateScore() {
+    scoreElement.textContent = `Score: ${correctAnswers}/${totalAttempts}`;
+}
+
 // Visualization
 function drawBars() {
     const bufferLength = analyser.frequencyBinCount;
@@ -356,7 +392,7 @@ function getBarHeight(dataValue) {
 }
 
 // Event listeners
-toggleButton.addEventListener('click', toggleRecord);
+toggleButton.addEventListener('click', () => toggleRecord(true));
 loadModelButton.addEventListener('click', loadModel);
 updateGameButton.addEventListener('click', updatePinyinDisplay);
 playAudioButton.addEventListener('click', playAudio);
@@ -364,5 +400,31 @@ document.getElementById('showPinyinToggle').addEventListener('change', function(
     document.getElementById('pinyinDisplay').style.display = this.checked ? 'block' : 'none';
 });
 
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+        event.preventDefault(); // Prevent scrolling
+        if (!spacebarPressed) {
+            spacebarPressed = true;
+            toggleRecord(true);
+        }
+    }
+});
+
+document.addEventListener('keyup', (event) => {
+    if (event.code === 'Space') {
+        event.preventDefault(); // Prevent any default behavior
+        spacebarPressed = false;
+        toggleRecord(false);
+    }
+});
+
+document.addEventListener('scroll', (event) => {
+    if (spacebarPressed) {
+        event.preventDefault();
+        window.scrollTo(window.scrollX, window.scrollY);
+    }
+});
+
 // Initialize
 updatePinyinDisplay();
+updateScore();
