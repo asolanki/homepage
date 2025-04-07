@@ -127,21 +127,34 @@ async function toggleRecord(start) {
 }
 
 async function startRecording() {
+    // clear state when starting a new recording
+    feedbackElement.textContent = '';
+    feedbackElement.style.visibility = 'hidden';
+    labelsContainer.innerHTML = ''; 
+
     isRecording = true;
     toggleButton.textContent = 'Stop Recording';
     animationState = 'recording';
     shrinkFactor = 1;
     wiggleFactor = 0;
 
-    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    audioChunks = [];
-    mediaRecorder = new MediaRecorder(stream);
-    mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
-    mediaRecorder.onstop = handleStopRecording;
-    mediaRecorder.start();
+    try { 
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioChunks = [];
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+        mediaRecorder.onstop = handleStopRecording;
+        mediaRecorder.start();
 
-    setupAudioContext(stream);
-    drawBars();
+        setupAudioContext(stream);
+        drawBars();
+    } catch (err) {
+        console.error("Error accessing microphone:", err);
+        labelsContainer.textContent = "Error: Could not access microphone. Please check permissions.";
+        isRecording = false; // Reset recording state
+        toggleButton.textContent = 'Start Recording';
+        animationState = 'stopped'; // Ensure animation stops
+    }
 }
 
 function stopRecording() {
@@ -210,36 +223,209 @@ async function runModelInference(inputTensor) {
 }
 
 function displayResults(output) {
-    const results = processOutputs(output["1425"], output["1427"], id2tone, id2sound);
-    labelsContainer.innerHTML = results.html;
-    animationState = 'stopped';
+    // Ensure currentTone is treated as a number for comparison and lookup
+    const targetToneNum = parseInt(currentTone);
 
-    if (results.toneCorrect && results.soundCorrect) {
-        correctAnswers++;
-        feedbackElement.textContent = 'Correct!';
+    // Analyze predictions using the new function
+    const toneAnalysis = analyzePrediction(output["1425"], id2tone, targetToneNum, tone2id);
+    const soundAnalysis = analyzePrediction(output["1427"], id2sound, currentSound, sound2id);
+
+    // Generate granular feedback
+    const feedbackResult = generateFeedback(targetToneNum, currentSound, toneAnalysis, soundAnalysis);
+
+    // Display Top 3 probabilities
+    let resultsHTML = `
+        <div class="results-container">
+            <div class="tone-results">
+                <h4>Tone Results:</h4>
+                <ul>${toneAnalysis.top3Html}</ul>
+            </div>
+            <div class="sound-results">
+                <h4>Sound Results:</h4>
+                <ul>${soundAnalysis.top3Html}</ul>
+            </div>
+        </div>
+    `;
+    labelsContainer.innerHTML = resultsHTML;
+    animationState = 'stopped'; // Stop visualizer animation
+
+    // Display Granular Feedback
+    feedbackElement.textContent = feedbackResult.message;
+    // Set class based on correctness level
+    if (feedbackResult.level === 'perfect' || feedbackResult.level === 'good') {
         feedbackElement.className = 'feedback correct';
+        correctAnswers++; // Only increment score if overall correct
     } else {
-        feedbackElement.textContent = 'Incorrect. Try again!';
         feedbackElement.className = 'feedback incorrect';
     }
-    
-    feedbackElement.style.visibility = 'visible';
-    
+    feedbackElement.style.visibility = 'visible'; // Make feedback visible
+
     totalAttempts++;
     updateScore();
-    
-    // Remove the feedback element after 3 seconds
-    setTimeout(() => {
-        feedbackElement.style.visibility = 'hidden';
-    }, 3000);
+
+    // Note: We're not hiding feedback automatically anymore
+    // The feedback will stay visible until the next recording starts
 }
 
 // Utility functions
 function softmax(arr) {
-    const maxLogit = Math.max(...arr);
-    const scores = arr.map((logit) => Math.exp(logit - maxLogit));
+    // Ensure input is an array of numbers
+    const numericArr = arr.map(Number).filter(n => !isNaN(n));
+    if (numericArr.length === 0) {
+        console.error("Invalid input to softmax:", arr);
+        return []; // Return empty or handle error appropriately
+    }
+    const maxLogit = Math.max(...numericArr);
+    const scores = numericArr.map((logit) => Math.exp(logit - maxLogit));
     const sum = scores.reduce((a, b) => a + b, 0);
-    return scores.map((score) => score / sum);
+    // Handle potential division by zero if sum is 0
+    return scores.map((score) => (sum === 0 ? 0 : score / sum));
+}
+
+// NEW function to analyze model output
+function analyzePrediction(tensor, idMapping, targetLabel, labelToIdMapping) {
+    const logits = Array.from(tensor.data); // Ensure it's a standard array
+    const probabilities = softmax(logits);
+
+    // Check if probabilities array is valid
+    if (!probabilities || probabilities.length === 0 || probabilities.some(isNaN)) {
+        console.error("Softmax returned invalid probabilities:", probabilities);
+        // Return a default structure or throw an error
+        return {
+            probabilities: [],
+            predictedLabel: null,
+            predictedProbability: 0,
+            targetProbability: 0,
+            sortedProbabilities: [],
+            top3Html: "<li>Error processing results</li>",
+            isCorrect: false,
+            targetIndex: -1,
+            predictedIndex: -1
+        };
+    }
+
+    const indexedProbabilities = probabilities.map((p, index) => ({ index, probability: p }));
+    const sortedProbabilities = indexedProbabilities.sort((a, b) => b.probability - a.probability);
+
+    const topPrediction = sortedProbabilities[0];
+    const predictedIndex = topPrediction ? topPrediction.index : -1;
+    const predictedLabel = predictedIndex !== -1 ? idMapping[predictedIndex] : null;
+    const predictedProbability = topPrediction ? topPrediction.probability : 0;
+
+    // Find the probability of the actual target label
+    // Use the reverse mapping (labelToIdMapping) to find the target index
+    const targetIndex = labelToIdMapping ? labelToIdMapping[targetLabel] : -1;
+    const targetProbability = (targetIndex !== -1 && targetIndex < probabilities.length) ? probabilities[targetIndex] : 0;
+
+    // Generate Top 3 HTML
+    const top3Results = sortedProbabilities.slice(0, 3);
+    const top3Html = top3Results.map(({ index, probability }) => {
+        const label = idMapping[index];
+        // Ensure label is comparable (convert targetLabel if necessary)
+        const isTarget = String(label) === String(targetLabel);
+        const highlight = isTarget ? 'style="background-color: lightblue;"' : '';
+        // Check if label exists before trying to access properties or display it
+        const displayLabel = label !== undefined && label !== null ? label : `Unknown Index ${index}`;
+        return `<li ${highlight}>${(probability * 100).toFixed(2)}%: ${displayLabel}</li>`;
+    }).join('');
+
+    // Determine correctness based on the top prediction matching the target
+    const isCorrect = predictedLabel !== null && String(predictedLabel) === String(targetLabel);
+
+    return {
+        probabilities, // Full array
+        predictedLabel, // Label with highest probability
+        predictedProbability, // Probability of the top prediction
+        targetProbability, // Probability of the correct label
+        sortedProbabilities, // Array of {index, probability} sorted
+        top3Html, // HTML for display
+        isCorrect, // Boolean if top prediction matches target
+        targetIndex, // Index of the target label
+        predictedIndex // Index of the predicted label
+    };
+}
+
+function generateFeedback(targetTone, targetSound, toneAnalysis, soundAnalysis) {
+    const {
+        predictedLabel: predictedTone,
+        predictedProbability: predictedToneProb,
+        targetProbability: targetToneProb,
+        sortedProbabilities: sortedTones,
+        isCorrect: toneCorrect
+    } = toneAnalysis;
+
+    const {
+        predictedLabel: predictedSound,
+        predictedProbability: predictedSoundProb,
+        targetProbability: targetSoundProb,
+        sortedProbabilities: sortedSounds,
+        isCorrect: soundCorrect
+    } = soundAnalysis;
+
+    let feedback = "";
+    let correctnessLevel = 'both_wrong'; // Default
+    let closeCallPrefix = "";
+
+    // --- Check for "Close Calls" ---
+    // Check if target tone was 2nd prediction with significant probability
+    if (!toneCorrect && sortedTones.length > 1) {
+        const secondTonePrediction = sortedTones[1];
+        if (id2tone[secondTonePrediction.index] === targetTone && secondTonePrediction.probability > 0.20) {
+            closeCallPrefix = "Close! ";
+        }
+    }
+    // Check if target sound was 2nd prediction with significant probability
+    if (!soundCorrect && sortedSounds.length > 1) {
+        const secondSoundPrediction = sortedSounds[1];
+         if (id2sound[secondSoundPrediction.index] === targetSound && secondSoundPrediction.probability > 0.20) {
+             // Only add "Close!" once, even if both were close
+             if (!closeCallPrefix) closeCallPrefix = "Close! ";
+         }
+    }
+
+    // --- Determine Feedback Message ---
+    if (toneCorrect && soundCorrect) {
+        if (targetToneProb > 0.7 && targetSoundProb > 0.7) { // Use target prob for high confidence check
+            feedback = `Excellent! Perfect '${targetSound}${targetTone}'.`;
+            correctnessLevel = 'perfect';
+        } else {
+            feedback = `Good! That was '${targetSound}${targetTone}'.`;
+            correctnessLevel = 'good';
+        }
+    } else if (soundCorrect && !toneCorrect) {
+        correctnessLevel = 'tone_wrong';
+        if (predictedToneProb > 0.6) { // Confident wrong tone prediction
+             feedback = `Right sound ('${targetSound}'), but that sounded clearly like tone ${predictedTone}. Aim for the tone ${targetTone} pattern.`;
+        } else {
+             // Less confident wrong tone, check if target was close
+             const targetToneRank = sortedTones.findIndex(p => id2tone[p.index] === targetTone);
+             if (targetToneRank === 1 && sortedTones[1].probability > 0.2) { // Target was 2nd guess
+                 feedback = `Right sound ('${targetSound}'), but the tone wasn't quite right (sounded like ${predictedTone}). You were close to tone ${targetTone}! Try again.`;
+             } else {
+                 feedback = `Right sound ('${targetSound}'), but the tone wasn't quite right. Listen to the example and try the tone ${targetTone} pattern again. It sounded a bit like tone ${predictedTone}.`;
+             }
+        }
+    } else if (!soundCorrect && toneCorrect) {
+        correctnessLevel = 'sound_wrong';
+         feedback = `You got the tone ${targetTone} right! But the sound was closer to '${predictedSound}'. Focus on pronouncing '${targetSound}'.`;
+    } else { // Both incorrect
+        correctnessLevel = 'both_wrong';
+        feedback = `Let's try that again. Listen closely to the example for '${targetSound}${targetTone}'.`;
+        // Optional: Add more detail if one part was closer than the other
+        const targetToneRank = sortedTones.findIndex(p => id2tone[p.index] === targetTone);
+        const targetSoundRank = sortedSounds.findIndex(p => id2sound[p.index] === targetSound);
+
+        if (targetToneRank === 1 && sortedTones[1].probability > 0.2) {
+             feedback += ` You were closer on the tone (${targetTone}).`;
+        } else if (targetSoundRank === 1 && sortedSounds[1].probability > 0.2) {
+             feedback += ` You were closer on the sound ('${targetSound}').`;
+        }
+    }
+
+    return {
+        message: closeCallPrefix + feedback,
+        level: correctnessLevel
+    };
 }
 
 function processOutputs(toneTensor, soundTensor, id2tone, id2sound) {
@@ -307,6 +493,11 @@ function getRandomPinyin() {
 }
 
 function updatePinyinDisplay() {
+    // Clear previous feedback when getting a new word
+    feedbackElement.textContent = '';
+    feedbackElement.style.visibility = 'hidden';
+    labelsContainer.innerHTML = ''; // Also clear previous probability lists
+
     const { pinyin, tone, characters } = getRandomPinyin();
     document.getElementById('pinyinText').textContent = `${pinyin} (tone ${tone})`;
     document.getElementById('charactersText').textContent = characters;
@@ -401,20 +592,26 @@ document.getElementById('showPinyinToggle').addEventListener('change', function(
 });
 
 document.addEventListener('keydown', (event) => {
-    if (event.code === 'Space') {
+    if (event.code === 'Space' && session) { // Check if model is loaded
         event.preventDefault(); // Prevent scrolling
         if (!spacebarPressed) {
             spacebarPressed = true;
+            // Clear feedback immediately when space is pressed to record
+            feedbackElement.textContent = '';
+            feedbackElement.style.visibility = 'hidden';
+            labelsContainer.innerHTML = '';
             toggleRecord(true);
         }
     }
 });
 
 document.addEventListener('keyup', (event) => {
-    if (event.code === 'Space') {
+    if (event.code === 'Space' && session) { // Check if model is loaded
         event.preventDefault(); // Prevent any default behavior
-        spacebarPressed = false;
-        toggleRecord(false);
+        if (spacebarPressed) { // Only stop if we started with space
+             spacebarPressed = false;
+             toggleRecord(false);
+        }
     }
 });
 
